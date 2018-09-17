@@ -6,6 +6,15 @@ footer .container {
     background: #2b2b2b;
 }
 
+.parallaxHome {
+    background-image: url("../images/bgHome.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 65vh;
+}
+
 .checkbox-danger input[type="checkbox"]:checked + label::before {
     background-color: #ED0034;
     border-color: #ED0034; }
