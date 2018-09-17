@@ -1,0 +1,26 @@
+<!--//shows all posts-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('List of all the Listings')"></head>
+
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
+<description class="container">
+    <h1>These are all the listings</h1>
+
+    <div th:each="listing : ${listings}">
+        <h2 th:text="${listing.title}"></h2>
+        <p th:text="${listing.description}"></p>
+        <button class="btn btn-primary">Buy</button>
+    </div>
+
+    <script th:replace="fragments/scripts :: scripts"></script>
+</description>
+
+
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>

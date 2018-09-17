@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Your Profile')">
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
+<div class="container">
+
+    <div class="row mt-4">
+        <div class="col-1">
+            <i class="fas fa-user fa-4x pt-2" style="color: #696969;"></i>
+        </div>
+        <div class="col">
+            <h1>Profile</h1>
+            <h6>Welcome, ${user.firstName}!</h6>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-4 d-flex align-self-center">
+            <h2>My Information</h2>
+        </div>
+        <table class="col-8 mt-3 w-80 table table-sm table-borderless">
+            <tbody>
+            <tr>
+                <td>Full Name: ${user.firstName} ${user.lastName}</td>
+                <td>Username: ${user.username}</td>
+            </tr>
+            <tr>
+                <td>Phone Number: ${user.phoneNo}</td>
+                <td>Email: ${user.email}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>

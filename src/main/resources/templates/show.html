@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('HomeFinder.com')">
+    <meta charset="UTF-8">
+    <title>Selected Listing</title>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
+
+<!--///add what you want user to see when they click on one listing-->
+    <main class="container">
+        <h1>Here is your listing.</h1>
+        <h2 th:text="${listing.title}"></h2>
+        <p th:text="${listing.description}"></p>
+
+    </main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">-->
+<!--<head th:replace="fragments/head :: head('Post')"></head>-->
+
+<!--<nav th:replace="fragments/navbar :: navbar"></nav>-->
+
+
+
+<!--<main class="container">-->
+    <!--<h1>Individual post</h1>-->
+
+    <!--<div class="card">-->
+
+        <!--<div class="card-header" th:text="${post.title}">-->
+        <!--</div>-->
+        <!--<div class="card-body">-->
+            <!--<blockquote class="blockquote mb-0">-->
+                <!--<p th:text="${post.body}"></p>-->
+                <!--<footer class="blockquote-footer" > Created by: <cite title="Source Title" th:text="${post.user.username}"></cite></footer>-->
+            <!--</blockquote>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</main>-->
+
+
+
+<!--<footer th:replace="fragments/footer :: footer"></footer>-->
+<!--<script th:replace="fragments/scripts :: scripts"></script>-->
+
+<!--</html>-->

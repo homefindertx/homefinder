@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Login')">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
+
+
+    <div class="card border-dark mx-auto mt-5 text-center" style="width: 24rem;">
+        <div class="card-header">
+            <h1 class="pt-2 ml-2"><i class="far fa-keyboard" style="color: #696969;"></i> Login</h1>
+        </div>
+        <div class="card-body">
+            <form action="/../login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" id="username" name="username" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" class="form-control" type="password" />
+                </div>
+                <input type="submit" class="btn btn-danger btn-block" value="Log In">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">-->
+<!--<head>-->
+    <!--&lt;!&ndash;<div th:replace="fragments/head :: head('Post Create Form')"></div>&ndash;&gt;-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+    <!--<title>Log In</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Log In</h1>-->
+<!--<div th:if="${param.error}">-->
+    <!--Invalid Username and Password.-->
+<!--</div>-->
+<!--<div th:if="${param.logout}">-->
+    <!--You have been logged out.-->
+<!--</div>-->
+
+<!--<form th:action="@{/login}" method="post">-->
+    <!--<label for="username">Username</label>-->
+    <!--<input id="username" name="username" type="text" />-->
+    <!--<label for="password">Password</label>-->
+    <!--<input id="password" name="password" type="password" />-->
+    <!--<input type="submit" value="Log In" />-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
