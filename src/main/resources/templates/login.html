@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('Login')">
-    <meta charset="UTF-8">
     <title>Login</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+
 </head>
 <body>
 
@@ -24,7 +28,7 @@
                     <label for="password">Password</label>
                     <input id="password" name="password" class="form-control" type="password" />
                 </div>
-                <input type="submit" class="btn btn-danger btn-block" value="Log In">
+                <input type="submit" class="btn btn-danger btn-block" value="Log In" />
             </form>
         </div>
     </div>
@@ -34,31 +38,10 @@
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 </html>
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">-->
-<!--<head>-->
-    <!--&lt;!&ndash;<div th:replace="fragments/head :: head('Post Create Form')"></div>&ndash;&gt;-->
-    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
-    <!--<title>Log In</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Log In</h1>-->
-<!--<div th:if="${param.error}">-->
-    <!--Invalid Username and Password.-->
-<!--</div>-->
-<!--<div th:if="${param.logout}">-->
-    <!--You have been logged out.-->
-<!--</div>-->
-
-<!--<form th:action="@{/login}" method="post">-->
-    <!--<label for="username">Username</label>-->
-    <!--<input id="username" name="username" type="text" />-->
-    <!--<label for="password">Password</label>-->
-    <!--<input id="password" name="password" type="password" />-->
-    <!--<input type="submit" value="Log In" />-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
