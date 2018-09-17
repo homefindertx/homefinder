@@ -48,6 +48,9 @@ public class listing {
     @Column(nullable = false, length = 100)
     private String state;
 
+    public listing(){
+    }
+
     public listing(String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
         this.address = address;
         this.description = description;
