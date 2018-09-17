@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Listings {
+public class listing {
 
     @Id
     @GeneratedValue
@@ -48,7 +48,7 @@ public class Listings {
     @Column(nullable = false, length = 100)
     private String state;
 
-    public Listings(String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public listing(String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
         this.address = address;
         this.description = description;
         this.bedrooms = bedrooms;
@@ -63,7 +63,7 @@ public class Listings {
         this.state = state;
     }
 
-    public Listings(long id, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public listing(long id, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
         this.id = id;
         this.address = address;
         this.description = description;
