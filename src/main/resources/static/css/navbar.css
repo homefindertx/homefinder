@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+
+li  {
+    display: inline;
+
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: aqua;
+    color: white;
+}
+
