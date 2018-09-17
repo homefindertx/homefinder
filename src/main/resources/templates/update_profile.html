@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('HomeFinder.com')">
+    <meta charset="UTF-8" />
+    <title>Your Profile</title>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
+
+    <div class="container">
+
+        <div class="row mt-4 py-2">
+            <div class="col-1 mr-3">
+                <i class="fas fa-user-edit fa-4x" style="color: #696969;"></i>
+            </div>
+            <div class="col">
+                <h1>Update your Profile</h1>
+            </div>
+        </div>
+        <hr>
+
+    <div class="row"></div>
+        <div class="card text-center border-dark mx-auto" style="width: 60%;">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Edit Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="title-link nav-link" href="/profile/password">Change my Password</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <br>
+                    Profile Info Form
+                </h5>
+                <p class="card-text">
+                <form action="/profile/update" method="post">
+
+                    <input type="hidden" name="id" value="${user.id}"/>
+                    <input type="hidden" name="password" value="${user.password}" />
+                    <input type="hidden" name="firstName" value="${user.firstName}"/>
+                    <input type="hidden" name="lastName" value="${user.lastName}"/>
+
+                    <table align="center" class="w-80">
+                        <tr>
+                            <td>Full Name: </td>
+                            <td>  ${user.firstName} ${user.lastName}</td>
+                        </tr>
+                        <tr>
+                            <td>Username: </td>
+                            <td>
+                                <input id="username" name="username" class="form-control" type="text" value="${user.username}" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td>
+                                <input id="email" name="email" class="form-control" type="text" value="${user.email}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number: </td>
+                            <td>
+                                <input id="phoneNo" name="phoneNo" class="form-control" type="text" value="${user.phoneNo}" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+
+                        </tr>
+                    </table>
+                    <input type="submit" class="card-link btn btn-danger btn-sm" value="Submit" />
+                    <a href="/profile" class="card-link btn btn-secondary btn-sm">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="fragments/footer :: footer"></footer>
+    <script th:replace="fragments/scripts :: scripts"></script>
+
+</body>
+</html>
