@@ -1,26 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('List of all the Listings')">
-
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
 </head>
-
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<description class="container">
+<div class="container">
     <h1>These are all the listings</h1>
 
     <div th:each="listing : ${listings}">
         <p th:text="${listing.description}"></p>
         <p th:text="${listing.price}"></p>
-        <button class="btn btn-primary">Go Somewhere...</button>
+        <a th:href="@{/{id}(id=${listing.id})}">Go Somewhere...</a>
     </div>
 
     <script th:replace="fragments/scripts :: scripts"></script>
-</description>
+</div>
 
 
 

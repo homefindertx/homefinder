@@ -1,11 +1,12 @@
 package com.homefindertx.homefindertx.repositories;
 
-import com.homefindertx.homefindertx.models.listing;
+import com.homefindertx.homefindertx.models.Listing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ListingRepository extends CrudRepository<listing, Long> {
+public interface ListingRepository extends CrudRepository<Listing, Long> {
+
 
 
     }
