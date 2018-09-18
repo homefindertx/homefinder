@@ -1,7 +1,11 @@
 package com.homefindertx.homefindertx.models;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="User")
@@ -26,26 +30,36 @@ public class User implements Serializable {
     @Column(nullable = false, length = 100)
     private String phone_number;
 
+    @Fetch(value = FetchMode.SELECT)
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Listing> listings;
+
     @Column(nullable = false)
     private Boolean user_type;
 
-    public User(String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
+    public User(String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.password = password;
         this.phone_number = phone_number;
+        this.listings = listings;
         this.user_type = user_type;
     }
 
-    public User(long id, String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
+    public User(long id, String first_name, String last_name, String email, String password, String phone_number, Listing listing, Boolean user_type) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.password = password;
         this.phone_number = phone_number;
+        this.listings = listings;
         this.user_type = user_type;
+    }
+
+    public User() {
+
     }
 
     public long getId() { return id; }
@@ -71,6 +85,10 @@ public class User implements Serializable {
     public String getPhone_number() { return phone_number; }
 
     public void setPhone_number(String phone_number) { this.phone_number = phone_number; }
+
+    public List<Listing> getListing() { return listings; }
+
+    public void setListing(List<Listing> listings) { this.listings = listings; }
 
     public Boolean getUser_type() { return user_type; }
 
