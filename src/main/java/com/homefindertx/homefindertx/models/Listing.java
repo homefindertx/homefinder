@@ -1,9 +1,6 @@
 package com.homefindertx.homefindertx.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Listing {
@@ -11,6 +8,9 @@ public class Listing {
     @Id
     @GeneratedValue
     private long id;
+
+    @ManyToOne
+    private User user;
 
     @Column(nullable = false)
     private String address;
@@ -51,7 +51,8 @@ public class Listing {
     public Listing(){
     }
 
-    public Listing(String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public Listing(User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+        this.user = user;
         this.address = address;
         this.description = description;
         this.bedrooms = bedrooms;
@@ -66,8 +67,9 @@ public class Listing {
         this.state = state;
     }
 
-    public Listing(long id, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
         this.id = id;
+        this.user = user;
         this.address = address;
         this.description = description;
         this.bedrooms = bedrooms;
@@ -85,6 +87,10 @@ public class Listing {
     public long getId() { return id; }
 
     public void setId(long id) { this.id = id; }
+
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
 
     public String getAddress() { return address; }
 
