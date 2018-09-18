@@ -19,7 +19,7 @@
             <h1 class="pt-2 ml-2"><i class="far fa-keyboard" style="color: #696969;"></i> Login</h1>
         </div>
         <div class="card-body">
-            <form action="/../login" method="POST">
+            <form action="/login" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input class="form-control" id="username" name="username" type="text" />
@@ -28,14 +28,18 @@
                     <label for="password">Password</label>
                     <input id="password" name="password" class="form-control" type="password" />
                 </div>
+                <div>
+                <h6 class="text-center" style="color: darkgrey; font-style:italic">New user? Create an account <a href="/register">here.</a></h6>
+                </div>
                 <input type="submit" class="btn btn-danger btn-block" value="Log In" />
             </form>
         </div>
     </div>
 
+
+
 </div>
 
-<footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
