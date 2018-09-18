@@ -15,7 +15,6 @@ class ListingController {
     private UserRepository userRepo;
 
     public ListingController(ListingRepository listRepo, UserRepository userRepo) {
-
         this.listRepo = listRepo;
         this.userRepo = userRepo;
     }
@@ -24,7 +23,7 @@ class ListingController {
     public String findAll(Model vModel) {
             vModel.addAttribute("listings", listRepo.findAll());
 //        if(user_type = true) {
-        return"/index";
+        return "index";
 //        }
 //        return"/seller";
     }
@@ -33,7 +32,7 @@ class ListingController {
     public String viewAd(@PathVariable("id") Long id, Model model) {
         Listing listing = listRepo.findOne(id);
         model.addAttribute("listing", listing);
-        return "/show";
+        return "show";
     }
 
     @RequestMapping("/delete/{id}")
@@ -45,18 +44,17 @@ class ListingController {
     @PostMapping("/delete")
     public String deletePost(@RequestParam(name ="id") long id) {
         listRepo.delete(id);
-        return"redirect:/";
+        return "redirect:/";
     }
 
     @GetMapping("/create")
     public String showCreateForm(Model vModel){
         vModel.addAttribute("listing", new Listing());
-        return "/create";
+        return "create";
     }
 
     @PostMapping("/posts/create")
     public String createPost(@ModelAttribute Listing listing){
-
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        listing.setUser(user);
         listRepo.save(listing);
@@ -74,7 +72,5 @@ class ListingController {
         listRepo.save(listing);
         return "redirect:/posts";
     }
-
-
 
 }
