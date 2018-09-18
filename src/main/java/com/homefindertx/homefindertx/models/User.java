@@ -47,7 +47,7 @@ public class User implements Serializable {
         this.user_type = user_type;
     }
 
-    public User(long id, String first_name, String last_name, String email, String password, String phone_number, Listing listing, Boolean user_type) {
+    public User(long id, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -55,6 +55,15 @@ public class User implements Serializable {
         this.password = password;
         this.phone_number = phone_number;
         this.listings = listings;
+        this.user_type = user_type;
+    }
+    public User(long id, String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.phone_number = phone_number;
         this.user_type = user_type;
     }
 
