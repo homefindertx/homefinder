@@ -2,9 +2,10 @@
 
 # Features:
 
-- [ ] Create Controllers
-- [ ] Create Models
-- [ ] Create Repositories
+- [x] Deploymemnt
+- [x] Create Models
+- [x] Create Controllers
+- [x] Create Repositories
 - [ ] Bring functionality to register, login, home, profile, index, show, edit pages.
 - [ ] Add a search feature
 - [ ] Add pages for Seller
