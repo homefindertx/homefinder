@@ -28,7 +28,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String saveUser(@ModelAttribute User user){
+    public String saveUser(@RequestParam(name = "user_type") boolean type, @ModelAttribute User user){
+        System.out.println(type);
+        user.setUser_type(type);
         userDao.save(user);
         return "redirect:/login";
     }
