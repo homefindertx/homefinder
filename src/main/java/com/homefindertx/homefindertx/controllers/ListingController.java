@@ -19,7 +19,7 @@ class ListingController {
         this.userRepo = userRepo;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String findAll(Model vModel) {
             vModel.addAttribute("listings", listRepo.findAll());
 //        if(user_type = true) {
