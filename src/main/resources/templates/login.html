@@ -1,50 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('Login')">
-    <title>Login</title>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head :: head('Login')"></head>
 <body>
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="container">
+<h1>This is where you can Login</h1>
+<div class="register-container container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h1>Log In</h1>
 
-
-    <div class="card border-dark mx-auto mt-5 text-center" style="width: 24rem;">
-        <div class="card-header">
-            <h1 class="pt-2 ml-2"><i class="far fa-keyboard" style="color: #696969;"></i> Login</h1>
-        </div>
-        <div class="card-body">
-            <form action="/login" method="POST">
+            <form th:action="@{/login}" method="get">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input class="form-control" id="username" name="username" type="text" />
+                    <label for="email" class="cols-sm-2 control-label">Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input id="email" name="email" type="text" />
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input id="password" name="password" class="form-control" type="password" />
+                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input id="password" name="password" type="password" />
+                        </div>
+                    </div>
                 </div>
-                <div>
-                <h6 class="text-center" style="color: darkgrey; font-style:italic">New user? Create an account <a href="/register">here.</a></h6>
-                </div>
-                <input type="submit" class="btn btn-danger btn-block" value="Log In" />
+                <input type="submit" value="Log In" />
             </form>
+
+
+
+
         </div>
     </div>
-
-
-
 </div>
 
 <script th:replace="fragments/scripts :: scripts"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>

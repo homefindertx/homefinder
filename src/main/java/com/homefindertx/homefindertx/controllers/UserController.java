@@ -4,9 +4,7 @@ import com.homefindertx.homefindertx.models.User;
 import com.homefindertx.homefindertx.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -18,9 +16,9 @@ public class UserController {
         this.userDao = userDao;
     }
 
-    @GetMapping("/login")
+    @GetMapping(value="/login")
     public String login() {
-        return "login";
+        return "index";
     }
 
     @GetMapping("/register")
