@@ -34,4 +34,16 @@ public class UserController {
         userDao.save(user);
         return "redirect:/login";
     }
+
+    @GetMapping("profile/{id}/edit")
+    public String showEditForm(Model vModel, @PathVariable long id) {
+        vModel.addAttribute("user", userDao.findOne(id));
+        return "profile/edit";
+    }
+
+    @PostMapping("profile/{id}/edit")
+    public String update(@ModelAttribute User user){
+        userDao.save(user);
+        return "redirect:/profile";
+    }
 }

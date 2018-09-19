@@ -28,7 +28,7 @@ class ListingController {
 //        return"/seller";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("show/{id}")
     public String viewAd(@PathVariable("id") Long id, Model model) {
         Listing listing = listRepo.findOne(id);
         model.addAttribute("listing", listing);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('List of all the Listings')">
+<head th:replace="fragments/head :: head('All Listings')">
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
@@ -11,7 +11,7 @@
     <div th:each="listing : ${listings}">
         <p th:text="${listing.description}"></p>
         <p th:text="${listing.price}"></p>
-        <a th:href="@{/{id}(id=${listing.id})}">Go Somewhere...</a>
+        <a th:href="@{show/{id}(id=${listing.id})}">Go Somewhere...</a>
     </div>
 
     <script th:replace="fragments/scripts :: scripts"></script>

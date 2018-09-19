@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('List of all the Listings')">
+<head th:replace="fragments/head :: head('Seller Portal')">
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
 <div class="container">
-    <h1>These are all the seller listings</h1>
+    <h1>This is the Seller Portal</h1>
 
     <div th:each="listing : ${listings}">
         <p th:text="${listing.description}"></p>
