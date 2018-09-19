@@ -53,24 +53,24 @@ class ListingController {
         return "create";
     }
 
-    @PostMapping("/posts/create")
+    @PostMapping("/create")
     public String createPost(@ModelAttribute Listing listing){
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        listing.setUser(user);
         listRepo.save(listing);
-        return "redirect:/posts";
+        return "redirect:/";
     }
 
-    @GetMapping("/posts/{id}/edit")
+    @GetMapping("/{id}/edit")
     public String showEditForm(Model vModel, @PathVariable long id) {
         vModel.addAttribute("post", listRepo.findOne(id));
-        return "posts/edit";
+        return "/edit";
     }
 
-    @PostMapping("/posts/{id}/edit")
+    @PostMapping("/{id}/edit")
     public String update(@ModelAttribute Listing listing){
         listRepo.save(listing);
-        return "redirect:/posts";
+        return "redirect:/";
     }
 
 }

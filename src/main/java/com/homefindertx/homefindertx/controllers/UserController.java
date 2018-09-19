@@ -18,7 +18,7 @@ public class UserController {
 
     @GetMapping(value="/login")
     public String login() {
-        return "index";
+        return "login";
     }
 
     @GetMapping("/register")

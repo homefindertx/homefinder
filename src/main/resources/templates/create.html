@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Register')"></head>
+<body>
+<div class="register-container container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h5>Create New Listing</h5>
+            <form th:action="'/create'" th:method="post" th:object="${listing}">
+                <div class="form-group">
+                    <label for="address" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{address}" class="form-control" name="address" id="address"  placeholder="Enter Listing Address"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bathrooms" class="cols-sm-2 control-label">Bathrooms</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="number" th:field="*{bathrooms}" class="form-control" name="bathrooms" id="bathrooms"  placeholder="Enter number of Bathrooms"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bedrooms" class="cols-sm-2 control-label">Bedrooms</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="number" th:field="*{bedrooms}" class="form-control" name="bedrooms" id="bedrooms"  placeholder="Enter number of Bedrooms"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="city" class="cols-sm-2 control-label">City</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text"  th:field="*{city}" class="form-control" name="city" id="city"  placeholder="Enter Listing City"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="cols-sm-2 control-label">Description</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{description}" class="form-control" name="description" id="description"  placeholder="Enter Listing Description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lot_size" class="cols-sm-2 control-label">Lot Size</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="number" th:field="*{lot_size}" class="form-control" name="description" id="lot_size"  placeholder="Enter Lot Size"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="cols-sm-2 control-label">Price</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{price}" class="form-control" name="price" id="price"  placeholder="Enter Listing Price"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="square_footage" class="cols-sm-2 control-label">Square Footage</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{square_footage}" class="form-control" name="square_footage" id="square_footage"  placeholder="Enter Listing Square Footage"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="state" class="cols-sm-2 control-label">State</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{state}" class="form-control" name="state" id="state"  placeholder="Enter Listing State"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="cols-sm-2 control-label">Status</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{status}" class="form-control" name="status" id="status"  placeholder="Enter Listing Status"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="year_built" class="cols-sm-2 control-label">Year Built</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{year_built}" class="form-control" name="year_built" id="year_built"  placeholder="Enter Year Listing was Built"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="zipcode" class="cols-sm-2 control-label">ZipCode</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="text" th:field="*{zipcode}" class="form-control" name="zipcode" id="zipcode"  placeholder="Enter Listing ZipCode"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group ">
+                    <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>
+
