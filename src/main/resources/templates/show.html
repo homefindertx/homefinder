@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+
 <head th:replace="fragments/head :: head('HomeFinder.com')"></head>
+
 <body>
+
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
 <h1>Here is your listing.</h1>
-<div class="container" th:object="${listing}">
-    <h2 th:text="${listing.price}" class="listing-price" ></h2>
-        <p th:text="${listing.description}"></p>
-    <p th:text="${listing.user.email}"></p>
 
+<div class="container" th:object="${listing}">
+    <h2 th:text="${listing.price}" class="listing-price"></h2>
+    <p th:text="${listing.description}"></p>
+    <p th:text="${listing.user.email}"></p>
 </div>
-<script th:replace="fragments/scripts :: scripts"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!--<div align="center">-->
+    <!--<p>-->
+        <!--<a href="https://www.mortgagecalculator.org" target="_blank">-->
+            <!--<img src="https://www.mortgagecalculator.org/images/mortgage-calculator-logo2.png" alt="MortgageCalculator.org" height="19" width="200" border="0" />-->
+        <!--</a>-->
+        <!--<br />-->
+        <!--<iframe src="https://www.mortgagecalculator.org/free-tools/calculator/" frameborder="0" width="260px" height="270" scrolling="no"></iframe>-->
+    <!--</p>-->
+<!--</div>-->
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script th:replace="fragments/scripts :: scripts"></script>
+
 </body>
 </html>
-

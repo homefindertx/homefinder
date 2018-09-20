@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${title}"></title>
     <th:block th:replace="fragments/styles :: styles"></th:block>
+    <link href="http://cdn.mapfit.com/v2-4/assets/css/mapfit.css" rel='stylesheet' />
 </head>
 </html>
