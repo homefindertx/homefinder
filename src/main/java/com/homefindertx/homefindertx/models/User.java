@@ -15,6 +15,9 @@ public class User implements Serializable {
     @GeneratedValue
     private long id;
 
+    @Column(nullable = false, length = 16)
+    private String username;
+
     @Column(nullable = false, length = 100)
     private String first_name;
 
@@ -37,7 +40,20 @@ public class User implements Serializable {
     @Column(nullable = false)
     private Boolean user_type;
 
-    public User(String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        username = copy.username;
+        first_name = copy.first_name;
+        last_name = copy.last_name;
+        email = copy.email;
+        password = copy.password;
+        phone_number = copy.phone_number;
+        listings =copy.listings;
+        user_type = copy.user_type;
+    }
+
+    public User(String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -47,8 +63,9 @@ public class User implements Serializable {
         this.user_type = user_type;
     }
 
-    public User(long id, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
+    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
         this.id = id;
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -57,8 +74,9 @@ public class User implements Serializable {
         this.listings = listings;
         this.user_type = user_type;
     }
-    public User(long id, String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
+    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
         this.id = id;
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -74,6 +92,10 @@ public class User implements Serializable {
     public long getId() { return id; }
 
     public void setId(long id) { this.id = id; }
+
+    public String getUsername(){ return username; }
+
+    public void setUsername(String username) { this.username = username; }
 
     public String getFirst_name() { return first_name; }
 
