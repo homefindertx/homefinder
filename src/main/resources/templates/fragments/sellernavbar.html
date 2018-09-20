@@ -3,7 +3,7 @@
 <head th:replace="fragments/head :: head('head')"></head>
 
 <body>
-<nav th:fragment="navbar" class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav th:fragment="sellernavbar" class="navbar navbar-dark bg-dark navbar-expand-sm">
     <div class="container">
         <a class="navbar-brand" href="/">HomeFinderTx</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,9 +11,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index">Homes</a>
-                </li>
                 <li sec:authorize="!isAuthenticated()" class="nav-item">
                     <a class="nav-link" href="/register">Register</a>
                 </li>
@@ -24,15 +21,12 @@
                     <a class="nav-link" href="/create">Create</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" href="/sellerprofile">Profile</a>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
                     <form th:action="@{/logout}" th:method="post" class="nav-link">
                         <button class="btn-link btn nav-link" style="margin-top: 8px">Logout</button>
                     </form>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/sellerprofile">Profile</a>
                 </li>
             </ul>
         </div>
