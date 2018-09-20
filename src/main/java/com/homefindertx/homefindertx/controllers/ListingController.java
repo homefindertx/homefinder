@@ -26,7 +26,6 @@ class ListingController {
     @GetMapping("/index")
     public String FindAll(Model vModel) {
 
-
         vModel.addAttribute("listings", listRepo.findAll());
         return"index";
     }

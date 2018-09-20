@@ -38,7 +38,10 @@ public class UserController {
     }
 
     @GetMapping("/sellerprofile")
-    public String sellerPage() {
+    public String sellerPage(Model vModel) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User curruser = userDao.findByUsername(user.getUsername());
+        vModel.addAttribute("user", curruser);
         return "sellerprofile";
     }
 
