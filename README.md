@@ -2,8 +2,8 @@
 
 # Features:
 
-- [x] Deploymemnt
-- [x] Create Models
+- [ ] Deploymemnt
+- [ ] Create Models
 - [ ] Create Controllers
 - [ ] Create Repositories
 - [ ] Bring functionality to register, login, home, index
