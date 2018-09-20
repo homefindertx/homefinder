@@ -41,13 +41,13 @@ class ListingController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         listRepo.delete(id);
-        return "redirect:/";
+        return "redirect:/sellerprofile";
     }
 
     @PostMapping("/delete")
     public String deletePost(@RequestParam(name ="id") long id) {
         listRepo.delete(id);
-        return "redirect:/";
+        return "redirect:/sellerprofile";
     }
 
     @GetMapping("/create")
@@ -67,13 +67,13 @@ class ListingController {
     @GetMapping("/{id}/edit")
     public String showEditForm(Model vModel, @PathVariable long id) {
         vModel.addAttribute("post", listRepo.findOne(id));
-        return "/edit";
+        return "edit";
     }
 
     @PostMapping("/{id}/edit")
     public String update(@ModelAttribute Listing listing){
         listRepo.save(listing);
-        return "redirect:/";
+        return "redirect:/profile";
     }
 
 }
