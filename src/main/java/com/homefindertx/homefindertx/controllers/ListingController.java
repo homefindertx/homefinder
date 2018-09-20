@@ -19,15 +19,6 @@ class ListingController {
         this.userRepo = userRepo;
     }
 
-    @RequestMapping("/index")
-    public String findAll(Model vModel) {
-            vModel.addAttribute("listings", listRepo.findAll());
-//        if(user_type = true) {
-        return "index";
-//        }
-//        return"/seller";
-    }
-
     @GetMapping("show/{id}")
     public String viewAd(@PathVariable("id") Long id, Model model) {
         Listing listing = listRepo.findOne(id);

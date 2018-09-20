@@ -2,6 +2,7 @@ package com.homefindertx.homefindertx.controllers;
 
 import com.homefindertx.homefindertx.models.User;
 import com.homefindertx.homefindertx.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +21,26 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
-//    @GetMapping(value="/login")
-//    public String login() {
-//        return "login";
-//    }
+    @GetMapping("/user-type")
+    public String userType() {
+
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(user.getIsBuyer()) {
+            return "redirect:/profile";
+        }
+        return"redirect:/sellerprofile";
+
+    }
+
+    @GetMapping("/profile")
+    public String buyerPage() {
+        return"profile";
+    }
+
+    @GetMapping("/sellerprofile")
+    public String sellerPage() {
+        return "sellerprofile";
+    }
 
     @GetMapping("/register")
     public String showSignupForm(Model model){
@@ -32,26 +49,15 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String saveUser(@ModelAttribute User user){
+    public String saveUser(@RequestParam(name = "user_type") Boolean type,  @ModelAttribute User user){
+
+        System.out.println(type);
+        user.setIsBuyer(type);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/login";
     }
-
-//    @GetMapping("/register")
-//    public String showRegistrationForm(Model model){
-//        model.addAttribute("user", new User());
-//        return "register";
-//    }
-//
-//    @PostMapping("/register")
-//    public String saveUser(@RequestParam(name = "user_type") boolean type, @ModelAttribute User user){
-//        System.out.println(type);
-//        user.setUser_type(type);
-//        userDao.save(user);
-//        return "redirect:/login";
-//    }
 
     @GetMapping("profile/{id}/edit")
     public String showEditForm(Model vModel, @PathVariable long id) {
@@ -62,6 +68,6 @@ public class UserController {
     @PostMapping("profile/{id}/edit")
     public String update(@ModelAttribute User user){
         userDao.save(user);
-        return "redirect:/profile";
+        return "redirect:/profile/edit";
     }
 }

@@ -16,6 +16,7 @@ public class AuthenticationController {
         String name = auth.getName(); //get logged in username
 
         model.addAttribute("username", name);
+
         return "login";
 
     }
