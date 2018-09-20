@@ -38,7 +38,7 @@ public class User implements Serializable {
     private List<Listing> listings;
 
     @Column(nullable = false)
-    private Boolean user_type;
+    private Boolean isBuyer = false;
 
     public User(User copy) {
         id = copy.id; // This line is SUPER important! Many things won't work if it's absent
@@ -49,10 +49,10 @@ public class User implements Serializable {
         password = copy.password;
         phone_number = copy.phone_number;
         listings =copy.listings;
-        user_type = copy.user_type;
+        isBuyer = copy.isBuyer;
     }
 
-    public User(String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
+    public User(String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean isBuyer) {
         this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -60,10 +60,10 @@ public class User implements Serializable {
         this.password = password;
         this.phone_number = phone_number;
         this.listings = listings;
-        this.user_type = user_type;
+        this.isBuyer = isBuyer;
     }
 
-    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean user_type) {
+    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, List<Listing> listings, Boolean isBuyer) {
         this.id = id;
         this.username = username;
         this.first_name = first_name;
@@ -72,9 +72,9 @@ public class User implements Serializable {
         this.password = password;
         this.phone_number = phone_number;
         this.listings = listings;
-        this.user_type = user_type;
+        this.isBuyer = isBuyer;
     }
-    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, Boolean user_type) {
+    public User(long id, String username, String first_name, String last_name, String email, String password, String phone_number, Boolean isBuyer) {
         this.id = id;
         this.username = username;
         this.first_name = first_name;
@@ -82,7 +82,7 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
         this.phone_number = phone_number;
-        this.user_type = user_type;
+        this.isBuyer = isBuyer;
     }
 
     public User() {
@@ -121,8 +121,8 @@ public class User implements Serializable {
 
     public void setListing(List<Listing> listings) { this.listings = listings; }
 
-    public Boolean getUser_type() { return user_type; }
+    public Boolean getIsBuyer() { return isBuyer; }
 
-    public void setUser_type(Boolean user_type) { this.user_type = user_type; }
+    public void setIsBuyer(Boolean isBuyer) { this.isBuyer = isBuyer; }
 
 }

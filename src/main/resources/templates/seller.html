@@ -5,21 +5,11 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div class="container">
-    <h1>This is the Seller Portal</h1>
-
-    <div th:each="listing : ${listings}">
-        <p th:text="${listing.description}"></p>
-        <p th:text="${listing.price}"></p>
-        <a th:href="@{/{id}(id=${listing.id})}">Go Somewhere...</a>
-    </div>
-
+<h1>seller page</h1>
     <script th:replace="fragments/scripts :: scripts"></script>
-</div>
 
 
 
-<script th:replace="fragments/scripts :: scripts"></script>
 
 
 </body>
