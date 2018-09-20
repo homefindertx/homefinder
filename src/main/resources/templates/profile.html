@@ -4,6 +4,19 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>Buyer Profile</h1>
+<!--<form th:action="'/profile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">-->
+    <!--<label for="">User Name</label>-->
+    <!--<input type="text" th:field="*{username}" />-->
+    <!--<br/>-->
+    <!--<label for="">First Name</label>-->
+    <!--<input type="text" th:field="*{first_name}" />-->
+    <!--<br/>-->
+
+<p th:text="${user.id}"></p>
+<p th:text="${user.username}"></p>
+    <!--<button class="button">Update Profile</button>-->
+<!--</form>-->
+<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit</button></a>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
