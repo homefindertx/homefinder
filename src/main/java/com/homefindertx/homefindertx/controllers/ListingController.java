@@ -2,11 +2,15 @@ package com.homefindertx.homefindertx.controllers;
 
 
 import com.homefindertx.homefindertx.models.Listing;
+import com.homefindertx.homefindertx.models.Zillow;
 import com.homefindertx.homefindertx.repositories.ListingRepository;
 import com.homefindertx.homefindertx.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
 
 @Controller
 class ListingController {
@@ -73,4 +77,22 @@ class ListingController {
         return "redirect:/";
     }
 
+    @GetMapping("/zillow")
+    public String showZillow(Zillow zillow, Model vModel) {
+        vModel.addAttribute("zillow", zillow);
+        return "/zillow";
+    }
+
+    @PostMapping("/zillow")
+    public String updateZillow(@ModelAttribute Zillow zillow, @RequestParam(name = "address") String address, @RequestParam(name = "citystatezip") String zip) throws IOException, SAXException {
+        System.out.println("api:" + Zillow.getZWSID());
+        System.out.println(address);
+        System.out.println(zip);
+
+        Zillow.getValuation(address, zip);
+
+        System.out.println("valuation:" + Zillow.getValuation(address, zip));
+//        System.out.println("info:" + firstResult);
+        return "/zillow";
+    }
 }
