@@ -2,8 +2,10 @@ package com.homefindertx.homefindertx.controllers;
 
 
 import com.homefindertx.homefindertx.models.Listing;
+import com.homefindertx.homefindertx.models.User;
 import com.homefindertx.homefindertx.repositories.ListingRepository;
 import com.homefindertx.homefindertx.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,19 @@ class ListingController {
     private ListingRepository listRepo;
     private UserRepository userRepo;
 
+
+
     public ListingController(ListingRepository listRepo, UserRepository userRepo) {
         this.listRepo = listRepo;
         this.userRepo = userRepo;
+    }
+
+    @GetMapping("/index")
+    public String FindAll(Model vModel) {
+
+
+        vModel.addAttribute("listings", listRepo.findAll());
+        return"index";
     }
 
     @GetMapping("show/{id}")
@@ -46,8 +58,8 @@ class ListingController {
 
     @PostMapping("/create")
     public String createPost(@ModelAttribute Listing listing){
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        listing.setUser(user);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        listing.setUser(user);
         listRepo.save(listing);
         return "redirect:/";
     }
