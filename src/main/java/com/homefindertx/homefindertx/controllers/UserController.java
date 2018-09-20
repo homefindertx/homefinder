@@ -1,6 +1,7 @@
 package com.homefindertx.homefindertx.controllers;
 
 import com.homefindertx.homefindertx.models.User;
+import com.homefindertx.homefindertx.repositories.ListingRepository;
 import com.homefindertx.homefindertx.repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,11 +14,13 @@ public class UserController {
 
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
+    private ListingRepository listDao;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, ListingRepository listDao, PasswordEncoder passwordEncoder) {
 
         this.userDao = userDao;
+        this.listDao = listDao;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -33,7 +36,11 @@ public class UserController {
     }
 
     @GetMapping("/profile")
-    public String buyerPage() {
+    public String buyerPage(Model vModel) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User curruser = userDao.findByUsername(user.getUsername());
+
+        vModel.addAttribute("user", curruser);
         return"profile";
     }
 
@@ -41,6 +48,7 @@ public class UserController {
     public String sellerPage(Model vModel) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User curruser = userDao.findByUsername(user.getUsername());
+//        User listings = listDao.findAll(user.getId());
         vModel.addAttribute("user", curruser);
         return "sellerprofile";
     }
@@ -65,12 +73,12 @@ public class UserController {
     @GetMapping("profile/{id}/edit")
     public String showEditForm(Model vModel, @PathVariable long id) {
         vModel.addAttribute("user", userDao.findOne(id));
-        return "profile/edit";
+        return "editprofile";
     }
 
     @PostMapping("profile/{id}/edit")
     public String update(@ModelAttribute User user){
         userDao.save(user);
-        return "redirect:/profile/edit";
+        return "redirect:/profile";
     }
 }
