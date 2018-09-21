@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('All Listings')">
 </head>
 <body>
@@ -35,15 +35,23 @@
     <!--<h1>These are all the listings</h1>-->
 
     <div th:each="listing : ${listings}">
+        <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
+            <div th:attr="id=${'map_' + listing.id}" class="maps" style="height: 200px; width: 400px;"></div>
+        </span>
+        <h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2>
         <p th:text="${listing.description}"></p>
         <p th:text="${listing.price}"></p>
         <a th:href="@{show/{id}(id=${listing.id})}">Go Somewhere...</a>
+        <div class="states d-none" th:text="${listing.state}"></div>
+        <div class="cities d-none" th:text="${listing.city}"></div>
+        <div class="zipcodes d-none" th:text="${listing.zipcode}"></div>
     </div>
 
     <script th:replace="fragments/scripts :: scripts"></script>
 </div>
 
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
+<script src="/js/google-maps.js"></script>
 
 <script th:replace="fragments/scripts :: scripts"></script>
 

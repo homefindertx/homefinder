@@ -60,7 +60,7 @@ class ListingController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         listing.setUser(user);
         listRepo.save(listing);
-        return "redirect:/index";
+        return "redirect:/sellerprofile";
     }
 
     @GetMapping("/{id}/edit")
