@@ -8,9 +8,22 @@
 <label for="">User Name</label>
 <input type="text" th:field="*{username}" />
 <br/>
-<label for="">First Name</label>
-<input type="text" th:field="*{first_name}" />
+<label for="">Email</label>
+<input type="text" th:field="*{email}" />
 <br/>
+    <label for="">First Name</label>
+    <input type="text" th:field="*{first_name}" />
+    <br/>
+    <label for="">Last Name</label>
+    <input type="text" th:field="*{last_name}" />
+    <br/>
+
+    <input type="hidden" th:field="*{password}"/>
+    <input type="hidden" th:field="*{phone_number}"/>
+    <input type="hidden" th:field="*{isBuyer}"/>
+
+
+
 
 <button class="button">Update Profile</button>
 </form>

@@ -3,6 +3,7 @@ package com.homefindertx.homefindertx.controllers;
 import com.homefindertx.homefindertx.models.User;
 import com.homefindertx.homefindertx.repositories.ListingRepository;
 import com.homefindertx.homefindertx.repositories.UserRepository;
+import com.homefindertx.homefindertx.services.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -15,13 +16,15 @@ public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
     private ListingRepository listDao;
+    private UserService userSvc;
 
 
-    public UserController(UserRepository userDao, ListingRepository listDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, ListingRepository listDao, PasswordEncoder passwordEncoder, UserService userSvc) {
 
         this.userDao = userDao;
         this.listDao = listDao;
         this.passwordEncoder = passwordEncoder;
+        this.userSvc = userSvc;
     }
 
     @GetMapping("/user-type")
@@ -79,6 +82,19 @@ public class UserController {
     @PostMapping("profile/{id}/edit")
     public String update(@ModelAttribute User user){
         userDao.save(user);
+        userSvc.authenticate(user);
+        return "redirect:/profile";
+    }
+    @GetMapping("sellerprofile/{id}/edit")
+    public String showSellerEditForm(Model vModel, @PathVariable long id) {
+        vModel.addAttribute("user", userDao.findOne(id));
+        return "editprofile";
+    }
+
+    @PostMapping("sellerprofile/{id}/edit")
+    public String sellerUpdate(@ModelAttribute User user){
+        userDao.save(user);
+        userSvc.authenticate(user);
         return "redirect:/profile";
     }
 }

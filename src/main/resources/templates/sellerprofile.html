@@ -6,16 +6,16 @@
 <h1>Seller Profile</h1>
 <h2 th:text="${user.username}"></h2>
 <p th:text="${user.email}"></p>
-
+<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit Profile</button></a>
 <h4>User Listings</h4>
-<div th:each="listing : ${listings}">
-    <p th:text="${user.listing.description}"></p>
-    <form th:action="@{/delete}" th:method="post">
-    <input type="hidden" th:value="${listing.id}" name="id" />
-    <button class="button">Delete</button>
-    </form>
-    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>
-</div>
+<!--<div th:each="listing : ${listings}">-->
+    <!--<p th:text="${user.listing.description}"></p>-->
+    <!--<form th:action="@{/delete}" th:method="post">-->
+    <!--<input type="hidden" th:value="${listing.id}" name="id" />-->
+    <!--<button class="button">Delete</button>-->
+    <!--</form>-->
+    <!--<a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>-->
+<!--</div>-->
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
