@@ -52,7 +52,7 @@ public class UserController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User curruser = userDao.findByUsername(user.getUsername());
 //        User listings = listDao.findAll(user.getId());
-        vModel.addAttribute("listings", listDao.findAll());
+        vModel.addAttribute("listings", listDao.findByUser(curruser.getId()));
         vModel.addAttribute("user", curruser);
         return "sellerprofile";
     }

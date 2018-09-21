@@ -37,7 +37,7 @@ class ListingController {
         return "show";
     }
 
-    @RequestMapping("/delete/{id}")
+    @RequestMapping("/{id}/delete")
     public String delete(@PathVariable Long id) {
         listRepo.delete(id);
         return "redirect:/sellerprofile";
@@ -71,6 +71,8 @@ class ListingController {
 
     @PostMapping("/{id}/edit")
     public String update(@ModelAttribute Listing listing){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        listing.setUser(user);
         listRepo.save(listing);
         return "redirect:/sellerprofile";
     }

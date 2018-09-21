@@ -1,8 +1,5 @@
 package com.homefindertx.homefindertx.models;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -33,8 +30,7 @@ public class User implements Serializable {
     @Column(nullable = false, length = 100)
     private String phone_number;
 
-    @Fetch(value = FetchMode.SELECT)
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Listing> listings;
 
     @Column(nullable = false)
