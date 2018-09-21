@@ -21,13 +21,7 @@
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li sec:authorize="isAuthenticated()" class="nav-item">
-                        <a class="nav-link" href="/create">Create</a>
-                    </li>
-                    <li sec:authorize="isAuthenticated()" class="nav-item">
                         <a class="nav-link" href="/profile">Profile</a>
-                    </li>
-                    <li sec:authorize="isAuthenticated()" class="nav-item">
-                        <a class="nav-link" href="/sellerprofile">Profile</a>
                     </li>
                     <!--<div th:switch="${isBuyer}">-->
                         <!--<li sec:authorize="isAuthenticated()" th:case="true" class="nav-item">-->
