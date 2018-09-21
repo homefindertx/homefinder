@@ -6,7 +6,7 @@
 <h1>Seller Profile</h1>
 <h2 th:text="${user.username}"></h2>
 <p th:text="${user.email}"></p>
-<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit Profile</button></a>
+<a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button">Edit Profile</button></a>
 <h4>User Listings</h4>
 <!--<div th:each="listing : ${listings}">-->
     <!--<p th:text="${user.listing.description}"></p>-->

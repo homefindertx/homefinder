@@ -88,13 +88,13 @@ public class UserController {
     @GetMapping("sellerprofile/{id}/edit")
     public String showSellerEditForm(Model vModel, @PathVariable long id) {
         vModel.addAttribute("user", userDao.findOne(id));
-        return "editprofile";
+        return "seller-edit-profile";
     }
 
     @PostMapping("sellerprofile/{id}/edit")
     public String sellerUpdate(@ModelAttribute User user){
         userDao.save(user);
         userSvc.authenticate(user);
-        return "redirect:/profile";
+        return "redirect:/sellerprofile";
     }
 }

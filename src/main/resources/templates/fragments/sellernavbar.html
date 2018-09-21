@@ -21,12 +21,12 @@
                     <a class="nav-link" href="/create">Create</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/sellerprofile">Profile</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
                     <form th:action="@{/logout}" th:method="post" class="nav-link">
                         <button class="btn-link btn nav-link" style="margin-top: 8px">Logout</button>
                     </form>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" href="/sellerprofile">Profile</a>
                 </li>
             </ul>
         </div>
