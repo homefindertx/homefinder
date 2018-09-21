@@ -22,7 +22,10 @@ public class CallController {
     public static final String TWILIO_AUTH_TOKEN = "d6d95fbaf85b2ef2e5a2f7fb2e756ee8";
     public static final String TWILIO_NUMBER ="+12074069544";
 
-
+    @RequestMapping("/calltwilio")
+    public String greeting() {
+        return "twilio";
+    }
 
 
 //SENDING SMS
@@ -47,33 +50,14 @@ public class CallController {
     }
 
 
-//    @RequestMapping("/twiliocall")
-//    public String callTwilio() {
-//        makeCall();
-//        return "twilio";
-//    }
+
     @RequestMapping("/twilio")
     public String smsTwilio() {
         sendSMS();
-        return "twilio";
+        return "home";
     }
 
 
-//    @RequestMapping("/twilio/action")
-//    public String action(
-//            @RequestParam(value="mode", required=false, defaultValue="text") String mode,
-//            @RequestParam(value="number", required=true) String number, Model model) {
-//        model.addAttribute("number", number);
-//        model.addAttribute("mode", mode);
-//
-//        if(mode.equalsIgnoreCase("text")){
-//            sendSMS();
-//        }
-//        else if (mode.equalsIgnoreCase("call")) {
-//            sendSMS();
-//        }
-//        return "twilio";
-//    }
 
 
 }
