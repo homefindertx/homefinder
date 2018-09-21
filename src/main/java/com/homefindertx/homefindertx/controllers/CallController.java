@@ -25,6 +25,12 @@ public class CallController {
 
 
 
+    @RequestMapping("/calltwilio")
+    public String greeting() {
+        return "twilio";
+    }
+
+
 //SENDING SMS
 
     public void sendSMS() {
@@ -47,34 +53,12 @@ public class CallController {
     }
 
 
-//    @RequestMapping("/twiliocall")
-//    public String callTwilio() {
-//        makeCall();
-//        return "twilio";
-//    }
+
     @RequestMapping("/twilio")
     public String smsTwilio() {
         sendSMS();
-        return "twilio";
+        return "home";
     }
-
-
-//    @RequestMapping("/twilio/action")
-//    public String action(
-//            @RequestParam(value="mode", required=false, defaultValue="text") String mode,
-//            @RequestParam(value="number", required=true) String number, Model model) {
-//        model.addAttribute("number", number);
-//        model.addAttribute("mode", mode);
-//
-//        if(mode.equalsIgnoreCase("text")){
-//            sendSMS();
-//        }
-//        else if (mode.equalsIgnoreCase("call")) {
-//            sendSMS();
-//        }
-//        return "twilio";
-//    }
-
 
 }
 
