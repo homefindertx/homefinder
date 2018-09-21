@@ -58,12 +58,28 @@
             <version>2.1.2.RELEASE</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.twilio.sdk/twilio -->
+
+
+        <!-- https://mvnrepository.com/artifact/com.twilio.sdk/twilio-java-sdk -->
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio-java-sdk</artifactId>
+            <version>7.0.0-rc-10</version>
+            <scope>compile</scope>
+
+        </dependency>
         <dependency>
             <groupId>com.twilio.sdk</groupId>
             <artifactId>twilio</artifactId>
-            <version>7.16.1</version>
+            <version>7.24.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio-java-sdk</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+
 
     </dependencies>
 
