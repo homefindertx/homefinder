@@ -3,13 +3,13 @@
 <head th:replace="fragments/head :: head('Create Listing')"></head>
 <body>
 
-<nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 
 <div class="register-container container">
     <div class="row main">
         <div class="main-login main-center">
-            <h5>Create New Listing</h5>
-            <form th:action="'/create'" th:method="post" th:object="${listing}">
+            <h5>Edit Listing</h5>
+            <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}">
                 <div class="form-group">
                     <label for="address" class="cols-sm-2 control-label">Your Email</label>
                     <div class="cols-sm-10">

@@ -65,14 +65,30 @@ class ListingController {
 
     @GetMapping("/{id}/edit")
     public String showEditForm(Model vModel, @PathVariable long id) {
-        vModel.addAttribute("post", listRepo.findOne(id));
-        return "edit";
+        vModel.addAttribute("listing", listRepo.findOne(id));
+        return "editlisting";
     }
 
     @PostMapping("/{id}/edit")
     public String update(@ModelAttribute Listing listing){
         listRepo.save(listing);
-        return "redirect:/profile";
+        return "redirect:/sellerprofile";
     }
+
+//    @RequestMapping(value = "/search", method = RequestMethod.GET)
+//    public String search(@RequestParam(value = "search", required = false) String q, Model model) {
+//        List<Listing> searchResults = null;
+//        try {
+////            searchResults = List <Listing> listings;
+//
+//        } catch (Exception ex) {
+//            // here you should handle unexpected errors
+//            // ...
+//            // throw ex;
+//        }
+//        model.addAttribute("search", searchResults);
+//        return "index/";
+//
+//    }
 
 }
