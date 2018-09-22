@@ -1,60 +1,365 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('All Listings')">
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<!--<head th:replace="fragments/head :: head('All Listings')">-->
+<head>
+    <style>
+
+
+        body {
+            padding-top: 60px;
+        }
+        .navbar.navbar-custom {
+            background: #fff;
+            border: none;
+        }
+        .navbar.navbar-custom .navbar-header .navbar-toggle,
+        .navbar-custom .navbar-header .navbar-toggle:hover,
+        .navbar-custom .navbar-header .navbar-toggle:focus {
+            background: none;
+            border: none;
+        }
+        .navbar.navbar-custom .navbar-toggle-side {
+            margin-top: 15px;
+            background: none;
+            border: none;
+            float: left;
+        }
+        .navbar.navbar-custom .navbar-header .navbar-toggle-side:hover,
+        .navbar.navbar-custom .navbar-header .navbar-toggle-side:focus,
+        .navbar.navbar-custom .navbar-header .navbar-toggle-side:active {
+            border-radius: 0;
+            background: #2480fe;
+            color: #fff;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar.navbar-custom .side-collapse .navbar-nav > li:first-child {
+            background: #2480fe;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .navbar.navbar-custom .side-collapse .navbar-nav > li:first-child a {
+            color: #fff;
+        }
+        .navbar.navbar-custom .navbar-nav > li,
+        .navbar.navbar-custom .navbar-nav > li > a {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar.navbar-custom .navbar-nav > li:hover {
+            background: #6B8AB5;
+        }
+        .navbar.navbar-custom .navbar-nav > li > a:hover {
+            border-right: 6px solid #2480fe;
+            color: #fff;
+        }
+        .navbar.navbar-custom .navbar-nav .form-search,
+        .navbar.navbar-custom .navbar-nav .form-search:hover,
+        .navbar.navbar-custom .navbar-nav .form-search:focus {
+            border-radius: 0;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            box-shadow: none;
+            color: #2480fe;
+            margin-bottom: 5px;
+            width: 256px;
+        }
+        .navbar.navbar-custom .side-collapse .nav-close i {
+            line-height: 55px;
+            right: 10px;
+            float: right;
+            position: absolute;
+            z-index: 2000;
+            color: #fff;
+            cursor: pointer;
+        }
+        .navbar.navbar-custom .side-collapse {
+            background: #fff;
+            border-right: 2px solid #f5f5f5;
+            top: 0;
+            bottom: 0;
+            left: -256px;
+            width: 256px;
+            position: fixed;
+            overflow: hidden;
+            -webkit-transition: all 0.4s cubic-bezier(1, .25, .005, 1.1);
+            transition: all 0.4s cubic-bezier(1, .25, .005, 1.1);
+        }
+        .navbar.navbar-custom .side-collapse.open-side {
+            left: 0;
+        }
+
+        /*ALERT POP-UP*/
+        .alert.alert-success-alert {
+            background: #2480fe;
+            color: #fff;
+            border-radius: 0;
+            height: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .alert.alert-success-alert button.close {
+            color: #fff;
+        }
+
+        #alertBox{
+
+            font-family: 'Montserrat', Helvetica, sans-serif;
+            /*!*font-size: 12px*!*/
+            color: #1b6d85;
+            /*height: 95%;*/
+            /*width: 95%;*/
+            /*background: red;*/
+        }
+        @media (min-width: 768px) {
+            .navbar.navbar-custom .side-collapse {
+                top: 0px;
+            }
+            .navbar.navbar-custom .navbar-header .navbar-brand {
+                margin-left: 15px;
+            }
+            .navbar-custom .navbar-header .navbar-toggle-side {
+                display: block;
+            }
+            .navbar.navbar-custom .side-collapse .navbar-nav > li > a {
+                width: 256px;
+                display: block;
+            }
+            .navbar.navbar-custom .side-collapse .nav-close i {
+                line-height: 45px;
+            }
+        }
+        @media (max-width: 767px) {
+            .navbar.navbar-custom .navbar-toggle-side {
+                margin-left: 15px;
+            }
+            .navbar.navbar.navbar-custom {
+                border-bottom: 3px solid #6B8AB5;
+            }
+        }
+
+        /*FOOTER */
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 80%;
+            color: white;
+            text-align: center;
+            margin-left: 10em;
+            height: 10%;
+        }
+
+    </style>
 </head>
 <body>
-<nav th:replace="fragments/navbar :: navbar"></nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+<!--CUSTOM NAVBAR-->
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header" id="navbar-toggle-side">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-top" aria-expanded="false">
+                <i class="fa fa-align-right"></i>
+            </button>
+            <button type="button" class="navbar-toggle-side">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-align-left"></i>
+            </button><a class="navbar-brand" href="/../home">HomeFinderTX</a>
+        </div>
+
+        <!--NAV RIGHT-SIDEBAR-->
+        <div class="collapse navbar-collapse" id="bs-top">
+            <ul class="nav navbar-nav navbar-right">
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/register">Sign Up</a>
+                </li>
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/login">Log In</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <form th:action="@{/logout}" th:method="post" class="nav-link">
+                        <button class="btn-link btn nav-link" style="margin-top: 8px">Log Out</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <!--NAV LEFT-SIDEBAR-->
+
+        <div class="navbar-default side-collapse">
+            <nav role="navigation" class="navbar-collapse">
+                <div class="nav-close"><i class="fa fa-times fa-2x"></i>
+
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">HomeFinderTX</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index">Featured Homes</a>
+                    </li>
+                    <li><a href="#buy">Buy</a>
+                    </li>
+                    <li><a href="#sell">Sell</a>
+                    </li>
+                    <li><a href="#resources">Resources</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                    <li><a href="#about">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+<!--PAGE CONTENTS-->
 
 <div class="container">
-    <!--<form action="#" th:action="@{/}" th:object="${search}">-->
-        <!--<label for="search">Search:</label> <input name="search"-->
-                                                         <!--id="search">-->
-        <!--</input>-->
-        <!--<div th:if="${not #lists.isEmpty(search)}">-->
-            <!--<h2>Search Results</h2>-->
-            <!--<table>-->
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<th>ID</th>-->
-                    <!--<th>name</th>-->
-                    <!--<th>rarity level</th>-->
-                    <!--<th>year</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
-                <!--<tr th:each="search : ${search}">-->
-                    <!--<td th:text="${search.id}">Text ...</td>-->
-                    <!--<td th:text="${search.name}">Text ...</td>-->
-                    <!--<td th:text="${search.rarityLevel}">Text ...</td>-->
-                    <!--<td th:text="${search.year}">Text...</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
-        <!--</div>-->
-    <!--</form>-->
-    <!--<h1>These are all the listings</h1>-->
+    <!--ALERT BOX-->
+    <div class="alert alert-success-alert alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p id="alertBox">
+        <h1>San Antonio,</h1>
+        <hr/>
+        <h2>Culturally Inspired</h2>
+        <br/>
+        <h2>Be Inspired... to make this better.</h2>
 
-    <div th:each="listing : ${listings}">
-        <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
-            <div th:attr="id=${'map_' + listing.id}" class="maps" style="height: 200px; width: 400px;"></div>
-        </span>
-        <h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2>
-        <p th:text="${listing.description}"></p>
-        <p th:text="${listing.price}"></p>
-        <a th:href="@{show/{id}(id=${listing.id})}">Go Somewhere...</a>
-        <div class="states d-none" th:text="${listing.state}"></div>
-        <div class="cities d-none" th:text="${listing.city}"></div>
-        <div class="zipcodes d-none" th:text="${listing.zipcode}"></div>
+        </p>
+
     </div>
 
+    <div class="container row">
+
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                <tr>
+                    <th colspan="9"><h4>Listings</h4></th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr th:if="${listings.empty}">
+                    <td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>
+                </tr>
+                <tr th:each="listing : ${listings}">
+
+                    <td>
+                            <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
+                        <div th:attr="id=${'map_' + listing.id}" class="maps" style="height: 200px; width: 400px;"></div>
+                    </span>
+                    </td>
+                    <td>
+                        <a th:href="@{show/{id}(id=${listing.id})}"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                        <p th:text="${listing.description}"></p>
+                        <p th:text="${listing.price}"></p>
+                        <div class="states d-none" th:text="${listing.state}"></div>
+                        <div class="cities d-none" th:text="${listing.city}"></div>
+                        <div class="zipcodes d-none" th:text="${listing.zipcode}"></div>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--FOOTER       -->
+
+    <div class="footer">
+        <div class="input-group">
+            <div class="input-group-btn search-panel">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span id="search_concept">Filter by</span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#price">Price</a></li>
+                    <li><a href="#size">Size</a></li>
+                    <li><a href="#county">County </a></li>
+                    <li><a href="#zipcode">Zipcode </a></li>
+                    <li class="divider"></li>
+                    <li><a href="#all">Anything</a></li>
+                </ul>
+            </div>
+            <input type="hidden" name="search_param" value="all" id="search_param"/>
+            <input type="text" class="form-control" name="x" placeholder="Search term..."/>
+            <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+        </div>
+    </div>
+
+    <!--CUSTOM SCRIPTS-->
+
+    <script>
+        // SIDEBAR
+        $(document).ready(function() {
+            var open = false;
+
+            var openSidebar = function() {
+                $('.side-collapse').addClass('open-side');
+                $('.navbar-toggle-side').addClass('open-side');
+                $('#navbar-toggle-side').addClass('open-side');
+                open = true;
+            };
+
+            var closeSidebar = function() {
+                $('.side-collapse').removeClass('open-side');
+                $('.navbar-toggle-side').removeClass('open-side');
+                $('#navbar-toggle-side').removeClass('open-side');
+                open = false;
+            };
+
+            $('.navbar-toggle-side, .nav-close').click(function(event) {
+                event.stopPropagation();
+                var toggle = open ? closeSidebar : openSidebar;
+                toggle();
+            });
+
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.side-collapse').length) {
+                    closeSidebar();
+                }
+            });
+        })
+
+        // SEARCHBAR
+
+        $(document).ready(function(e){
+            $('.search-panel .dropdown-menu').find('a').click(function(e) {
+                e.preventDefault();
+                var param = $(this).attr("href").replace("#","");
+                var concept = $(this).text();
+                $('.search-panel span#search_concept').text(concept);
+                $('.input-group #search_param').val(param);
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
+    <script src="/js/google-maps.js"></script>
     <script th:replace="fragments/scripts :: scripts"></script>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
-<script src="/js/google-maps.js"></script>
-
-<script th:replace="fragments/scripts :: scripts"></script>
-
-
 </body>
+
 </html>
