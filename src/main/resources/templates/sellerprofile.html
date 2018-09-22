@@ -10,7 +10,7 @@
     <p th:text="${user.email}"></p>
     <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button">Edit Profile</button></a>
 
-    <h4> Your current Listing(s)</h4>
+    <!--<h4> Your current Listing(s)</h4>-->
     <!--<div th:each="listing : ${listings}">-->
         <!--<p th:text="${listing.price}"></p>-->
         <!--<p th:text="${listing.address}"></p>-->
@@ -25,8 +25,12 @@
 
 
 
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
+            <tr>
+                <th colspan="9"><h4>Your current listing(s).</h4></th>
+            </tr>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Price</th>
@@ -40,23 +44,29 @@
             </tr>
             </thead>
             <tbody>
-                <tr th:each="listing : ${listings}">
-                    <td th:text="${listing.id}"></td>
-                    <td th:text="${listing.price}"></td>
-                    <td th:text="${listing.address}"></td>
-                    <td th:text="${listing.city}"></td>
-                    <td th:text="${listing.description}"></td>
-                    <td th:text="${listing.state}"></td>
-                    <td th:text="${listing.status}"></td>
-                    <td>
-                        <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>
-                    </td>
-                    <td>
-                        <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button">Delete</button></a>
-                    </td>
-                </tr>
+            <tr th:if="${listings.empty}">
+                <td class="table-danger" colspan="9">You do not have any listings.</td>
+            </tr>
+            <tr th:each="listing : ${listings}">
+                <td th:text="${listing.id}"></td>
+                <td th:text="${listing.price}"></td>
+                <td th:text="${listing.address}"></td>
+                <td th:text="${listing.city}"></td>
+                <td th:text="${listing.description}"></td>
+                <td th:text="${listing.state}"></td>
+                <td th:text="${listing.status}"></td>
+                <td>
+                    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>
+                </td>
+                <td>
+                    <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button">Delete</button></a>
+                </td>
+            </tr>
             </tbody>
         </table>
+    </div>
+
+</div>
 
 
 </div>
