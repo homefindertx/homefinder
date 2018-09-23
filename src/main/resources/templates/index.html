@@ -2,10 +2,18 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <style>
-
-
         body {
             padding-top: 60px;
+        }
+        .address {
+            font-size: 20px;
+        }
+        .price {
+            font-size: 18px;
+        }
+        .map-size {
+            height: 300px;
+            width: 500px;
         }
         .navbar.navbar-custom {
             background: #fff;
@@ -154,7 +162,6 @@
             margin-left: 10em;
             height: 10%;
         }
-
     </style>
 </head>
 <body>
@@ -175,7 +182,7 @@
             <button type="button" class="navbar-toggle-side">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-align-left"></i>
-            </button><a class="navbar-brand" href="/../home">HomeFinderTX</a>
+            </button><a class="navbar-brand" href="/">HomeFinderTX</a>
         </div>
 
         <!--NAV RIGHT-SIDEBAR-->
@@ -202,14 +209,11 @@
 
         <div class="navbar-default side-collapse">
             <nav role="navigation" class="navbar-collapse">
-                <div class="nav-close"><i class="fa fa-times fa-2x"></i>
-
-                </div>
+                <div class="nav-close"><i class="fa fa-times fa-2x"></i></div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#">HomeFinderTX</a>
+                    <li><a href="/home">HomeFinderTX</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index">Featured Homes</a>
+                    <li class="nav-item"><a class="nav-link" href="/index">Featured Homes</a>
                     </li>
                     <li><a href="#buy">Buy</a>
                     </li>
@@ -217,7 +221,7 @@
                     </li>
                     <li><a href="#resources">Resources</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a href="/home">Contact</a>
                     </li>
                     <li><a href="#about">About Us</a>
                     </li>
@@ -241,9 +245,7 @@
         <h2>Culturally Inspired</h2>
         <br/>
         <h2>Be Inspired... to make this better.</h2>
-
         </p>
-
     </div>
 
     <div class="container row">
@@ -254,33 +256,36 @@
                 <tr>
                     <th colspan="9"><h4>Listings</h4></th>
                 </tr>
-
                 </thead>
+
                 <tbody>
                 <tr th:if="${listings.empty}">
                     <td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>
                 </tr>
                 <tr th:each="listing : ${listings}">
-
                     <td>
-                            <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
-                        <div th:attr="id=${'map_' + listing.id}" class="maps" style="height: 200px; width: 400px;"></div>
-                    </span>
+                        <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
+                        <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
+                        </span>
                     </td>
                     <td>
                         <a th:href="@{show/{id}(id=${listing.id})}"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                        <p class="address"><span class="cities d-none" th:text="${listing.city}"></span><span>, </span><span class="states d-none" th:text="${listing.state}"></span> <span class="zipcodes d-none" th:text="${listing.zipcode}"></span></p>
                         <p th:text="${listing.description}"></p>
-                        <p th:text="${listing.price}"></p>
-                        <div class="states d-none" th:text="${listing.state}"></div>
-                        <div class="cities d-none" th:text="${listing.city}"></div>
-                        <div class="zipcodes d-none" th:text="${listing.zipcode}"></div>
+                        <br />
+                        <h4>Price:</h4>
+                        <div class="price">$<span th:text="${listing.price}"></span></div>
+                        <!--<h5>Address:</h5>-->
+                        <!--<div class="cities d-none" th:text="${listing.city}"></div>-->
+                        <!--<div class="states d-none" th:text="${listing.state}"></div>-->
+                        <!--<div class="zipcodes d-none" th:text="${listing.zipcode}"></div>-->
                     </td>
-
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
+</div>
 
     <!--FOOTER       -->
 
@@ -291,19 +296,19 @@
                     <span id="search_concept">Filter by</span> <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#price">Price</a></li>
-                    <li><a href="#size">Size</a></li>
+                    <li><a href="#price">Price </a></li>
+                    <li><a href="#size">Size </a></li>
                     <li><a href="#county">County </a></li>
                     <li><a href="#zipcode">Zipcode </a></li>
                     <li class="divider"></li>
-                    <li><a href="#all">Anything</a></li>
+                    <li><a href="#all">Anything </a></li>
                 </ul>
             </div>
-            <input type="hidden" name="search_param" value="all" id="search_param"/>
-            <input type="text" class="form-control" name="x" placeholder="Search term..."/>
+            <input type="hidden" name="search_param" value="all" id="search_param" />
+            <input type="text" class="form-control" name="x" placeholder="Search term..." />
             <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
         </div>
     </div>
 
@@ -339,7 +344,7 @@
                     closeSidebar();
                 }
             });
-        })
+        });
 
         // SEARCHBAR
 
@@ -357,7 +362,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
     <script src="/js/google-maps.js"></script>
     <script th:replace="fragments/scripts :: scripts"></script>
-</div>
 
 </body>
 
