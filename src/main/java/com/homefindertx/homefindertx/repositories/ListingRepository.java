@@ -11,7 +11,10 @@ import java.util.List;
 public interface ListingRepository extends CrudRepository<Listing, Long> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM listing l where l.user_id = ?1")
- List<Listing> findByUser(long id);
+    List<Listing> findByUser(long id);
 
-    }
+    @Query (nativeQuery = true, value="SELECT * FROM listing l WHERE l.address LIKE ?1 or l.status LIKE ?1 " +
+            "or l.bedrooms LIKE ?1 or l.bathrooms LIKE ?1 or l.description LIKE ?1 or l.year_built LIKE ?1 or l.zipcode LIKE ?1")
+    List<Listing> searchByKeyword(String x);
+}
 
