@@ -1,5 +1,7 @@
 package com.homefindertx.homefindertx.models;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -48,10 +50,21 @@ public class Listing {
     @Column(nullable = false, length = 100)
     private String state;
 
+//    @Column(nullable = false, length = 300)
+//    private String houseImg;
+    @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
+    private String uploadPath;
+
+    @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
+    private String uploadPath2;
+
+    @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
+    private String uploadPath3;
+
     public Listing(){
     }
 
-    public Listing(User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public Listing(User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3) {
         this.user = user;
         this.address = address;
         this.description = description;
@@ -65,9 +78,12 @@ public class Listing {
         this.zipcode = zipcode;
         this.status = status;
         this.state = state;
+        this.uploadPath = uploadPath;
+        this.uploadPath2 = uploadPath2;
+        this.uploadPath3 = uploadPath3;
     }
 
-    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state) {
+    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3) {
         this.id = id;
         this.user = user;
         this.address = address;
@@ -82,6 +98,9 @@ public class Listing {
         this.zipcode = zipcode;
         this.status = status;
         this.state = state;
+        this.uploadPath = uploadPath;
+        this.uploadPath2 = uploadPath2;
+        this.uploadPath3 = uploadPath3;
     }
 
     public long getId() { return id; }
@@ -139,4 +158,16 @@ public class Listing {
     public String getState() { return state; }
 
     public void setState(String state) { this.state = state; }
+
+    public String getUploadPath() { return uploadPath; }
+
+    public void setUploadPath(String uploadPath) { this.uploadPath = uploadPath; }
+
+    public String getUploadPath2() { return uploadPath2; }
+
+    public void setUploadPath2(String uploadPath2) { this.uploadPath2 = uploadPath2; }
+
+    public String getUploadPath3() { return uploadPath3; }
+
+    public void setUploadPath3(String uploadPath3) { this.uploadPath3 = uploadPath3; }
 }

@@ -92,14 +92,14 @@ show tables;
 
 
 
--- INSERT INTO listing(user_id, address, description, bedrooms, bathrooms, square_footage, price, year_built, lot_size, city, zipcode, status, state) VALUES
---   (16, '266 Claywell Dr',        'Beautiful 3 bedroom', 3, 3, 1544,  401732,  1942, 10454, 'San Antonio', 78209, 'For Sale', 'TX'),
---   (20, '215 Tophill Rd',         'Beautiful 4 bedroom', 4, 3, 2726,  559338,  1955, 10890, 'San Antonio', 78209, 'For Sale', 'TX'),
---   (17, '302 Castano Ave',        'Beautiful 4 bedroom', 4, 4, 4342,  1168170, 1937, 14985, 'San Antonio', 78209, 'For Sale', 'TX'),
---   (19, '322 EL Monte Blvd',      'Beautiful 2 bedroom', 2, 1, 512,   100028,  1956, 7013,  'San Antonio', 78212, 'For Sale', 'TX'),
---   (16, '515 Weizmann St',        'Beautiful 3 bedroom', 3, 1, 1112,  123589,  1951, 6882,  'San Antonio', 78213, 'For Sale', 'TX'),
---   (17, '511 Fresno St',          'Beautiful 4 bedroom', 4, 1, 1272,  139833,  1950, 7405,  'San Antonio', 78212, 'For Sale', 'TX'),
---   (20, '923 Edison Dr',          'Beautiful 3 bedroom', 3, 1, 1374,  131625,  1947, 7013,  'San Antonio', 78201, 'For Sale', 'TX'),
+INSERT INTO listing(user_id, address, description, bedrooms, bathrooms, square_footage, price, year_built, lot_size, city, zipcode, status, state, upload_path, upload_path2, upload_path3) VALUES
+  (1, '266 Claywell Dr',        'Beautiful 3 bedroom', 3, 3, 1544,  401732,  1942, 10454, 'San Antonio', 78209, 'For Sale', 'TX', 'house3.jpeg', 'inthouse3.jpeg', 'yard3.jpeg'),
+  (1, '215 Tophill Rd',         'Beautiful 4 bedroom', 4, 3, 2726,  559338,  1955, 10890, 'San Antonio', 78209, 'For Sale', 'TX', 'house2.jpeg', 'inthouse2.jpeg', 'yard2.jpeg'),
+  (1, '302 Castano Ave',        'Beautiful 4 bedroom', 4, 4, 4342,  1168170, 1937, 14985, 'San Antonio', 78209, 'For Sale', 'TX', 'house5.jpeg', 'inthouse5.jpeg', 'yard5.jpeg'),
+  (1, '322 EL Monte Blvd',      'Beautiful 2 bedroom', 2, 1, 512,   100028,  1956, 7013,  'San Antonio', 78212, 'For Sale', 'TX', 'house4.jpeg', 'inthouse4.jpeg', 'yard4.jpeg'),
+  (1, '515 Weizmann St',        'Beautiful 3 bedroom', 3, 1, 1112,  123589,  1951, 6882,  'San Antonio', 78213, 'For Sale', 'TX', 'house6.jpeg', 'inthouse6.jpeg', 'yard6.jpeg'),
+  (1, '511 Fresno St',          'Beautiful 4 bedroom', 4, 1, 1272,  139833,  1950, 7405,  'San Antonio', 78212, 'For Sale', 'TX', 'house1.jpeg', 'inthouse1.jpeg', 'yard1.jpeg'),
+  (1, '923 Edison Dr',          'Beautiful 3 bedroom', 3, 1, 1374,  131625,  1947, 7013,  'San Antonio', 78201, 'For Sale', 'TX', 'house3.jpeg', 'inthouse3.jpeg', 'yard3.jpeg');
 --   (16, '138 Mink',            'Beautiful 3 bedroom', 3, 1, 1394,  142342,  1953, 6969,  'San Antonio', 78213, 'For Sale', 'TX'),
 --   (19, '510 Adrian Dr',          'Beautiful 2 bedroom', 2, 1, 884,   117657,  1952, 7144,  'San Antonio', 78213, 'For Sale', 'TX'),
 --   (20, '5411 King Richard St',  'Beautiful 4 bedroom', 4, 2, 2100,  239000,  1968, 10803, 'San Antonio', 78229, 'For Sale', 'TX'),

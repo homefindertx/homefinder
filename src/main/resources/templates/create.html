@@ -119,11 +119,27 @@
                         </div>
                     </div>
                 </div>
+                <form action="/fileupload" method="post" enctype="multipart/form-data">
+                    <label for="file">Upload a file!</label>
+                    <input th:field="*{uploadPath}" id="file" name="file" type="file" />
+                    <br />
+                    <form action="/fileupload" method="post" enctype="multipart/form-data">
+                        <label for="file">Upload a file!</label>
+                        <input th:field="*{uploadPath2}" id="file2" name="file" type="file" />
+                        <br />
+                        <form action="/fileupload" method="post" enctype="multipart/form-data">
+                            <label for="file">Upload a file!</label>
+                            <input th:field="*{uploadPath3}" id="file3" name="file" type="file" />
+                            <br />
+
 
 
                 <div class="form-group ">
                     <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create Listing</button>
                 </div>
+                </form>inthouse3
+            </form>
+                </form>
             </form>
         </div>
     </div>
