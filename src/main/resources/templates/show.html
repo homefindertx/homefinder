@@ -13,7 +13,7 @@
     <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" />
     <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" />
     <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" />
-    $<h2 th:text="${listing.price}" class="listing-price"></h2>
+    <h2 th:text="${listing.price}" class="listing-price">$</h2>
     <p th:text="${listing.description}"></p>
     <p th:text="${listing.user.email}"></p>
 </div>
