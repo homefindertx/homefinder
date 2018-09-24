@@ -10,12 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 class ListingController {
 
     private ListingRepository listRepo;
     private UserRepository userRepo;
-
 
 
     public ListingController(ListingRepository listRepo, UserRepository userRepo) {
@@ -27,7 +28,7 @@ class ListingController {
     public String FindAll(Model vModel) {
 
         vModel.addAttribute("listings", listRepo.findAll());
-        return"index";
+        return "index";
     }
 
     @GetMapping("show/{id}")
@@ -44,19 +45,19 @@ class ListingController {
     }
 
     @PostMapping("/delete")
-    public String deletePost(@RequestParam(name ="id") long id) {
+    public String deletePost(@RequestParam(name = "id") long id) {
         listRepo.delete(id);
         return "redirect:/sellerprofile";
     }
 
     @GetMapping("/create")
-    public String showCreateForm(Model vModel){
+    public String showCreateForm(Model vModel) {
         vModel.addAttribute("listing", new Listing());
         return "create";
     }
 
     @PostMapping("/create")
-    public String createPost(@ModelAttribute Listing listing){
+    public String createPost(@ModelAttribute Listing listing) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         listing.setUser(user);
         listRepo.save(listing);
@@ -70,15 +71,30 @@ class ListingController {
     }
 
     @PostMapping("/{id}/edit")
-    public String update(@ModelAttribute Listing listing){
+    public String update(@ModelAttribute Listing listing) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         listing.setUser(user);
         listRepo.save(listing);
         return "redirect:/sellerprofile";
     }
 
-//    @RequestMapping(value = "/search", method = RequestMethod.GET)
-//    public String search(@RequestParam(value = "search", required = false) String q, Model model) {
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "x", required = false) String x, Model model) {
+
+        List<Listing> listings = listRepo.searchByKeyword('%' + x + '%');
+
+        if (listings.isEmpty()) {
+            System.out.println("is empty");
+            model.addAttribute("listings", listRepo.findAll());
+        }
+        for (Listing listing : listings) {
+            System.out.println(listing.getAddress());
+        }
+        if (!listings.isEmpty()) {
+            model.addAttribute("searchedContent", listings);
+        }
+
+
 //        List<Listing> searchResults = null;
 //        try {
 ////            searchResults = List <Listing> listings;
@@ -89,8 +105,7 @@ class ListingController {
 //            // throw ex;
 //        }
 //        model.addAttribute("search", searchResults);
-//        return "index/";
-//
-//    }
+        return "index";
 
+    }
 }
