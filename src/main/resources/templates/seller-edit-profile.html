@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('Your Profile')"></head>
 <body>
-<nav th:replace="fragments/sellernavbar :: sellernavbarnavbar"></nav>
+<nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
 <h1>Edit Seller Profile</h1>
 <form th:action="'/sellerprofile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">
     <label for="">User Name</label>
