@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 
 <head>
@@ -27,7 +27,7 @@
         <th:block th:fragment="listing">
             <div class="table-responsive">
 
-                <table class="table ">
+                <table class="table">
                     <thead>
                     <tr>
                         <!--<th colspan="9"><h4>Listings</h4></th>-->
@@ -36,12 +36,14 @@
 
                     <tbody>
 
-                    <tr>
-                        <td>
-                            <a th:href="@{show/{id}(id=${listing.id})}"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
+                    <tr class="row">
+                        <td class="col-lg-4">
+                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
+                            <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
                         </td>
-                        <td class="text-center">
-                            <a th:href="@{show/{id}(id=${listing.id})}"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                        <td class="text-center col-lg-4">
+                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                            <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
                             <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
                                 <span class="states " th:text="${listing.state}"></span>
                                 <span class="zipcodes " th:text="${listing.zipcode}"></span></p>
@@ -49,9 +51,9 @@
                             <p th:text="${listing.status}"></p>
                             <br />
                             <h4>Price:</h4>
-                            <div class="price">$<span th:text="${listing.price}"></span></div>
+                            <div class="price">$<span th:text="${listing.price}"></span>0</div>
                         </td>
-                        <td>
+                        <td class="col-lg-4">
                             <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
                                 <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
                             </span>
