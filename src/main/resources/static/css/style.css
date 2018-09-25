@@ -22,13 +22,23 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-
-.title-link {
-    color: #ED0034 !important;
-    text-decoration: none;
+.anchor:link {
+    color: #28a745;
+}
+.anchor:hover {
+    color: green;
+}
+.anchor:visited {
+    color: #28a745;
+}
+.anchor:active {
+    color: darkgreen;
 }
 
-
+.title-link {
+    color: lawngreen !important;
+    text-decoration: none;
+}
 
 .banner {
     /*background: #292929;*/
@@ -49,7 +59,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 .logo-text {
     font-family: 'Cinzel Decorative', Helvetica, sans-serif;
-    color: #ED0034;
+    color: lawngreen;
     text-shadow: .75px .75px #2f1100;
 }
 

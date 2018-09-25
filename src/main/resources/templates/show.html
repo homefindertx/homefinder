@@ -7,47 +7,40 @@
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div class="container ">
-    <h1>Here is your listing.</h1>
+<div class="container" th:object="${listing}">
 
-    <div class="row">
-    <div class=" col" th:object="${listing}">
-        <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" />
-        <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" />
-        <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" />
-        <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" />
-        <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" />
-        <h2 th:text="${listing.price}" class="listing-price">$</h2>
-        <p th:text="${listing.description}"></p>
-        <p th:text="${listing.user.email}"></p>
+    <h1 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h1>
+    <h1><span th:text="${listing.city}"></span><span>, </span>
+        <span th:text="${listing.state}"></span>
+        <span th:text="${listing.zipcode}"></span></h1>
 
+    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" />
+    <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" />
+    <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" />
+    <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" />
+    <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" />
+    <p th:text="${listing.description}"></p>
+    <p th:text="${listing.status}"></p>
+    <h2>$<span th:text="${listing.price}" class="listing-price"></span>0</h2>
+    <h3>Email the seller: <span th:text="${listing.user.email}"></span></h3>
+
+    <h3>Mortgage Calculator:</h3>
+    <form action="">
+        <label>APR Percent(%): <input type="text" id="apr" name="APR" /></label><br />
+        <label>Loan Term(Year): <input type="text" id="trm" name="APR" /></label><br />
+        <label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />
+        <input type="button" id="sbt" value="Submit" />
+        <input type="reset" id="rst" value="Reset Form" /><br /><br />
+        <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
+    </form>
+
+</div>
+  
 <!--CONTACT US BUTTON-->
+ 
         <span sec:authorize="isAuthenticated()">
                 <a class="nav-link" href="/calltwilio"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
         </span>
-
-    </div>
-
-    <!--<div align="center">-->
-        <!--<p>-->
-            <!--<a href="https://www.mortgagecalculator.org" target="_blank">-->
-                <!--<img src="https://www.mortgagecalculator.org/images/mortgage-calculator-logo2.png" alt="MortgageCalculator.org" height="19" width="200" border="0" />-->
-            <!--</a>-->
-            <!--<br />-->
-            <!--<iframe src="https://www.mortgagecalculator.org/free-tools/calculator/" frameborder="0" width="260px" height="270" scrolling="no"></iframe>-->
-        <!--</p>-->
-    <!--</div>-->
-    <div class="col">
-        <h3>Mortgage Calculator:</h3>
-        <form action="">
-            <label>APR Percent(%): <input type="text" id="apr" name="APR" /></label><br />
-            <label>Loan Term(Year): <input type="text" id="trm" name="APR" /></label><br />
-            <label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />
-            <input type="button" id="sbt" value="Submit" />
-            <input type="reset" id="rst" value="Reset Form" /><br /><br />
-            <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
-        </form>
-    </div>
 
 </div>
 </div>
