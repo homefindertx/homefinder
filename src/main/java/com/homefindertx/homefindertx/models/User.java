@@ -12,7 +12,7 @@ public class User implements Serializable {
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false, length = 16)
+    @Column(nullable = false, length = 16, unique = true)
     private String username;
 
     @Column(nullable = false, length = 100)
@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Column(nullable = false, length = 100)
     private String last_name;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, unique = true)
     private String email;
 
     @Column(nullable = false, length = 1000)

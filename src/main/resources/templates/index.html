@@ -3,22 +3,6 @@
 
 
 <head>
-    <style>
-        <!--body {-->
-        <!--padding-top: 60px;-->
-        <!--}-->
-        .address {
-            font-size: 20px;
-        }
-        .price {
-            font-size: 18px;
-        }
-        .map-size {
-            height: 300px;
-            width: 500px;
-        }
-    </style>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
@@ -54,19 +38,23 @@
 
                     <tr>
                         <td>
-                                <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
-                                <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
-                                </span>
+                            <a th:href="@{show/{id}(id=${listing.id})}"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a th:href="@{show/{id}(id=${listing.id})}"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
                             <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
                                 <span class="states " th:text="${listing.state}"></span>
                                 <span class="zipcodes " th:text="${listing.zipcode}"></span></p>
                             <p th:text="${listing.description}"></p>
+                            <p th:text="${listing.status}"></p>
                             <br />
                             <h4>Price:</h4>
                             <div class="price">$<span th:text="${listing.price}"></span></div>
+                        </td>
+                        <td>
+                            <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
+                                <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
+                            </span>
                         </td>
                     </tr>
 

@@ -70,7 +70,9 @@ input[type=text]:focus, input[type=password]:focus {
     padding-bottom: 3em;
 }
 
-
+body {
+    padding-top: 60px;
+}
 .address {
     font-size: 20px;
 }
@@ -78,11 +80,13 @@ input[type=text]:focus, input[type=password]:focus {
     font-size: 18px;
 }
 .map-size {
-    height: 300px;
-    width: 500px;
+    height: 250px;
+    width: 350px;
 }
-
-
+.house-img {
+    height: 250px;
+    width: 350px;
+}
 
 #navGap{
     margin-bottom: 50px;
