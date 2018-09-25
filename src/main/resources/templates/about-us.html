@@ -4,14 +4,53 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>About Us</h1>
-<h3>Charles</h3>
-<p></p>
-<h3>David</h3>
-<p></p>
-<h3>Ruusa</h3>
-<p></p>
-<h3>Tylor</h3>
-<p></p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br />
+            <a href="/about-us"><h1 class="my-4 text-center">Meet the Team</h1></a>
+        </div>
+    </div>
+    <div class="card-group mt-3 mb-2 dev-profiles">
+        <div class="card text-center">
+            <div class="card-img-top mt-4">
+                <img src="/../images/RuusaBolton.jpg" class="rounded-circle" alt="Ruusa Bolton" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Ruusa Bolton</h4>
+                <a href="https://www.linkedin.com/in/ruusapbolton/" class="btn btn-outline-success mx-auto">Contact</a>
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-img-top mt-4">
+                <img src="/../images/DavidMyers.jpg" class="rounded-circle" alt="David Myers" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">David Myers</h4>
+                <a href="https://www.linkedin.com/in/david-a-myers/" class="btn btn-outline-success mx-auto">Contact</a>
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-img-top mt-4">
+                <img src="/../images/CharlesHadden.jpg" class="rounded-circle" alt="Charles Hadden" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Charles Hadden</h4>
+                <a href="https://www.linkedin.com/in/charles-hadden/" class="btn btn-outline-success mx-auto">Contact</a>
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-img-top mt-4">
+                <img src="/../images/TylorPelletier.jpg" class="rounded-circle" alt="Tylor Pelletier" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Tylor Pelletier</h4>
+                <a href="https://www.linkedin.com/in/tylor-pelletier/" class="btn btn-outline-success mx-auto">Contact</a>
+            </div>
+        </div>
+    </div>
+</div>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
