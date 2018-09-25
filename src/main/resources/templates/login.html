@@ -4,7 +4,7 @@
 <body>
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is where you can Login</h1>
+
 <div class="register-container container">
     <div class="row main">
         <div class="main-login main-center">
@@ -18,19 +18,17 @@
 
             <form th:action="@{/login}" method="post">
                 <div class="form-group">
-                    <label for="username" class="cols-sm-2 control-label">Username</label>
+                    <label for="username" class="cols-sm-2 control-label">Username <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span></label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input id="username" name="username" type="text" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                    <label for="password" class="cols-sm-2 control-label">Password <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span></label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <input id="password" name="password" type="password" />
                         </div>
                     </div>
