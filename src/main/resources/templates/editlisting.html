@@ -7,8 +7,9 @@
 
 <div class="register-container container">
     <div class="row main">
-        <div class="main-login main-center">
+        <div class="main-login main-center text-center">
             <h5>Edit Listing</h5>
+
             <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}">
                 <div class="form-group">
                     <label for="address" class="cols-sm-2 control-label">Your Email</label>
@@ -19,6 +20,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="bathrooms" class="cols-sm-2 control-label">Bathrooms</label>
                     <div class="cols-sm-10">
@@ -28,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="bedrooms" class="cols-sm-2 control-label">Bedrooms</label>
                     <div class="cols-sm-10">
@@ -47,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="description" class="cols-sm-2 control-label">Description</label>
                     <div class="cols-sm-10">
@@ -56,6 +60,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="lot_size" class="cols-sm-2 control-label">Lot Size</label>
                     <div class="cols-sm-10">
@@ -65,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="price" class="cols-sm-2 control-label">Price</label>
                     <div class="cols-sm-10">
@@ -74,6 +80,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="square_footage" class="cols-sm-2 control-label">Square Footage</label>
                     <div class="cols-sm-10">
@@ -83,21 +90,13 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="state" class="cols-sm-2 control-label">State</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <input type="text" th:field="*{state}" class="form-control" name="state" id="state"  placeholder="Enter Listing State"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="status" class="cols-sm-2 control-label">Status</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="text" th:field="*{status}" class="form-control" name="status" id="status"  placeholder="Enter Listing Status"/>
                         </div>
                     </div>
                 </div>
@@ -110,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="zipcode" class="cols-sm-2 control-label">ZipCode</label>
                     <div class="cols-sm-10">
@@ -120,9 +120,49 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="status">
+                            <select name="status">
+                                <option th:field="*{status}" value="For Sale">For Sale</option>
+                                <option th:field="*{status}" value="Under Contract">Under Contract</option>
+                                <option th:field="*{status}" value="Pending">Pending</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br/>
 
-                <div class="form-group ">
-                    <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create Listing</button>
+                <h4>Upload up to 5 photos</h4>
+                <form action="/fileupload" method="post" enctype="multipart/form-data">
+                    <label for="file">Upload 1st Photo!</label>
+                    <input th:field="*{uploadPath}" id="file" name="file" type="file" />
+                    <br />
+
+                    <form action="/fileupload" method="post" enctype="multipart/form-data">
+                        <label for="file">Upload 2nd Photo!</label>
+                        <input th:field="*{uploadPath2}" id="file2" name="file" type="file" />
+                        <br />
+                        <form action="/fileupload" method="post" enctype="multipart/form-data">
+                            <label for="file">Upload 3rd Photo!</label>
+                            <input th:field="*{uploadPath3}" id="file3" name="file" type="file" />
+                            <br />
+                            <form action="/fileupload" method="post" enctype="multipart/form-data">
+                                <label for="file">Upload 4th Photo!</label>
+                                <input th:field="*{uploadPath4}" id="file4" name="file" type="file" />
+                                <br />
+                                <form action="/fileupload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Upload 5th Photo!</label>
+                                    <input th:field="*{uploadPath5}" id="file5" name="file" type="file" />
+                                    <br />
+
+                                    <div class="form-group ">
+                                        <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create Listing</button>
+                                    </div>
+                                </form>
+                            </form>
+                        </form>
+                    </form>
+                </form>
                 </div>
             </form>
         </div>

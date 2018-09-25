@@ -55,16 +55,26 @@ public class Listing {
     @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
     private String uploadPath;
 
+    @Column(nullable = true, length = 100)
     @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
     private String uploadPath2;
 
+    @Column(nullable = true, length = 100)
     @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
     private String uploadPath3;
+
+    @Column(nullable = true, length = 100)
+    @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
+    private String uploadPath4;
+
+    @Column(nullable = true, length = 100)
+    @Value("/Users/charleshadden/IdeaProjects/homefindertx/target/classes/static/images/")
+    private String uploadPath5;
 
     public Listing(){
     }
 
-    public Listing(User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3) {
+    public Listing(User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3, String uploadPath4, String uploadPath5) {
         this.user = user;
         this.address = address;
         this.description = description;
@@ -81,9 +91,11 @@ public class Listing {
         this.uploadPath = uploadPath;
         this.uploadPath2 = uploadPath2;
         this.uploadPath3 = uploadPath3;
+        this.uploadPath4 = uploadPath4;
+        this.uploadPath5 = uploadPath5;
     }
 
-    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3) {
+    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath, String uploadPath2, String uploadPath3, String uploadPath4, String uploadPath5) {
         this.id = id;
         this.user = user;
         this.address = address;
@@ -101,6 +113,26 @@ public class Listing {
         this.uploadPath = uploadPath;
         this.uploadPath2 = uploadPath2;
         this.uploadPath3 = uploadPath3;
+        this.uploadPath4 = uploadPath4;
+        this.uploadPath5 = uploadPath5;
+    }
+
+    public Listing(long id, User user, String address, String description, double bedrooms, double bathrooms, double square_footage, double price, int year_built, double lot_size, String city, String zipcode, String status, String state, String uploadPath) {
+        this.id = id;
+        this.user = user;
+        this.address = address;
+        this.description = description;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.square_footage = square_footage;
+        this.price = price;
+        this.year_built = year_built;
+        this.lot_size = lot_size;
+        this.city = city;
+        this.zipcode = zipcode;
+        this.status = status;
+        this.state = state;
+        this.uploadPath = uploadPath;
     }
 
     public long getId() { return id; }
@@ -170,4 +202,12 @@ public class Listing {
     public String getUploadPath3() { return uploadPath3; }
 
     public void setUploadPath3(String uploadPath3) { this.uploadPath3 = uploadPath3; }
+
+    public String getUploadPath4() { return uploadPath4; }
+
+    public void setUploadPath4(String uploadPath4) { this.uploadPath4 = uploadPath4; }
+
+    public String getUploadPath5() { return uploadPath5; }
+
+    public void setUploadPath5(String uploadPath5) { this.uploadPath5 = uploadPath5; }
 }
