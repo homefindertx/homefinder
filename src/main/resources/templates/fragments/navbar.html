@@ -24,14 +24,14 @@
                 <li sec:authorize="!isAuthenticated()" class="nav-item">
                     <a class="nav-link" href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
                 </li>
-                <li sec:authorize="!isAuthenticated()"  class="nav-item">
+                <li sec:authorize="isAuthenticated()"  class="nav-item">
                     <a class="nav-link" href="/calltwilio"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a class="nav-link" href="/profile"><i class="fa  fa-address-card"></i> Profile</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/about-us"> About Us</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item" >
                     <form  th:action="@{/logout}" th:method="post" >
