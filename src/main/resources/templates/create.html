@@ -7,7 +7,7 @@
 
 <div class="register-container container">
     <div class="row main">
-        <div class="main-login main-center">
+        <div class="main-login main-center text-center">
             <h5>Create New Listing</h5>
             <form th:action="'/create'" th:method="post" th:object="${listing}">
                 <div class="form-group">
@@ -100,15 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="status" class="cols-sm-2 control-label">Status</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="text" th:field="*{status}" class="form-control" name="status" id="status"  placeholder="Enter Listing Status"/>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <label for="price" class="cols-sm-2 control-label">Price</label>
                     <div class="cols-sm-10">
@@ -118,27 +110,52 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="status">
+                            <select name="status">
+                                <option th:field="*{status}" value="For Sale">For Sale</option>
+                                <option th:field="*{status}" value="Under Contract">Under Contract</option>
+                                <option th:field="*{status}" value="Pending">Pending</option>
+                            </select>
+                        </div>
+                    </div>
+                <br/>
+
+                    <h4>Upload up to 5 photos</h4>
+
                 <form action="/fileupload" method="post" enctype="multipart/form-data">
-                    <label for="file">Upload a file!</label>
+                    <label for="file">Upload 1st Photo!</label>
                     <input th:field="*{uploadPath}" id="file" name="file" type="file" />
                     <br />
+
                     <form action="/fileupload" method="post" enctype="multipart/form-data">
-                        <label for="file">Upload a file!</label>
+                        <label for="file">Upload 2nd Photo!</label>
                         <input th:field="*{uploadPath2}" id="file2" name="file" type="file" />
                         <br />
                         <form action="/fileupload" method="post" enctype="multipart/form-data">
-                            <label for="file">Upload a file!</label>
+                            <label for="file">Upload 3rd Photo!</label>
                             <input th:field="*{uploadPath3}" id="file3" name="file" type="file" />
                             <br />
+                            <form action="/fileupload" method="post" enctype="multipart/form-data">
+                                <label for="file">Upload 4th Photo!</label>
+                                <input th:field="*{uploadPath4}" id="file4" name="file" type="file" />
+                                <br />
+                                <form action="/fileupload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Upload 5th Photo!</label>
+                                    <input th:field="*{uploadPath5}" id="file5" name="file" type="file" />
+                                    <br />
 
-
-
-                <div class="form-group ">
-                    <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create Listing</button>
+                                    <div class="form-group ">
+                                        <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create Listing</button>
+                                    </div>
+                </form>
+                </form>
+                </form>
+                </form>
+                </form>
                 </div>
-                </form>
-            </form>
-                </form>
             </form>
         </div>
     </div>
