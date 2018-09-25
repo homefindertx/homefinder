@@ -32,7 +32,7 @@ public class UserController {
 
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(user.getIsBuyer()) {
-            return "redirect:/profile";
+            return "redirect:/index";
         }
         return"redirect:/sellerprofile";
 
