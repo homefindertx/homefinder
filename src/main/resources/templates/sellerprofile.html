@@ -5,25 +5,11 @@
 <nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
 
 <div class="container" style="margin: 3em;">
-    <h1>Seller Profile</h1>
-    <h2 th:text="${user.username}"></h2>
-    <p th:text="${user.email}"></p>
-    <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button">Edit Profile</button></a>
-
-    <!--<h4> Your current Listing(s)</h4>-->
-    <!--<div th:each="listing : ${listings}">-->
-        <!--<p th:text="${listing.price}"></p>-->
-        <!--<p th:text="${listing.address}"></p>-->
-        <!--<p th:text="${listing.city}"></p>-->
-        <!--<p th:text="${listing.description}"></p>-->
-        <!--<p th:text="${listing.state}"></p>-->
-        <!--<p th:text="${listing.status}"></p>-->
-
-        <!--<a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>-->
-        <!--<a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button">Delete</button></a>-->
-
-
-
+    <h1>Welcome, <span th:text="${user.first_name}"></span></h1>
+    <h2>Username: <span th:text="${user.username}"></span></h2>
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></p>
+    <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button btn btn-success">Edit Profile</button></a>
 
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -32,7 +18,6 @@
                 <th colspan="9"><h4>Your current listing(s).</h4></th>
             </tr>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Price</th>
                 <th scope="col">Address</th>
                 <th scope="col">City</th>
@@ -48,8 +33,7 @@
                 <td class="table-danger" colspan="9">You do not have any listings.</td>
             </tr>
             <tr th:each="listing : ${listings}">
-                <td th:text="${listing.id}"></td>
-                <td th:text="${listing.price}"></td>
+                <td>$<span th:text="${listing.price}" class="cost"></span>0</td>
                 <td th:text="${listing.address}"></td>
                 <td th:text="${listing.city}"></td>
                 <td th:text="${listing.description}"></td>
@@ -68,10 +52,21 @@
 
 </div>
 
-
-
-
-
 <script th:replace="fragments/scripts :: scripts"></script>
+<script>
+
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+
+    $.fn.digits = function(){
+        return this.each(function(){
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+        })
+    };
+
+    $('.cost').digits();
+
+</script>
 </body>
 </html>
