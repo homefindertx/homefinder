@@ -9,12 +9,11 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<span><h1 style="text-align: center; margin-top: 50px; margin-bottom: 25px; border: 2px solid red;">contact request</h1></span>
+<span><h1 style="text-align: center; margin-top: 50px; margin-bottom: 25px; border: 2px solid #28a745;">contact request</h1></span>
 
 <div class="container">
     <div class="row row-centered">
         <div class="col-lg-6 col-centered">
-
 
             <form  th:action="@{/twilio}"  method="post">
                 <div class="form-group">
@@ -35,17 +34,14 @@
                     <label for="exampleFormControlTextarea1">Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="don't forget to include the listing ID or address..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Send</button>
+                <button type="submit" class="btn btn-success mb-2">Send</button>
 
             </form>
 
         </div>
 
-
     </div>
 </div>
-
-
 
 </body>
 </html>

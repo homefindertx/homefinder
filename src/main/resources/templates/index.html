@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
@@ -16,8 +15,6 @@
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
 <div class="container">
-
-
 
     <div>Listings</div>
     <div class="listDiv container row" th:each="listing : ${listings}">
@@ -75,11 +72,24 @@
 
 </div>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
 <script src="/js/google-maps.js"></script>
+<script>
+
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+
+    $.fn.digits = function(){
+        return this.each(function(){
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+        })
+    };
+
+    $('.cost').digits();
+
+</script>
 
 </body>
-
 </html>
