@@ -36,12 +36,73 @@
         <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
     </form>
 
-    <!--CONTACT US BUTTON-->
 
-    <span sec:authorize="isAuthenticated()">
-    <a class="nav-link green" href="/calltwilio"><i class="fa fa-fw fa-envelope green"></i> Contact Us</a>
-    </span>
 
+
+</div>
+
+<!--MODAL-->
+
+<div class="container">
+    <h1>Submit a request about this listing</h1>
+    <!-- Trigger the modal with a button -->
+    <button sec:authorize="isAuthenticated()" type="button" class="btn btn-info btn-lg" id="btnId">
+        <a class="nav-link " href="/calltwilio"><i class="fa fa-fw fa-envelope "></i> Click here</a>
+    </button>
+
+    <!--<button  >Click Here</button>-->
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="modalId" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Bootstrap Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Enquiry about </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container" th:object="${listing}">
+
+                        <h5 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h5>
+                        <h5><span th:text="${listing.city}"></span><span>, </span>
+                            <span th:text="${listing.state}"></span>
+                            <span th:text="${listing.zipcode}"></span></h5>
+                    </div>
+                    <div>
+                        <form  th:action="@{/twilio}"  method="post">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Enter a telephone number?</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="5551115555" />
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Which do you prefer? (select 1 option from the drop-down)</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Phone Call</option>
+                                    <option>Text Message</option>
+                                    <option>Email (We can only use your registered email address)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Message</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your question"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success mb-2" >Send</button>
+                            <button type="reset"  class="btn btn-outline-success mb-2" value="Reset">Reset</button>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -84,6 +145,50 @@
     };
 
     $('.cost').digits();
+
+    //modal functionality
+
+    $( document ).ready(function() {
+
+        var url = window.location;
+
+        $("#btnId").click(function(event){
+            event.preventDefault();
+
+            // Open Bootstrap Modal
+            openModel();
+            // Get data from Server
+            ajaxGet();
+        })
+
+        // Open Bootstrap Modal
+        function openModel(){
+            $("#modalId").modal();
+        }
+
+        // DO GET
+        function ajaxGet(){
+            $.ajax({
+                type : "GET",
+                url : url + "/greeting",
+                success: function(data){
+                    // fill data to Modal Body
+                    fillData(data);
+                },
+                error : function(e) {
+                    fillData(null);
+                }
+            });
+        }
+
+        function fillData(data){
+            if(data!=null){
+                $(".modal-body #greetingId").text(data);
+            }else{
+                $(".modal-body #greetingId").text("Can Not Get Data from Server!");
+            }
+        }
+    })
 </script>
 
 </body>
