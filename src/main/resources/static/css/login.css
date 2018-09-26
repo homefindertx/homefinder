@@ -2,16 +2,27 @@
     background-image: url(/images/stock-home-blue.jpeg);
     background-size: cover;
     height: 800px;
-    background-position: -390px -90px;
+    background-position: -390px 0;
 }
 
 .login-box {
-    padding-top: 37%;
+    padding-top: 20%;
+}
+
+.grey-transparent {
+    padding: 5%;
+    background-color: rgba(40, 40, 40, .9);
+    border-radius: 20%;
+    margin: 5%;
 }
 
 .motto {
     background-color: #2b2b2b;
     opacity: 0.9;
+}
+
+.navbar-background {
+    background-color: rgba(41, 41, 41, 0)
 }
 
 /*FOR THE LOGIN FORM*/
@@ -167,8 +178,6 @@
     }
 
     .grey-transparent {
-        padding: 5%;
-        background-color: rgba(40, 40, 40, .9);
-        border-radius: 20%;
+        margin: 0;
     }
 }
