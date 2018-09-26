@@ -6,13 +6,14 @@
 <div class="register-container container">
     <div class="row main">
         <div class="main-login main-center">
-            <h5>Register Right Now!...It's free</h5>
+            <h1>Sign up now and start your next adventure</h1>
+            <!--<h5>Register Right Now!...It's free</h5>-->
             <form th:action="'/register'" th:method="post" th:object="${user}">
                 <div class="form-group">
                     <label for="first_name" class="cols-sm-2 control-label">First Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>-->
                             <input type="text" th:field="*{first_name}" class="form-control" name="first_name" id="first_name"  placeholder="Enter your First Name"/>
                         </div>
                     </div>
@@ -21,7 +22,7 @@
                     <label for="last_name" class="cols-sm-2 control-label">Last Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>-->
                             <input type="text" th:field="*{last_name}" class="form-control" name="last_name" id="last_name"  placeholder="Enter your Last Name"/>
                         </div>
                     </div>
@@ -30,7 +31,7 @@
                     <label for="username" class="cols-sm-2 control-label">User Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>-->
                             <input type="text" th:field="*{username}" class="form-control" name="username" id="username"  placeholder="Enter a User Name"/>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                     <label for="phone_number" class="cols-sm-2 control-label">Phone Number</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>-->
                             <input type="text" th:field="*{phone_number}" class="form-control" name="phone_number" id="phone_number"  placeholder="Enter Phone Number"/>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                     <label for="email" class="cols-sm-2 control-label">Your Email</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>-->
                             <input type="text" th:field="*{email}" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                     <label for="password" class="cols-sm-2 control-label">Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <!--<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>-->
                             <input type="password"  th:field="*{password}" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
                         </div>
                     </div>
@@ -74,7 +75,7 @@
                 </div>
             </div>
                 <div class="form-group ">
-                    <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                    <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button">Register</button>
                 </div>
             </form>
 

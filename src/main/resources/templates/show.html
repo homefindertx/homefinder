@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
-<head th:replace="fragments/head :: head('HomeFinder.com')"></head>
+<head th:replace="fragments/head :: head('View House')"></head>
 
 <body>
 
@@ -21,29 +21,29 @@
     <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" />
     <p th:text="${listing.description}"></p>
     <p th:text="${listing.status}"></p>
-    <h2>$<span th:text="${listing.price}" class="listing-price"></span>0</h2>
-    <h3>Email the seller: <span th:text="${listing.user.email}"></span></h3>
+    <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
+    <h3>Contact the seller</h3>
+    <h3>Email: <span th:text="${listing.user.email}"></span></h3>
+    <h3>Phone: <span th:text="${listing.user.phone_number}" class="phone"></span></h3>
 
     <h3>Mortgage Calculator:</h3>
     <form action="">
         <label>APR Percent(%): <input type="text" id="apr" name="APR" /></label><br />
         <label>Loan Term(Year): <input type="text" id="trm" name="APR" /></label><br />
         <label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />
-        <input type="button" id="sbt" value="Submit" />
-        <input type="reset" id="rst" value="Reset Form" /><br /><br />
+        <input class="btn btn-outline-success" type="button" id="sbt" value="Submit" />
+        <input class="btn btn-outline-success" type="reset" id="rst" value="Reset Form" /><br /><br />
         <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
     </form>
 
-</div>
-  
-<!--CONTACT US BUTTON-->
- 
-        <span sec:authorize="isAuthenticated()">
-                <a class="nav-link" href="/calltwilio"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
-        </span>
+    <!--CONTACT US BUTTON-->
+
+    <span sec:authorize="isAuthenticated()">
+    <a class="nav-link green" href="/calltwilio"><i class="fa fa-fw fa-envelope green"></i> Contact Us</a>
+    </span>
 
 </div>
-</div>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script th:replace="fragments/scripts :: scripts"></script>
 <script>
@@ -72,6 +72,18 @@
         var payment = amt*(apr * Math.pow((1 + apr), term))/(Math.pow((1 + apr), term) - 1);
         return payment;
     }
+
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+
+    $.fn.digits = function(){
+        return this.each(function(){
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+        })
+    };
+
+    $('.cost').digits();
 </script>
 
 </body>

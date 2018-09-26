@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head('Login')"></head>
-<body>
+<body class="login">
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is where you can Login</h1>
-<div class="register-container container">
-    <div class="row main">
-        <div class="main-login main-center">
-            <h1>Log In</h1>
+
+<div class="register-container container login-box">
+    <div class="row main justify-content-center">
+        <h1 class="text-white text-center motto d-lg-none">Find your next dream home here</h1>
+        <div class="main-login main-center text-white">
             <div th:if="${param.error}">
                 Invalid Username and Password.
             </div>
             <div th:if="${param.logout}">
                 You have been logged out.
             </div>
-
-            <form th:action="@{/login}" method="post">
-                <div class="form-group">
-                    <label for="username" class="cols-sm-2 control-label">Username</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input id="username" name="username" type="text" />
-                        </div>
-                    </div>
+            <br />
+            <form th:action="@{/login}" class="login-form" method="post">
+                <div class="input-group question">
+                    <h3 class="cols-sm-2 control-label">Username <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span></h3>
+                    <input id="username" name="username" type="text" />
                 </div>
-                <div class="form-group">
-                    <label for="password" class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input id="password" name="password" type="password" />
-                        </div>
-                    </div>
+                <br class="d-none d-lg-block" /><br class="d-none d-lg-block" />
+                <div class="input-group question">
+                    <h3 class="cols-sm-2 control-label">Password <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span></h3>
+                    <input id="password" name="password" type="password" />
                 </div>
-                <input type="submit" value="Log In" />
+                <button type="submit" value="Log In">Log In</button>
             </form>
-
+            <br />
             <div>Don't have an account? <a href="/register" class="anchor">Click here</a></div>
 
         </div>
