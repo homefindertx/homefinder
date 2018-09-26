@@ -6,10 +6,11 @@
 
 <div class="container" style="margin: 3em;">
     <h1>Welcome, <span th:text="${user.first_name}"></span></h1>
-    <h2>Username: <span th:text="${user.username}"></span></h2>
-    <p>Email: <span th:text="${user.email}"></span></p>
-    <p>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></p>
+    <h4>Username: <span th:text="${user.username}"></span></h4>
+    <h4>Email: <span th:text="${user.email}"></span></h4>
+    <h4>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></h4>
     <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button btn btn-success">Edit Profile</button></a>
+    <br /><br />
 
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -33,17 +34,17 @@
                 <td class="table-danger" colspan="9">You do not have any listings.</td>
             </tr>
             <tr th:each="listing : ${listings}">
-                <td>$<span th:text="${listing.price}" class="cost"></span>0</td>
+                <td class="text-right">$<span th:text="${listing.price}" class="cost"></span>0</td>
                 <td th:text="${listing.address}"></td>
                 <td th:text="${listing.city}"></td>
                 <td th:text="${listing.description}"></td>
-                <td th:text="${listing.state}"></td>
+                <td th:text="${listing.state}" class="text-center"></td>
                 <td th:text="${listing.status}"></td>
-                <td>
-                    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button">Edit</button></a>
+                <td class="text-center">
+                    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button btn btn-outline-success">Edit</button></a>
                 </td>
-                <td>
-                    <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button">Delete</button></a>
+                <td class="text-center">
+                    <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button btn btn-outline-danger">Delete</button></a>
                 </td>
             </tr>
             </tbody>

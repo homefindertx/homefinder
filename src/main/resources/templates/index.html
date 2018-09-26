@@ -25,12 +25,6 @@
             <div class="table-responsive">
 
                 <table class="table">
-                    <thead>
-                    <tr>
-                        <!--<th colspan="9"><h4>Listings</h4></th>-->
-                    </tr>
-                    </thead>
-
                     <tbody>
 
                     <tr class="row">
@@ -48,7 +42,7 @@
                             <p th:text="${listing.status}"></p>
                             <br />
                             <h4>Price:</h4>
-                            <div class="price">$<span th:text="${listing.price}"></span>0</div>
+                            <div class="price">$<span th:text="${listing.price}" class="cost"></span>0</div>
                         </td>
                         <td class="col-lg-4">
                             <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
@@ -76,10 +70,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUUvPtAXrLEVOu1WjZRIz9Zv3rQZ4oUpA"></script>
 <script src="/js/google-maps.js"></script>
 <script>
-
-    $('.phone').text(function(i, text) {
-        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-    });
 
     $.fn.digits = function(){
         return this.each(function(){

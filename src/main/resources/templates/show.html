@@ -21,8 +21,10 @@
     <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" />
     <p th:text="${listing.description}"></p>
     <p th:text="${listing.status}"></p>
-    <h2>$<span th:text="${listing.price}" class="listing-price"></span>0</h2>
-    <h3>Email the seller: <span th:text="${listing.user.email}"></span></h3>
+    <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
+    <h3>Contact the seller</h3>
+    <h3>Email: <span th:text="${listing.user.email}"></span></h3>
+    <h3>Phone: <span th:text="${listing.user.phone_number}" class="phone"></span></h3>
 
     <h3>Mortgage Calculator:</h3>
     <form action="">
@@ -34,13 +36,13 @@
         <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
     </form>
 
+    <!--CONTACT US BUTTON-->
+
+    <span sec:authorize="isAuthenticated()">
+    <a class="nav-link green" href="/calltwilio"><i class="fa fa-fw fa-envelope green"></i> Contact Us</a>
+    </span>
+
 </div>
-  
-<!--CONTACT US BUTTON-->
- 
-<span sec:authorize="isAuthenticated()">
-    <a class="nav-link" href="/calltwilio"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
-</span>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script th:replace="fragments/scripts :: scripts"></script>
@@ -70,6 +72,18 @@
         var payment = amt*(apr * Math.pow((1 + apr), term))/(Math.pow((1 + apr), term) - 1);
         return payment;
     }
+
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+
+    $.fn.digits = function(){
+        return this.each(function(){
+            $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+        })
+    };
+
+    $('.cost').digits();
 </script>
 
 </body>

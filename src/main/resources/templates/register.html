@@ -6,7 +6,8 @@
 <div class="register-container container">
     <div class="row main">
         <div class="main-login main-center">
-            <h5>Register Right Now!...It's free</h5>
+            <h1>Sign up now and start your next adventure</h1>
+            <!--<h5>Register Right Now!...It's free</h5>-->
             <form th:action="'/register'" th:method="post" th:object="${user}">
                 <div class="form-group">
                     <label for="first_name" class="cols-sm-2 control-label">First Name</label>
@@ -74,7 +75,7 @@
                 </div>
             </div>
                 <div class="form-group ">
-                    <button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                    <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button">Register</button>
                 </div>
             </form>
 
