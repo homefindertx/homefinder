@@ -7,6 +7,8 @@
 <div class="container" style="margin: 3em;">
     <h1>Welcome, <span th:text="${user.first_name}"></span></h1>
     <h4>Username: <span th:text="${user.username}"></span></h4>
+    <h4>First Name: <span th:text="${user.first_name}"></span></h4>
+    <h4>Last Name: <span th:text="${user.last_name}"></span></h4>
     <h4>Email: <span th:text="${user.email}"></span></h4>
     <h4>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></h4>
     <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button btn btn-success">Edit Profile</button></a>

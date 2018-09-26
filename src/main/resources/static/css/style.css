@@ -146,19 +146,19 @@ input[type=text]:focus, input[type=password]:focus {
     padding-top: 25%;
 }
 
-.motto {
-    background-color: #2b2b2b;
-    opacity: 0.9;
-}
+/*.motto {*/
+    /*background-color: #2b2b2b;*/
+    /*opacity: 0.9;*/
+/*}*/
 
-.parallaxHome {
-    background-image: url("../images/bgHome.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 65vh;
-}
+/*.parallaxHome {*/
+    /*background-image: url("../images/bgHome.jpg");*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*min-height: 65vh;*/
+/*}*/
 
 .anchor:link {
     color: #28a745;
@@ -178,15 +178,15 @@ input[type=text]:focus, input[type=password]:focus {
     text-decoration: none;
 }
 
-.banner {
-    /*background: #292929;*/
-    opacity: .8;
-    min-height: 25vh;
-    font-weight: 900;
-    padding: 65px;
-    border: none;
-    margin-top: 5em;
-}
+/*.banner {*/
+    /*!*background: #292929;*!*/
+    /*opacity: .8;*/
+    /*min-height: 25vh;*/
+    /*font-weight: 900;*/
+    /*padding: 65px;*/
+    /*border: none;*/
+    /*margin-top: 5em;*/
+/*}*/
 
 .text {
     font-weight: 300;

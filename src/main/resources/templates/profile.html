@@ -13,11 +13,11 @@
 <div class="card">
     <h5 class="card-header">Hello <span th:text="${user.first_name}"> !</span></h5>
     <div class="card-body">
-        <h5 class="card-title">Your Username : <span th:text="${user.username}"></span></h5>
-        <p class="card-text">First Name : <span th:text="${user.first_name}"></span></p>
-        <p class="card-text">Last Name : <span th:text="${user.last_name}"></span></p>
-        <p class="card-text">Email : <span th:text="${user.email}"></span></p>
-        <p class="card-text">Phone # : <span th:text="${user.phone_number}"></span></p>
+        <h5 class="card-title">Your Username: <span th:text="${user.username}"></span></h5>
+        <p class="card-text">First Name: <span th:text="${user.first_name}"></span></p>
+        <p class="card-text">Last Name: <span th:text="${user.last_name}"></span></p>
+        <p class="card-text">Email: <span th:text="${user.email}"></span></p>
+        <p class="card-text phone">Phone: <span th:text="${user.phone_number}"></span></p>
         <a th:href="@{/profile/{id}/edit(id=${user.id})}" class="btn btn-outline-success">Edit</a>
         <a th:href="@{/index}" class="btn btn-outline-success">Listings</a>
     </div>
@@ -32,5 +32,11 @@
 
 <!--<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit</button></a>-->
 <script th:replace="fragments/scripts :: scripts"></script>
+<script>
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+</script>
+
 </body>
 </html>
