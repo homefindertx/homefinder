@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head('Login')"></head>
-<body class="login">
+<link rel="stylesheet" href="/css/login.css" />
+
+<body class="login-body">
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
 <div class="register-container container login-box">
     <div class="row main justify-content-center">
-        <h1 class="text-white text-center motto d-lg-none">Find your next dream home here</h1>
+        <!--<h1 class="text-white text-center motto d-lg-none">Find your next dream home here</h1>-->
         <div class="main-login main-center text-white">
             <div th:if="${param.error}">
                 Invalid Username and Password.
@@ -39,4 +41,3 @@
 
 </body>
 </html>
-

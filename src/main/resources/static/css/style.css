@@ -1,223 +1,6 @@
 html, body {
     font-family: 'Montserrat', Helvetica, sans-serif;
-}
-
-footer .container {
-    background: transparent;
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-.transition, .login-form button, .login-form .question label, .login-form .question input[type="text"] {
-     -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-     -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-     -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
- }
-.transition, .login-form button, .login-form .question label, .login-form .question input[type="password"] {
-    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-}
-.login-form button {
-    margin-top: 35px;
-    background-color: white;
-    border: 1px solid #28a745;
-    line-height: 0;
-    font-size: 17px;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 20px 15px;
-    border-radius: 60px;
-    color: #28a745;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    position: relative;
-    z-index: 1;
-}
-.login-form button:hover, form button:focus {
-    color: white;
-    background-color: #28a745;
-}
-.login-form .question {
-    position: relative;
-    padding: 10px 0;
-}
-.login-form .question:first-of-type {
-    padding-top: 0;
-}
-.login-form .question:last-of-type {
-    padding-bottom: 0;
-}
-.login-form .question input[type="text"] {
-    appearance: none;
-    background-color: none;
-    border: 1px solid #28a745;
-    line-height: 0;
-    font-size: 17px;
     width: 100%;
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 15px;
-    border-radius: 60px;
-    color: #28a745;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    position: relative;
-    z-index: 1;
-}
-.login-form .question input[type="text"]:focus {
-    outline: none;
-    background: #28a745;
-    color: white;
-    margin-top: 30px;
-}
-.login-form .question input[type="text"]:valid {
-    margin-top: 30px;
-}
-.login-form .question input[type="text"]:focus ~ label {
-    -moz-transform: translate(0, -35px);
-    -ms-transform: translate(0, -35px);
-    -webkit-transform: translate(0, -35px);
-    transform: translate(0, -35px);
-}
-.login-form .question input[type="text"]:valid ~ label {
-    text-transform: uppercase;
-    font-style: italic;
-    -moz-transform: translate(5px, -35px) scale(0.6);
-    -ms-transform: translate(5px, -35px) scale(0.6);
-    -webkit-transform: translate(5px, -35px) scale(0.6);
-    transform: translate(5px, -35px) scale(0.6);
-}
-.login-form .question input[type="password"] {
-    appearance: none;
-    background-color: none;
-    border: 1px solid #28a745;
-    line-height: 0;
-    font-size: 17px;
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 15px;
-    border-radius: 60px;
-    color: #28a745;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    position: relative;
-    z-index: 1;
-}
-.login-form .question input[type="password"]:focus {
-    outline: none;
-    background: #28a745;
-    color: white;
-    margin-top: 30px;
-}
-.login-form .question input[type="password"]:valid {
-    margin-top: 30px;
-}
-.login-form .question input[type="password"]:focus ~ label {
-    -moz-transform: translate(0, -35px);
-    -ms-transform: translate(0, -35px);
-    -webkit-transform: translate(0, -35px);
-    transform: translate(0, -35px);
-}
-.login-form .question input[type="password"]:valid ~ label {
-    text-transform: uppercase;
-    font-style: italic;
-    -moz-transform: translate(5px, -35px) scale(0.6);
-    -ms-transform: translate(5px, -35px) scale(0.6);
-    -webkit-transform: translate(5px, -35px) scale(0.6);
-    transform: translate(5px, -35px) scale(0.6);
-}
-
-.login {
-    background-image: url(/images/grey-stone-house.jpeg);
-    background-size: cover;
-    height: 700px;
-}
-
-.login-box {
-    padding-top: 25%;
-}
-
-/*.motto {*/
-    /*background-color: #2b2b2b;*/
-    /*opacity: 0.9;*/
-/*}*/
-
-/*.parallaxHome {*/
-    /*background-image: url("../images/bgHome.jpg");*/
-    /*background-attachment: fixed;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*min-height: 65vh;*/
-/*}*/
-
-.anchor:link {
-    color: #28a745;
-}
-.anchor:hover {
-    color: green;
-}
-.anchor:visited {
-    color: #28a745;
-}
-.anchor:active {
-    color: darkgreen;
-}
-
-.title-link {
-    color: lawngreen !important;
-    text-decoration: none;
-}
-
-/*.banner {*/
-    /*!*background: #292929;*!*/
-    /*opacity: .8;*/
-    /*min-height: 25vh;*/
-    /*font-weight: 900;*/
-    /*padding: 65px;*/
-    /*border: none;*/
-    /*margin-top: 5em;*/
-/*}*/
-
-.text {
-    font-weight: 300;
-    color: white;
-}
-
-.green {
-    color: #28a745;
-}
-
-.logo-text {
-    font-family: 'Cinzel Decorative', Helvetica, sans-serif;
-    color: lawngreen;
-    text-shadow: .75px .75px #2f1100;
-}
-
-.carousel-item h5,
-.carousel-item blockquote {
-    text-align: center;
-    color: white;
-}
-
-.carousel-item h5 {
-    line-height: 60px;
-    padding-top: 1em;
-}
-
-.carousel-item blockquote {
-    font-size: 16px;
-    line-height: 50px;
-    padding-bottom: 3em;
 }
 
 .address {
@@ -235,27 +18,84 @@ input[type=text]:focus, input[type=password]:focus {
     width: 350px;
 }
 
+.green {
+    color: #28a745;
+}
+
+.anchor:link {
+    color: #28a745;
+}
+.anchor:hover {
+    color: green;
+}
+.anchor:visited {
+    color: #28a745;
+}
+.anchor:active {
+    color: darkgreen;
+}
+
+/*.text {*/
+/*font-weight: 300;*/
+/*color: white;*/
+/*}*/
+
+/*footer .container {*/
+/*background: transparent;*/
+/*}*/
+
+/*input[type=text]:focus, input[type=password]:focus {*/
+/*background-color: #ddd;*/
+/*outline: none;*/
+/*}*/
+
+/*.parallaxHome {*/
+    /*background-image: url("../images/bgHome.jpg");*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*min-height: 65vh;*/
+/*}*/
+
+/*.title-link {*/
+    /*color: lawngreen !important;*/
+    /*text-decoration: none;*/
+/*}*/
+
+/*.banner {*/
+    /*!*background: #292929;*!*/
+    /*opacity: 0;*/
+    /*min-height: 25vh;*/
+    /*font-weight: 900;*/
+    /*padding: 65px;*/
+    /*border: none;*/
+    /*margin-top: 5em;*/
+/*}*/
+
+/*.carousel-item h5,*/
+/*.carousel-item blockquote {*/
+    /*text-align: center;*/
+    /*color: white;*/
+/*}*/
+
+/*.carousel-item h5 {*/
+    /*line-height: 60px;*/
+    /*padding-top: 1em;*/
+/*}*/
+
+/*.carousel-item blockquote {*/
+    /*font-size: 16px;*/
+    /*line-height: 50px;*/
+    /*padding-bottom: 3em;*/
+/*}*/
+
 
 @media only screen and (min-width: 426px) {
-    .login-box {
-        padding-top: 10%;
-    }
 
-    .motto {
-        width: 100%;
-        padding: 10px 0;
-    }
 }
 
 
 @media only screen and (min-width: 769px) {
-    .login {
-        background-image: url(/images/stock-home-blue.jpeg);
-        background-size: cover;
-        background-position: 0 -150px;
-    }
 
-    .login-box {
-        padding-top: 11%;
-    }
 }

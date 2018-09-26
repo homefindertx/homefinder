@@ -1,0 +1,56 @@
+.home-body {
+    background-image: url(/images/stock-house-blue-angle.jpeg);
+    background-size: cover;
+    height: 850px;
+    background-position: 30% 10%;
+}
+
+.logo-text {
+    font-family: 'Cinzel Decorative', Helvetica, sans-serif;
+    color: lawngreen;
+    text-shadow: .75px .75px #2f1100;
+}
+
+.parallaxHome {
+    background-color: rgba(10, 10, 10, 0);
+    padding-top: 60%;
+}
+
+.home-title {
+    font-size: 50px;
+}
+
+.imagine {
+    font-size: 20px;
+}
+
+
+
+@media only screen and (min-width: 426px) {
+    .parallaxHome {
+        padding-top: 33%;
+    }
+}
+
+
+
+@media only screen and (min-width: 769px) {
+    .home-body {
+        background-position: 0 -120px;
+        height: 100%;
+    }
+
+    .logo-text {
+        font-family: 'Cinzel Decorative', Helvetica, sans-serif;
+        color: lawngreen;
+        text-shadow: .75px .75px #2f1100;
+    }
+
+    .parallaxHome {
+        padding-top: 19%;
+    }
+
+    .home-title {
+        font-size: 60px;
+    }
+}
