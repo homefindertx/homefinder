@@ -1,34 +1,107 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('Your Profile')"></head>
-<body>
+<head th:replace="fragments/head :: head('Your Profile')">
+</head>
+<link rel="stylesheet" href="/css/profile.css" />
+<body class="profile_body">
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>Edit Buyer Profile</h1>
-<form th:action="'/profile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">
-<label for="">User Name</label>
-<input type="text" th:field="*{username}" />
-<br/>
-<label for="">Email</label>
-<input type="text" th:field="*{email}" />
-<br/>
-    <label for="">First Name</label>
-    <input type="text" th:field="*{first_name}" />
-    <br/>
-    <label for="">Last Name</label>
-    <input type="text" th:field="*{last_name}" />
-    <br/>
-    <label for="">Phone Number</label>
-    <input type="text" th:field="*{phone_number}" />
-    <br/>
 
-    <input type="hidden" th:field="*{password}"/>
-    <input type="hidden" th:field="*{isBuyer}"/>
+<div class="profileContainer">
+    <div class="profileId">
+        <div class="id">
+        </div>
+        <div class="idName">
+            <h4>Hello, <span th:text="${user.first_name}"></span>!</h4>
+            Welcome to your profile page.
+        </div>
+    </div>
+    <div class="profileContent">
+        <h1>  Buyer Profile:</h1>
+
+        <div class="b_p_Content">
+
+            <div>
+                <h1>Edit Buyer Profile</h1>
+                <form th:action="'/profile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">
+                    <label for="">User Name</label>
+                    <input type="text" th:field="*{username}" />
+                    <br/>
+                    <label for="">Email</label>
+                    <input type="text" th:field="*{email}" />
+                    <br/>
+                    <label for="">First Name</label>
+                    <input type="text" th:field="*{first_name}" />
+                    <br/>
+                    <label for="">Last Name</label>
+                    <input type="text" th:field="*{last_name}" />
+                    <br/>
+                    <label for="">Phone Number</label>
+                    <input type="text" th:field="*{phone_number}" />
+                    <br/>
+
+                    <input type="hidden" th:field="*{password}"/>
+                    <input type="hidden" th:field="*{isBuyer}"/>
 
 
 
 
-<button class="button">Update Profile</button>
-</form>
+                    <button class="button">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--href="/index"-->
+
+
+
+
+<!--<p th:text="${user.id}"></p>-->
+<!--<p th:text="${user.username}"></p>-->
+
+<!--<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit</button></a>-->
 <script th:replace="fragments/scripts :: scripts"></script>
+<script>
+    $('.phone').text(function(i, text) {
+        return text.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    });
+</script>
+
 </body>
+
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">-->
+<!--<head th:replace="fragments/head :: head('Your Profile')"></head>-->
+<!--<body>-->
+<!--<nav th:replace="fragments/navbar :: navbar"></nav>-->
+<!--<h1>Edit Buyer Profile</h1>-->
+<!--<form th:action="'/profile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">-->
+<!--<label for="">User Name</label>-->
+<!--<input type="text" th:field="*{username}" />-->
+<!--<br/>-->
+<!--<label for="">Email</label>-->
+<!--<input type="text" th:field="*{email}" />-->
+<!--<br/>-->
+    <!--<label for="">First Name</label>-->
+    <!--<input type="text" th:field="*{first_name}" />-->
+    <!--<br/>-->
+    <!--<label for="">Last Name</label>-->
+    <!--<input type="text" th:field="*{last_name}" />-->
+    <!--<br/>-->
+    <!--<label for="">Phone Number</label>-->
+    <!--<input type="text" th:field="*{phone_number}" />-->
+    <!--<br/>-->
+
+    <!--<input type="hidden" th:field="*{password}"/>-->
+    <!--<input type="hidden" th:field="*{isBuyer}"/>-->
+
+
+
+
+<!--<button class="button">Update Profile</button>-->
+<!--</form>-->
+<!--<script th:replace="fragments/scripts :: scripts"></script>-->
+<!--</body>-->
+<!--</html>-->

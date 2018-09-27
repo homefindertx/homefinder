@@ -1,6 +1,100 @@
 .profile_body {
-    background-image: url(/images/profileView.jpeg);
+    background-image: url(/images/insideProfile.jpg);
     background-size: cover;
     height: 800px;
     /*background-position: -390px 0;*/
 }
+
+.navbar-background {
+    background-color: #EBE9E9;
+}
+
+.profileContent {
+    /*display: block;*/
+    text-align: center;
+    width: 480px;
+    height: 405px;
+    padding: 5%;
+    background-color: rgba(40, 40, 40, .9);
+    color: rgb(90, 150, 180);
+    border-radius: 0% 20% 20% 0%;
+
+    top: 70px;
+    left: 42%;
+    position: fixed;
+    align-content: center;
+    margin: 0px;
+
+}
+
+input {
+    background-color: transparent;
+    border: transparent;
+}
+
+.idName {
+    position: relative;
+    left: -17px;
+    width: 130px;
+    top: 45px;
+}
+
+.id {
+    background-image: url(/images/anonymousphoto.png);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    /*background-color: transparent;*/
+}
+
+.profileId {
+
+    /*display: block;*/
+    text-align: center;
+    width: 250px;
+    height: 405px;
+    padding: 5%;
+    background-color: rgba(40, 40, 40, .9);
+    color: rgb(90, 150, 180);
+    border-radius: 20% 0% 0% 20%;
+
+    top: 70px;
+    left: 24%;
+    position: fixed;
+    align-content: center;
+    margin: 0px;
+}
+
+.profileContainer {
+
+}
+
+.b_p_Content {
+    padding-bottom: 20px;
+    line-height: 0.5;
+}
+
+h1 {
+    padding-bottom: 30px;
+    margin-top: -22px;
+}
+
+h4 {
+    display: inline-block;
+}
+
+h5 {
+margin-top: -18px;
+    line-height: 3.2;
+}
+
+
+
+/*.profile {*/
+    /*background-image: url(/images/inside.jpg);*/
+    /*background-size: cover;*/
+    /*height: 700px;*/
+    /*text-align: center;*/
+    /*font-weight: bold;*/
+    /*color: rgba(103, 92, 83, 1);*/
+/*}*/
