@@ -1,7 +1,7 @@
 .profile_body {
     background-image: url(/images/insideProfile.jpg);
     background-size: cover;
-    height: 800px;
+    height: 850px;
     /*background-position: -390px 0;*/
 }
 
@@ -102,3 +102,9 @@ margin-top: -18px;
     /*font-weight: bold;*/
     /*color: rgba(103, 92, 83, 1);*/
 /*}*/
+
+@media only screen and (min-width: 769px) {
+    .profile_body {
+        height: 100%;
+    }
+}
