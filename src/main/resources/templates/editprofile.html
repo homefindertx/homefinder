@@ -23,19 +23,19 @@
             <div>
                 <h1>Edit Buyer Profile</h1>
                 <form th:action="'/profile/'+ ${user.id} + '/edit'" th:method="post" th:object="${user}">
-                    <label for="">User Name</label>
+                    <label>User Name</label>
                     <input type="text" th:field="*{username}" />
                     <br/>
-                    <label for="">Email</label>
+                    <label>Email</label>
                     <input type="text" th:field="*{email}" />
                     <br/>
-                    <label for="">First Name</label>
+                    <label>First Name</label>
                     <input type="text" th:field="*{first_name}" />
                     <br/>
-                    <label for="">Last Name</label>
+                    <label>Last Name</label>
                     <input type="text" th:field="*{last_name}" />
                     <br/>
-                    <label for="">Phone Number</label>
+                    <label>Phone Number</label>
                     <input type="text" th:field="*{phone_number}" />
                     <br/>
 

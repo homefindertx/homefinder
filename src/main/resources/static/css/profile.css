@@ -5,6 +5,10 @@
     /*background-position: -390px 0;*/
 }
 
+.profileContainer {
+    /*padding: 20% 0 0 0;*/
+}
+
 .navbar-background {
     background-color: #EBE9E9;
 }
@@ -23,7 +27,7 @@
     left: 42%;
     position: fixed;
     align-content: center;
-    margin: 0px;
+    margin: 9% 0 0 0;
 
 }
 
@@ -62,7 +66,7 @@ input {
     left: 24%;
     position: fixed;
     align-content: center;
-    margin: 0px;
+    margin: 9% 0 0 0;
 }
 
 .profileContainer {
