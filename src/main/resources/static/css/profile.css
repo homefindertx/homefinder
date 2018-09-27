@@ -1,0 +1,6 @@
+.profile_body {
+    background-image: url(/images/profileView.jpeg);
+    background-size: cover;
+    height: 800px;
+    /*background-position: -390px 0;*/
+}
