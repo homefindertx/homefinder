@@ -87,7 +87,7 @@
                     <label for="price" class="cols-sm-2 control-label " style="text-align: center">Status   </label><br/>
                     <div class="input-group justify-content-center">
 
-                            <select name="status" class="form-control" >
+                            <select name="status" class="form-control btn btn-success" >
                                 <option th:field="*{status}" value="For Sale">For Sale</option>
                                 <option th:field="*{status}" value="Under Contract">Under Contract</option>
                                 <option th:field="*{status}" value="Pending">Pending</option>
@@ -99,26 +99,26 @@
                 <div >
                     <h4>Upload up to 5 photos</h4>
 
-                    <form  action="/fileupload" method="post" enctype="multipart/form-data">
+                    <form class="form-group" action="/fileupload" method="post" enctype="multipart/form-data">
                         <label for="file">Photo 1</label>
-                        <input th:field="*{uploadPath}" id="file" name="file" type="file" />
+                        <input class="form-control btn btn-outline-success" th:field="*{uploadPath}" id="file" name="file" type="file" />
                         <br />
 
                         <form  action="/fileupload" method="post" enctype="multipart/form-data">
                             <label for="file">Photo 2</label>
-                            <input th:field="*{uploadPath2}" id="file2" name="file" type="file" />
+                            <input class="form-control btn btn-outline-success" th:field="*{uploadPath2}" id="file2" name="file" type="file" />
                             <br />
                             <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                 <label for="file">Photo 3</label>
-                                <input th:field="*{uploadPath3}" id="file3" name="file" type="file" />
+                                <input class="form-control btn btn-outline-success" th:field="*{uploadPath3}" id="file3" name="file" type="file" />
                                 <br />
                                 <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                     <label for="file">Photo 4</label>
-                                    <input th:field="*{uploadPath4}" id="file4" name="file" type="file" />
+                                    <input class="form-control btn btn-outline-success" th:field="*{uploadPath4}" id="file4" name="file" type="file" />
                                     <br />
                                     <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                         <label for="file">Photo 5</label>
-                                        <input th:field="*{uploadPath5}" id="file5" name="file" type="file" />
+                                        <input class="form-control btn btn-outline-success" th:field="*{uploadPath5}" id="file5" name="file" type="file" />
                                         <br />
 
                                         <div class="form-group">
