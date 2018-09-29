@@ -6,13 +6,16 @@ html, body {
 .address {
     font-size: 20px;
 }
+
 .price {
     font-size: 18px;
 }
+
 .map-size {
     height: 250px;
     width: 350px;
 }
+
 .house-img {
     height: 250px;
     width: 350px;
@@ -40,65 +43,12 @@ html, body {
     background-color: rgba(3, 43, 67, 0); /*rgba(41, 41, 41, .2);*/
 }
 
-/*.text {*/
-/*font-weight: 300;*/
-/*color: white;*/
-/*}*/
-
-/*footer .container {*/
-/*background: transparent;*/
-/*}*/
-
-/*input[type=text]:focus, input[type=password]:focus {*/
-/*background-color: #ddd;*/
-/*outline: none;*/
-/*}*/
-
-/*.parallaxHome {*/
-    /*background-image: url("../images/bgHome.jpg");*/
-    /*background-attachment: fixed;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*min-height: 65vh;*/
-/*}*/
-
-/*.title-link {*/
-    /*color: lawngreen !important;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*.banner {*/
-    /*!*background: #292929;*!*/
-    /*opacity: 0;*/
-    /*min-height: 25vh;*/
-    /*font-weight: 900;*/
-    /*padding: 65px;*/
-    /*border: none;*/
-    /*margin-top: 5em;*/
-/*}*/
-
-/*.carousel-item h5,*/
-/*.carousel-item blockquote {*/
-    /*text-align: center;*/
-    /*color: white;*/
-/*}*/
-
-/*.carousel-item h5 {*/
-    /*line-height: 60px;*/
-    /*padding-top: 1em;*/
-/*}*/
-
-/*.carousel-item blockquote {*/
-    /*font-size: 16px;*/
-    /*line-height: 50px;*/
-    /*padding-bottom: 3em;*/
-/*}*/
 
 
 @media only screen and (min-width: 426px) {
 
 }
+
 
 
 @media only screen and (min-width: 769px) {
