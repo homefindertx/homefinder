@@ -4,7 +4,7 @@
 <head th:replace="fragments/head :: head('View House')"></head>
 <link rel="stylesheet" href="/css/show.css" />
 
-<body>
+<body class="show-background">
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
@@ -82,7 +82,6 @@
 
 </section>
 <br/>
-<br/>
 
     <div class="banner d-none d-lg-block">
         <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
@@ -97,7 +96,7 @@
         <h3>
             <span th:text="${listing.status}"></span>
         </h3>
-
+        <br />
     </div>
 
 

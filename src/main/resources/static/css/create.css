@@ -21,8 +21,12 @@
     opacity: 0.9;
 }
 
-.navbar-background {
-    background-color: rgba(41, 41, 41, 0)
+/*.navbar-background {*/
+    /*background-color: rgba(41, 41, 41, 0)*/
+/*}*/
+
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
 
 

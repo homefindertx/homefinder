@@ -1,5 +1,9 @@
-.navbar-background {
-    background-color: #EBE9E9;
+/*.navbar-background {*/
+    /*background-color: #EBE9E9;*/
+/*}*/
+
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
 
 .slidecontainer {
@@ -48,3 +52,12 @@
     width: 100%; /* Set full-width to expand the whole page */
 }
 
+.show-background {
+    /*background-image: url("/../images/leaf.jpg");*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*min-height: 65vh;*/
+    background-color: whitesmoke;
+}

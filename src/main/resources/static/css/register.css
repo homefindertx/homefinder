@@ -1,5 +1,5 @@
 .register-body {
-    background-image: url(/images/stock-home-blue.jpeg);
+    background-image: url(/../images/stock-home-blue.jpeg);
     background-size: cover;
     height: 850px;
     background-position: -390px 0;
@@ -12,7 +12,7 @@
 .grey-transparent {
     padding: 5%;
     background-color: rgba(40, 40, 40, .9);
-    border-radius: 20%;
+    border-radius: 10%;
     margin: 5%;
 }
 
@@ -21,9 +21,9 @@
     opacity: 0.9;
 }
 
-.navbar-background {
-    background-color: rgba(41, 41, 41, 0)
-}
+/*.navbar-background {*/
+    /*!*background-color: rgba(41, 41, 41, 0)*!*/
+/*}*/
 
 /*FOR THE LOGIN FORM*/
 
@@ -167,7 +167,7 @@
 
 @media only screen and (min-width: 769px) {
     .register-body {
-        background-image: url(/images/stock-home-blue.jpeg);
+        background-image: url(/../images/stock-home-blue.jpeg);
         background-size: cover;
         background-position: 0 -170px;
         height: 100%;
@@ -180,5 +180,6 @@
 
     .grey-transparent {
         margin: 0;
+        border-radius: 20%;
     }
 }
