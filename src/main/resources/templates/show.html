@@ -8,12 +8,28 @@
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div class="container " th:object="${listing}">
+<div class="container" th:object="${listing}">
 
+    <div class="banner d-lg-none">
+        <br />
+        <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
+        <h3>
+            <span th:text="${listing.city}" class="cities"></span><span>, </span>
+            <span th:text="${listing.state}" class="states"></span>
+            <span th:text="${listing.zipcode}" class="zipcodes"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.description}"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.status}"></span>
+        </h3>
+
+    </div>
 
 <section>
 
-    <div class="container">
+    <div class="container mt-5 d-none d-lg-block">
         <div class="row shadow-lg ">
             <div class="col-md-6 p-0">
                 <div class="card text-center  ">
@@ -34,26 +50,62 @@
         </div>
     </div>
 
+    <div class="container mt-5 d-lg-none">
+        <div class="row shadow-lg ">
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 <br/>
 <br/>
 
-    <div class="banner">
+    <div class="banner d-none d-lg-block">
         <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
         <h3>
-            <span th:text="${listing.city}"></span><span>, </span>
-            <span th:text="${listing.state}"></span>
-            <span th:text="${listing.zipcode}"></span>
+            <span th:text="${listing.city}" class="cities"></span><span>, </span>
+            <span th:text="${listing.state}" class="states"></span>
+            <span th:text="${listing.zipcode}" class="zipcodes"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.description}"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.status}"></span>
         </h3>
 
     </div>
 
 
 <section>
-        <div class="col-container">
-            <div class=" card-deck">
-                <div class="card text-center" style="width: 25rem; height: 100%;" >
-                    <div class="card-img-top">
+        <div class="col-container w-100">
+            <div class=" card-deck row">
+                <div class="card text-center col-12 col-lg-6 w-100 p-0" style="height: 100%;" >
+                    <div class="card-img-top row justify-content-center">
                         <p class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}" style="width: 100%">
                         <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
                         </p>
@@ -70,7 +122,7 @@
                             </button>
                         </p>
                 </div>
-                <div class="card text-center"  >
+                <div class="card text-center mb-4 col-12 col-lg-6 w-100">
                     <div class="card-body">
                         <h5 class="card-title">Mortgage Calculator</h5>
                         <form action="">
@@ -96,8 +148,8 @@
                             <label>Loan Amount:
 
                                 <div class="slidecontainer">
-                                    <input type="range" min="5000" max="5000000" class="slider1" step="1" value="1000000" id="amt" />
-                                    <p>Loan Amount ($): ($5000 - $5 million): <span id="demo3"></span></p>
+                                    <input type="range" min="20000" max="2000000" class="slider1" step="100" value="500000" id="amt" />
+                                    <p>Loan Amount ($): ($20,000 - $2 million): <span id="demo3"></span></p>
                                 </div>
                             </label>
                             <br />
@@ -176,9 +228,6 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
-<script src="/js/google-maps.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script th:replace="fragments/scripts :: scripts"></script>
 <script>
@@ -233,7 +282,7 @@
             openModel();
             // Get data from Server
             ajaxGet();
-        })
+        });
 
         // Open Bootstrap Modal
         function openModel(){
@@ -262,7 +311,7 @@
                 $(".modal-body #greetingId").text("Can Not Get Data from Server!");
             }
         }
-    })
+    });
 
     // RANGE SLIDER
     var slider1 = document.getElementById("apr");
@@ -272,7 +321,7 @@
     // Update the current slider value (each time you drag the slider handle)
     slider1.oninput = function() {
         output1.innerHTML = this.value;
-    }
+    };
     var slider2 = document.getElementById("trm");
     var output2 = document.getElementById("demo1");
     output2.innerHTML = slider2.value; // Display the default slider value
@@ -280,7 +329,7 @@
     // Update the current slider value (each time you drag the slider handle)
     slider2.oninput = function() {
         output2.innerHTML = this.value;
-    }
+    };
 
     var slider3 = document.getElementById("amt");
     var output3 = document.getElementById("demo3");
@@ -291,6 +340,9 @@
         output3.innerHTML = this.value;
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
+<script src="/js/google-maps.js"></script>
 
 </body>
 </html>
