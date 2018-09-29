@@ -35,6 +35,11 @@ html, body {
     color: darkgreen;
 }
 
+.nav-font {
+    font-size: 18px;
+    background-color: rgba(3, 43, 67, 0); /*rgba(41, 41, 41, .2);*/
+}
+
 /*.text {*/
 /*font-weight: 300;*/
 /*color: white;*/

@@ -1,5 +1,9 @@
-.navbar-background {
-    background-color: #EBE9E9;
+/*.navbar-background {*/
+    /*background-color: #EBE9E9;*/
+/*}*/
+
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
 
 /*body {*/
@@ -10,29 +14,30 @@
 /*}*/
 
 .parallaxIndex {
-background-image: url("../TwilioStatic/air-bubbles-clipart-1.jpg");
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-min-height: 65vh;
+    background-image: url("/../images/leaf.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 65vh;
 }
 
 
 /*CHANGES NAV-FONT TO BOLD*/
-nav  {
-    margin-right: auto;
-    font-size: 1.6em;
-    font-weight: 500
-}
+/*nav  {*/
+    /*margin-right: auto;*/
+    /*font-size: 1.6em;*/
+    /*font-weight: 500*/
+/*}*/
 
 /*CREATES A SHADOW UNDER NAVBAR WHEN SCROLLING*/
 
 .shadow {
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .6);
-}body {
-    /*background: #ffdbc6;*/
 }
+/*body {*/
+    /*!*background: #ffdbc6;*!*/
+/*}*/
 
 .listDiv{
     margin-top: 5%;

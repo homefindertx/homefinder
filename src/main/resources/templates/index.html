@@ -17,13 +17,15 @@
 
 <div class="container ">
 
-    <div style="height: 10%;"><h1></h1></div>
+    <br /><br />
+    <h3 class="text-white">Listings</h3>
+    <hr />
     <div class="listDiv" th:each="listing : ${listings}">
         <div th:if="${listings.isEmpty()}">
             <td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>
         </div>
         <th:block th:fragment="listing" >
-            <div class="row shadow-lg">
+            <div class="row shadow-lg pt-3 pb-3 bg-white">
                 <div class="col-6 col-md-4 ">
                         <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="map-size" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
                         <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
@@ -31,7 +33,7 @@
                 </div>
 
                 <div class=" col-md-4 d-xs-none d-sm-block ">
-                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><p class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></p></a>
+                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
                         <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
                         <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
                             <span class="states " th:text="${listing.state}"></span>
@@ -49,7 +51,6 @@
                         </span>
                 </div>
             </div>
-            <hr/>
 
             <div class="row shadow-lg">
                 <div class=" col-12 d-none d-xs-block d-sm-none shadow-lg text-white">
@@ -65,6 +66,7 @@
                 <div class="price">$<span th:text="${listing.price}" class="cost"></span>0</div>
             </div>
             </div>
+            <br />
         </th:block>
     </div>
 

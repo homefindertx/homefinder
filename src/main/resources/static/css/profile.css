@@ -1,17 +1,21 @@
 .profile_body {
-    background-image: url(/images/insideProfile.jpg);
+    background-image: url(/../images/insideProfile.jpg);
     background-size: cover;
     height: 850px;
     /*background-position: -390px 0;*/
+}
+
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
 
 .profileContainer {
     /*padding: 20% 0 0 0;*/
 }
 
-.navbar-background {
-    background-color: #EBE9E9;
-}
+/*.navbar-background {*/
+    /*background-color: #EBE9E9;*/
+/*}*/
 
 .profileContent {
     /*display: block;*/
@@ -90,8 +94,6 @@ h5 {
 margin-top: -18px;
     line-height: 3.2;
 }
-
-
 
 /*.profile {*/
     /*background-image: url(/images/inside.jpg);*/
