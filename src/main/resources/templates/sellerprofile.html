@@ -1,58 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head('Your Profile')"></head>
-<body>
+<link rel="stylesheet" href="/css/sellerprofile.css" />
+
+
+<body class="create-body">
 <nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
 
-<div class="container" style="margin: 3em;">
-    <h1>Welcome, <span th:text="${user.first_name}"></span></h1>
-    <h4>Username: <span th:text="${user.username}"></span></h4>
-    <h4>First Name: <span th:text="${user.first_name}"></span></h4>
-    <h4>Last Name: <span th:text="${user.last_name}"></span></h4>
-    <h4>Email: <span th:text="${user.email}"></span></h4>
-    <h4>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></h4>
-    <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button btn btn-success">Edit Profile</button></a>
-    <br /><br />
+<div class="container">
 
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover table-striped">
             <thead>
-            <tr>
-                <th colspan="9"><h4>Your current listing(s).</h4></th>
+            <tr><th colspan="6">
+                <!--<div class="register-container container ">-->
+                <div class="main text-white">
+                    <div class="main-login main-center create-box grey-transparent">
+                        <div class="row ">
+                            <div class="col-sm-9 col-md-5 text-center">
+                                <h3>Welcome, <h2><span th:text="${user.first_name}">!</span></h2></h3>
+                            </div>
+                            <div class="col-md-5 d-none d-sm-block " style="float: left;">
+                                <span><h3>Current Profile:  </h3></span><br/>
+                                <span>Username: <span th:text="${user.username}"></span> </span><br/>
+                                <span>Name: <span th:text="${user.first_name}"> </span> <span th:text="${user.last_name}"></span></span><br/>
+                                <span>Email: <span th:text="${user.email}"></span></span><br/>
+                                <span>Phone Number: <span th:text="${user.phone_number}" class="phone"></span></span>
+                            </div>
+                            <div class="col ">
+                                <a th:href="@{/sellerprofile/{id}/edit(id=${user.id})}"><button class="button btn btn-success text-left">Edit Profile</button></a>
+                            </div>
+                        </div>
+                    </div></div>
+
+            </th>
             </tr>
+
             <tr>
-                <th scope="col">Price</th>
-                <th scope="col">Address</th>
-                <th scope="col">City</th>
-                <th scope="col">Description</th>
-                <th scope="col">State</th>
-                <th scope="col">Status</th>
-                <th scope="col">Edit listing</th>
-                <th scope="col">Delete listing</th>
+                <h5><th scope="col">Active Listings</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th></h5>
             </tr>
             </thead>
             <tbody>
+
             <tr th:if="${listings.empty}">
-                <td class="table-danger" colspan="9">You do not have any listings.</td>
+                <td class="table-danger" colspan="6">You do not have any listings.</td>
             </tr>
             <tr th:each="listing : ${listings}">
-                <td class="text-right">$<span th:text="${listing.price}" class="cost"></span>0</td>
-                <td th:text="${listing.address}"></td>
-                <td th:text="${listing.city}"></td>
-                <td th:text="${listing.description}"></td>
-                <td th:text="${listing.state}" class="text-center"></td>
-                <td th:text="${listing.status}"></td>
-                <td class="text-center">
-                    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button btn btn-outline-success">Edit</button></a>
+                <td>
+                    <p><b>Address:  </b> <br/>
+                        <span th:text="${listing.address}"></span>,
+                        <span th:text="${listing.city}"> </span>
+                        <span th:text="${listing.state}"></span>
+                        <span  th:text="${listing.zipcode}"></span>
+                    </p>
+
+                </td>
+                <td><p><b>Status:  </b>
+                    <span th:text="${listing.status}"></span>
+                    <br/>
+                    <b>Listed Price: </b>$<span th:text="${listing.price}" class="cost"></span>0
+                </p>
                 </td>
                 <td class="text-center">
-                    <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button btn btn-outline-danger">Delete</button></a>
+                    <a th:href="@{/{id}/edit(id=${listing.id})}"><button class="button btn btn-success">
+                        <i class="fa fa-edit"></i>
+                        Edit</button></a>
+                    <a th:href="@{/{id}/delete(id=${listing.id})}"><button class="button btn btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i>Delete</button></a>
                 </td>
             </tr>
+
+
             </tbody>
         </table>
     </div>
-
 </div>
 
 <script th:replace="fragments/scripts :: scripts"></script>
