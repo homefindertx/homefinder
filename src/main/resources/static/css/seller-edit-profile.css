@@ -21,9 +21,9 @@
     opacity: 0.9;
 }
 
-.navbar-background {
-    background-color: rgba(41, 41, 41, 0)
-}
+/*.navbar-background {*/
+    /*background-color: rgba(41, 41, 41, 0)*/
+/*}*/
 .nav-font {
     background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
@@ -193,13 +193,14 @@
     transform: translate(5px, -35px) scale(0.6);
 }
 
-
-
 .main .create-box{
-    width: 50%;
+    width: 90%;
     padding-top: 4%;
     margin-bottom: 4%;
 }
+
+
+
 @media only screen and (max-width: 768px) {
     .create-box {
         padding-top: 10%;
@@ -214,12 +215,19 @@
 }
 
 
+
 @media only screen and (min-width: 769px) {
     .create-body {
         background-image: url(/images/insideProfile.jpg);
         background-size: cover;
         background-position: 0 -170px;
         height: 100%;
+    }
+
+    .main .create-box{
+        width: 50%;
+        padding-top: 4%;
+        margin-bottom: 4%;
     }
 
     .create-box {

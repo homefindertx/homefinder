@@ -8,123 +8,146 @@
 <nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
 
 
-<div class="register-container container text-white">
+<div class="create-container container text-white">
     <div class="row main justify-content-center">
         <div class="main-login main-center create-box grey-transparent text-center">
-            <h3 class="text-white">Create New Listing</h3>
+            <h1 class="text-white">Create New Listing</h1>
             <br/>
             <form th:action="'/create'" th:method="post" th:object="${listing}" class="create-form" >
-                <div class="form-group">
 
-                <label for="address" class="cols-sm-2 control-label">Your Address</label>
+                <div class="form-group">
+                    <label for="address" class="cols-sm-2 control-label">Your Address</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="text" th:field="*{address}" class="form-control" name="address" id="address"  placeholder="e.g. 5 Smiles St"/>
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
                     <label for="city" class="cols-sm-2 control-label">City</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="text"  th:field="*{city}" class="form-control" name="city" id="city"  placeholder="e.g. San Antonio"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="state" class="cols-sm-2 control-label">State</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="text" th:field="*{state}" class="form-control" name="state" id="state"   maxlength="2" placeholder="e.g. TX"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="zipcode" class="cols-sm-2 control-label">ZipCode</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="text" th:field="*{zipcode}" name="zipcode" id="zipcode"  maxlength="5" min="1"  placeholder="e.g. 76702"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="description" class="cols-sm-2 control-label">Description</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="text" th:field="*{description}" maxlength="250" name="description" id="description"  placeholder="maximum 250 characters" />
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="bedrooms" class="cols-sm-2 control-label">Bedrooms</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{bedrooms}"  name="bedrooms" id="bedrooms" min="1" step="1"  placeholder="1"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="bathrooms" class="cols-sm-2 control-label">Bathrooms</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{bathrooms}" name="bathrooms" id="bathrooms" min="1" step="0.5"  placeholder="1"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="lot_size" class="cols-sm-2 control-label">Lot Size</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{lot_size}" name="description" id="lot_size"  min="0.01" step="0.01" />
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="square_footage" class="cols-sm-2 control-label">Square Footage</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{square_footage}"  name="square_footage" min="1.00" step="1.00"  id="square_footage" />
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="year_built" class="cols-sm-2 control-label">Year Built</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{year_built}"  name="year_built" id="year_built"  maxlength="4" min="1900" step="1"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="price" class="cols-sm-2 control-label">Price</label>
                     <div class="cols-sm-10">
                         <div class="input-group question">
                             <input type="number" th:field="*{price}"  name="price" id="price"  min="5000.00"  max="5000000.00" step="100.01" />
                         </div>
                     </div>
-                <div class="form-group input-group question text-center">
-                    <label for="price" class="cols-sm-2 control-label " style="text-align: center">Status   </label><br/>
+                </div>
+                <div class="form-group">
+                <div class="text-center question">
+                    <label for="price" class="cols-sm-2 control-label">Status</label>
+                    <br/>
                     <div class="input-group justify-content-center">
-
-                            <select name="status" class="form-control btn btn-success" >
-                                <option th:field="*{status}" value="For Sale">For Sale</option>
-                                <option th:field="*{status}" value="Under Contract">Under Contract</option>
-                                <option th:field="*{status}" value="Pending">Pending</option>
-                            </select>
+                        <select name="status" class="form-control btn btn-success" >
+                            <option th:field="*{status}" value="For Sale">For Sale</option>
+                            <option th:field="*{status}" value="Under Contract">Under Contract</option>
+                            <option th:field="*{status}" value="Pending">Pending</option>
+                        </select>
                     </div>
-
+                </div>
                 </div>
                 <br/>
-                <div >
+                <div>
                     <h4>Upload up to 5 photos</h4>
-
+                    <br />
                     <form class="form-group" action="/fileupload" method="post" enctype="multipart/form-data">
                         <label for="file">Photo 1</label>
-                        <input class="form-control btn btn-outline-success" th:field="*{uploadPath}" id="file" name="file" type="file" />
                         <br />
-
+                        <input class="form-control btn btn-outline-success file-width" th:field="*{uploadPath}" id="file" name="file" type="file" />
+                        <br /><br />
                         <form  action="/fileupload" method="post" enctype="multipart/form-data">
                             <label for="file">Photo 2</label>
-                            <input class="form-control btn btn-outline-success" th:field="*{uploadPath2}" id="file2" name="file" type="file" />
                             <br />
+                            <input class="form-control btn btn-outline-success file-width" th:field="*{uploadPath2}" id="file2" name="file" type="file" />
+                            <br /><br />
                             <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                 <label for="file">Photo 3</label>
-                                <input class="form-control btn btn-outline-success" th:field="*{uploadPath3}" id="file3" name="file" type="file" />
                                 <br />
+                                <input class="form-control btn btn-outline-success file-width" th:field="*{uploadPath3}" id="file3" name="file" type="file" />
+                                <br /><br />
                                 <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                     <label for="file">Photo 4</label>
-                                    <input class="form-control btn btn-outline-success" th:field="*{uploadPath4}" id="file4" name="file" type="file" />
                                     <br />
+                                    <input class="form-control btn btn-outline-success file-width" th:field="*{uploadPath4}" id="file4" name="file" type="file" />
+                                    <br /><br />
                                     <form  action="/fileupload" method="post" enctype="multipart/form-data">
                                         <label for="file">Photo 5</label>
-                                        <input class="form-control btn btn-outline-success" th:field="*{uploadPath5}" id="file5" name="file" type="file" />
                                         <br />
-
+                                        <input class="form-control btn btn-outline-success file-width" th:field="*{uploadPath5}" id="file5" name="file" type="file" />
+                                        <br /><br />
                                         <div class="form-group">
-                                            <button type="submit" id="button" class="btn btn-success btn-lg">Create Listing</button>
+                                            <button type="submit" id="button" class="btn btn-success btn-lg file-width">Create Listing</button>
                                         </div>
-
                                     </form>
                                 </form>
                             </form>

@@ -1,120 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('Create Listing')"></head>
-<body>
+<link rel="stylesheet" href="/../css/edit-listing.css" />
+
+<body class="edit-listing-body">
 
 <nav th:replace="fragments/sellernavbar :: sellernavbar"></nav>
 
-<div class="register-container container">
-    <div class="row main">
-        <div class="main-login main-center text-center">
-            <h5>Edit Listing</h5>
+<div class="edit-container container">
+    <div class="row main justify-content-center">
+        <div class="main-login main-center text-center listing-box grey-transparent">
+            <h1 class="text-white">Edit Your Listing</h1>
+            <br /><br />
 
-            <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}">
+            <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}" class="listing-form">
                 <div class="form-group">
-                    <label for="address" class="cols-sm-2 control-label">Your Email</label>
+                    <label for="address" class="cols-sm-2 control-label text-white">Your Email</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{address}" class="form-control" name="address" id="address"  placeholder="Enter Listing Address"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bathrooms" class="cols-sm-2 control-label">Bathrooms</label>
+                    <label for="bathrooms" class="cols-sm-2 control-label text-white">Bathrooms</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="number" th:field="*{bathrooms}" class="form-control" name="bathrooms" id="bathrooms"  placeholder="Enter number of Bathrooms"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bedrooms" class="cols-sm-2 control-label">Bedrooms</label>
+                    <label for="bedrooms" class="cols-sm-2 control-label text-white">Bedrooms</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="number" th:field="*{bedrooms}" class="form-control" name="bedrooms" id="bedrooms"  placeholder="Enter number of Bedrooms"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="city" class="cols-sm-2 control-label">City</label>
+                    <label for="city" class="cols-sm-2 control-label text-white">City</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text"  th:field="*{city}" class="form-control" name="city" id="city"  placeholder="Enter Listing City"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="description" class="cols-sm-2 control-label">Description</label>
+                    <label for="description" class="cols-sm-2 control-label text-white">Description</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{description}" class="form-control" name="description" id="description"  placeholder="Enter Listing Description"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="lot_size" class="cols-sm-2 control-label">Lot Size</label>
+                    <label for="lot_size" class="cols-sm-2 control-label text-white">Lot Size</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="number" th:field="*{lot_size}" class="form-control" name="description" id="lot_size"  placeholder="Enter Lot Size"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="price" class="cols-sm-2 control-label">Price</label>
+                    <label for="price" class="cols-sm-2 control-label text-white">Price</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{price}" class="form-control" name="price" id="price"  placeholder="Enter Listing Price"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="square_footage" class="cols-sm-2 control-label">Square Footage</label>
+                    <label for="square_footage" class="cols-sm-2 control-label text-white">Square Footage</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{square_footage}" class="form-control" name="square_footage" id="square_footage"  placeholder="Enter Listing Square Footage"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="state" class="cols-sm-2 control-label">State</label>
+                    <label for="state" class="cols-sm-2 control-label text-white">State</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{state}" class="form-control" name="state" id="state"  placeholder="Enter Listing State"/>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="year_built" class="cols-sm-2 control-label">Year Built</label>
+                    <label for="year_built" class="cols-sm-2 control-label text-white">Year Built</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{year_built}" class="form-control" name="year_built" id="year_built"  placeholder="Enter Year Listing was Built"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="zipcode" class="cols-sm-2 control-label">ZipCode</label>
+                    <label for="zipcode" class="cols-sm-2 control-label text-white">ZipCode</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <div class="input-group question">
                             <input type="text" th:field="*{zipcode}" class="form-control" name="zipcode" id="zipcode"  placeholder="Enter Listing ZipCode"/>
                         </div>
                     </div>
@@ -123,7 +115,8 @@
                 <div class="form-group">
                     <div class="cols-sm-10">
                         <div class="status">
-                            <select name="status">
+                            <label class="text-white">Status</label><br />
+                            <select name="status" class="form-control btn btn-success">
                                 <option th:field="*{status}" value="For Sale">For Sale</option>
                                 <option th:field="*{status}" value="Under Contract">Under Contract</option>
                                 <option th:field="*{status}" value="Pending">Pending</option>
@@ -131,38 +124,43 @@
                         </div>
                     </div>
                     <br/>
-
-                <h4>Upload up to 5 photos</h4>
-                <form action="/fileupload" method="post" enctype="multipart/form-data">
-                    <label for="file">Upload 1st Photo!</label>
-                    <input th:field="*{uploadPath}" id="file" name="file" type="file" />
+                <div>
+                <h4 class="text-white">Upload up to 5 photos</h4>
                     <br />
-
+                <form action="/fileupload" method="post" enctype="multipart/form-data">
+                    <label for="file" class="text-white">Photo 1</label>
+                    <br />
+                        <input th:field="*{uploadPath}" class="btn btn-outline-success text-center file-width" id="file" name="file" type="file" />
+                    <br /><br />
                     <form action="/fileupload" method="post" enctype="multipart/form-data">
-                        <label for="file">Upload 2nd Photo!</label>
-                        <input th:field="*{uploadPath2}" id="file2" name="file" type="file" />
+                        <label for="file" class="text-white">Photo 2</label>
                         <br />
+                        <input th:field="*{uploadPath2}" class="btn btn-outline-success text-center file-width" id="file2" name="file" type="file" />
+                        <br /><br />
                         <form action="/fileupload" method="post" enctype="multipart/form-data">
-                            <label for="file">Upload 3rd Photo!</label>
-                            <input th:field="*{uploadPath3}" id="file3" name="file" type="file" />
+                            <label for="file" class="text-white">Photo 3</label>
                             <br />
+                            <input th:field="*{uploadPath3}" class="btn btn-outline-success text-center file-width" id="file3" name="file" type="file" />
+                            <br /><br />
                             <form action="/fileupload" method="post" enctype="multipart/form-data">
-                                <label for="file">Upload 4th Photo!</label>
-                                <input th:field="*{uploadPath4}" id="file4" name="file" type="file" />
+                                <label for="file" class="text-white">Photo 4</label>
                                 <br />
+                                <input th:field="*{uploadPath4}" class="btn btn-outline-success text-center file-width" id="file4" name="file" type="file" />
+                                <br /><br />
                                 <form action="/fileupload" method="post" enctype="multipart/form-data">
-                                    <label for="file">Upload 5th Photo!</label>
-                                    <input th:field="*{uploadPath5}" id="file5" name="file" type="file" />
+                                    <label for="file" class="text-white">Photo 5</label>
                                     <br />
-
+                                    <input th:field="*{uploadPath5}" class="btn btn-outline-success text-center file-width" id="file5" name="file" type="file" />
+                                    <br /><br />
                                     <div class="form-group ">
-                                        <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button">Create Listing</button>
+                                        <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button file-width">Create Listing</button>
                                     </div>
                                 </form>
                             </form>
                         </form>
                     </form>
                 </form>
+                </div>
                 </div>
             </form>
         </div>
