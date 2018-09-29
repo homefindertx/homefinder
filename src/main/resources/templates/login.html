@@ -10,6 +10,8 @@
 <div class="register-container container create-box">
     <div class="row main justify-content-center">
         <div class="text-white grey-transparent mt-5">
+            <button type="submit" class="close" onclick="goBack()">&times;</button>
+
             <div th:if="${param.error}">
                 Invalid Username and Password.
             </div>
@@ -37,6 +39,11 @@
     </div>
 </div>
 
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 <script th:replace="fragments/scripts :: scripts"></script>
 
 </body>
