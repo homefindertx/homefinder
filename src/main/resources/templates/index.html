@@ -7,56 +7,67 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="/../css/style.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/../css/index.css" />
 </head>
-<body>
+<body class="parallaxIndex">
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div class="container">
+<div class="container ">
 
-    <div>Listings</div>
-    <div class="listDiv container row" th:each="listing : ${listings}">
+    <div style="height: 10%;"><h1></h1></div>
+    <div class="listDiv" th:each="listing : ${listings}">
         <div th:if="${listings.isEmpty()}">
             <td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>
         </div>
-        <th:block th:fragment="listing">
-            <div class="table-responsive">
+        <th:block th:fragment="listing" >
+            <div class="row shadow-lg">
+                <div class="col-6 col-md-4 ">
+                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="map-size" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
+                        <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
 
-                <table class="table">
-                    <tbody>
+                </div>
 
-                    <tr class="row">
-                        <td class="col-lg-4">
-                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
-                            <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>
-                        </td>
-                        <td class="text-center col-lg-4">
-                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
-                            <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
-                            <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
-                                <span class="states " th:text="${listing.state}"></span>
-                                <span class="zipcodes " th:text="${listing.zipcode}"></span></p>
-                            <p th:text="${listing.description}"></p>
-                            <p th:text="${listing.status}"></p>
-                            <br />
-                            <h4>Price:</h4>
-                            <div class="price">$<span th:text="${listing.price}" class="cost"></span>0</div>
-                        </td>
-                        <td class="col-lg-4">
-                            <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
-                                <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
-                            </span>
-                        </td>
-                    </tr>
+                <div class=" col-md-4 d-xs-none d-sm-block ">
+                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><p class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></p></a>
+                        <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                        <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
+                            <span class="states " th:text="${listing.state}"></span>
+                            <span class="zipcodes " th:text="${listing.zipcode}"></span></p>
+                        <h5><p th:text="${listing.description}"></p></h5>
+                        <p th:text="${listing.status}"></p>
+                        <br />
+                        <h4>Price:
+                        <div class="price" style="color: red; font-weight: bolder;">$<span th:text="${listing.price}" class="cost"></span>0</div></h4>
+                </div>
 
-                    </tbody>
-                </table>
+                <div class="col-6 col-md-4 ">
+                         <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
+                            <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
+                        </span>
+                </div>
+            </div>
+            <hr/>
+
+            <div class="row shadow-lg">
+                <div class=" col-12 d-none d-xs-block d-sm-none shadow-lg text-white">
+                <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>
+                <p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>
+                    <span class="states " th:text="${listing.state}"></span>
+                    <span class="zipcodes " th:text="${listing.zipcode}"></span></p>
+                <p th:text="${listing.description}"></p>
+                <p th:text="${listing.status}"></p>
+                <br />
+                <h4>Price:</h4>
+                <div class="price">$<span th:text="${listing.price}" class="cost"></span>0</div>
+            </div>
             </div>
         </th:block>
     </div>
+
 
     <div th:each="listing : ${searchedContent}">
         <div th:if="${searchedContent.isEmpty()}">
@@ -82,5 +93,109 @@
 
 </script>
 
+<!--SKEWED BACKGROUND-->
+<script>
+    $(window).scroll(function() {
+        if($(this).scrollTop()) {
+            $('nav').addClass('shadow');
+        } else {
+            $('nav').removeClass('shadow');
+        }
+    });
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">-->
+
+<!--<head>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />-->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+    <!--<link rel="stylesheet" href="/../css/style.css" />-->
+    <!--<link rel="stylesheet" href="/css/index.css" />-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<nav th:replace="fragments/navbar :: navbar"></nav>-->
+
+<!--<div class="container">-->
+
+    <!--<div>Listings</div>-->
+    <!--<div class="listDiv container row" th:each="listing : ${listings}">-->
+        <!--<div th:if="${listings.isEmpty()}">-->
+            <!--<td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>-->
+        <!--</div>-->
+        <!--<th:block th:fragment="listing">-->
+            <!--<div class="table-responsive">-->
+
+                <!--<table class="table">-->
+                    <!--<tbody>-->
+
+                    <!--<tr class="row">-->
+                        <!--<td class="col-lg-4">-->
+                            <!--<a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>-->
+                            <!--<a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" /></a>-->
+                        <!--</td>-->
+                        <!--<td class="text-center col-lg-4">-->
+                            <!--<a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>-->
+                            <!--<a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h2 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h2></a>-->
+                            <!--<p class="address"><span class="cities" th:text="${listing.city}"></span><span>, </span>-->
+                                <!--<span class="states " th:text="${listing.state}"></span>-->
+                                <!--<span class="zipcodes " th:text="${listing.zipcode}"></span></p>-->
+                            <!--<p th:text="${listing.description}"></p>-->
+                            <!--<p th:text="${listing.status}"></p>-->
+                            <!--<br />-->
+                            <!--<h4>Price:</h4>-->
+                            <!--<div class="price">$<span th:text="${listing.price}" class="cost"></span>0</div>-->
+                        <!--</td>-->
+                        <!--<td class="col-lg-4">-->
+                            <!--<span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">-->
+                                <!--<div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>-->
+                            <!--</span>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
+        <!--</th:block>-->
+    <!--</div>-->
+
+    <!--<div th:each="listing : ${searchedContent}">-->
+        <!--<div th:if="${searchedContent.isEmpty()}">-->
+            <!--<h1>There are no listings matching those search terms</h1>-->
+        <!--</div>-->
+        <!--<th:block th:replace="index :: listing"></th:block>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>-->
+<!--<script src="/js/google-maps.js"></script>-->
+<!--<script>-->
+
+    <!--$.fn.digits = function(){-->
+        <!--return this.each(function(){-->
+            <!--$(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );-->
+        <!--})-->
+    <!--};-->
+
+    <!--$('.cost').digits();-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

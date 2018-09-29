@@ -1,52 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
-<head th:replace="fragments/head :: head('View House')">
-
-    <style>
-        .slidecontainer {
-            width: 100%; /* Width of the outside container */
-        }
-
-        /* The slider itself */
-        .slider1 {
-            -webkit-appearance: none;  /* Override default CSS styles */
-            appearance: none;
-            width: 100%; /* Full-width */
-            height: 25px; /* Specified height */
-            background: #d3d3d3; /* Grey background */
-            outline: none; /* Remove outline */
-            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-            transition: opacity .2s;
-        }
-        /* The slider itself */
-
-        /* Mouse-over effects */
-        .slider1:hover {
-            opacity: 1; /* Fully shown on mouse-over */
-        }
-
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider1::-webkit-slider-thumb {
-            -webkit-appearance: none; /* Override default look */
-            appearance: none;
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-        .slider1::-moz-range-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-
-    </style>
-</head>
+<head th:replace="fragments/head :: head('View House')"></head>
+<link rel="stylesheet" href="/css/show.css" />
 
 <body>
 
@@ -54,123 +10,167 @@
 
 <div class="container" th:object="${listing}">
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        </ol>
+    <div class="banner d-lg-none">
+        <br />
+        <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
+        <h3>
+            <span th:text="${listing.city}" class="cities"></span><span>, </span>
+            <span th:text="${listing.state}" class="states"></span>
+            <span th:text="${listing.zipcode}" class="zipcodes"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.description}"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.status}"></span>
+        </h3>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" class="d-block w-75 " />
-            </div>
-
-            <div class="carousel-item">
-                <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" class="d-block w-75 " />
-            </div>
-
-            <div class="carousel-item">
-                <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" class="d-block w-75 " />
-            </div>
-            <div class="carousel-item">
-                <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" class="d-block w-75 " />
-            </div>
-
-            <div class="carousel-item">
-                <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" class="d-block w-75 " />
-            </div>
-        </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-</div>
 
+<section>
 
-<!--SELECTED LISTING INFORMATION-->
-<div class="container">
-    <div class="row card-deck">
-        <div class="col-sm-6">
-            <div class="card text-center" style="width: 25rem; height: 100%;" >
-                <div class="card-body">
-                    <h5 class="card-title listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h5>
-                    <h5 class="card-title">
-                        <span th:text="${listing.city}"></span><span>, </span>
-                        <span th:text="${listing.state}"></span>
-                        <span th:text="${listing.zipcode}"></span>
-                    </h5>
-                    <p class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
-                    <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
-                    </p>
-                    <p class="card-text">
-                        <small class="text-muted"><h3>Listed Price</h3>
-                            <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
-                        </small>
-                    </p>
-                    <!-- Trigger the modal with a button -->
-                    <p>
-                        <button sec:authorize="isAuthenticated()" type="button" class="btn btn-outline-success btn-lg" id="btnId">
-                            <a class="nav-link " href="/calltwilio"> <b>Contact Seller</b></a>
-                        </button>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--MORTGAGE CALCULATOR-->
-        <div class="col-sm-6">
-            <div class="card text-center" style="width: 25rem; height: 100%;"  >
-                <div class="card-body">
-                    <h5 class="card-title">Mortgage Calculator</h5>
-                    <form action="">
-                        <p>Drag the slider to display the desired value.</p>
-                        <label>APR Percent(%):
-
-                            <div class="slidecontainer">
-                                <input type="range" min="0.0" max="15" class="slider1" step="0.1" value="4.5" id="apr" />
-                                <p>APR (0% - 15%): <span id="demo"></span></p>
-                            </div>
-                        </label>
-                        <br />
-
-                        <label>Loan Term:
-
-                            <div class="slidecontainer">
-                                <input type="range" min="1" max="30" value="15" class="slider1" id="trm" />
-                                <p>Loan Term (1 year - 30 years): <span id="demo1"></span></p>
-                            </div>
-                        </label>
-                        <br />
-                        <!--<label>Loan Term(Year): <input type="text" id="trm" name="APR" /></label><br />-->
-                        <label>Loan Amount:
-
-                            <div class="slidecontainer">
-                                <input type="range" min="5000" max="5000000" class="slider1" step="1" value="1000000" id="amt" />
-                                <p>Loan Amount ($): ($5000 - $5 million): <span id="demo3"></span></p>
-                            </div>
-                        </label>
-                        <br />
-
-                        <!--<label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />-->
-                        <input class="btn btn-outline-success" type="button" id="sbt" value="Submit" />
-                        <input class="btn btn-outline-success" type="reset" id="rst" value="Reset Form" /><br /><br />
-                        <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
-                    </form>
+    <div class="container mt-5 d-none d-lg-block">
+        <div class="row shadow-lg ">
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>            </div>
+            <div class="col-md-6 card-group">
+                <div class="row">
+                    <div class="col card text-center p-0">
+                        <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%"  />
+                        <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%"  />
+                    </div>
+                    <div class="col card text-center p-0">
+                        <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%"  />
+                        <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%"  />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container mt-5 d-lg-none">
+        <div class="row shadow-lg ">
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card text-center  ">
+                    <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<br/>
+<br/>
+
+    <div class="banner d-none d-lg-block">
+        <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
+        <h3>
+            <span th:text="${listing.city}" class="cities"></span><span>, </span>
+            <span th:text="${listing.state}" class="states"></span>
+            <span th:text="${listing.zipcode}" class="zipcodes"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.description}"></span>
+        </h3>
+        <h3>
+            <span th:text="${listing.status}"></span>
+        </h3>
+
+    </div>
+
+
+<section>
+        <div class="col-container w-100">
+            <div class=" card-deck row">
+                <div class="card text-center col-12 col-lg-6 w-100 p-0" style="height: 100%;" >
+                    <div class="card-img-top row justify-content-center">
+                        <p class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}" style="width: 100%">
+                        <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
+                        </p>
+                    </div>
+                        <p class="card-body">
+                            <small class="text-muted"><h3>Listed Price</h3>
+                                <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
+                            </small>
+                        </p>
+<!-- Trigger the modal with a button -->
+                        <p>
+                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-outline-success btn-lg" id="btnId">
+                                <a class="nav-link " href="/calltwilio"> <b>Contact Seller</b></a>
+                            </button>
+                        </p>
+                </div>
+                <div class="card text-center mb-4 col-12 col-lg-6 w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Mortgage Calculator</h5>
+                        <form action="">
+                            <p>Drag the slider to display the desired value.</p>
+                            <label>APR Percent(%):
+
+                                <div class="slidecontainer">
+                                    <input type="range" min="0.0" max="15" class="slider1" step="0.1" value="4.5" id="apr" />
+                                    <p>APR (0% - 15%): <span id="demo"></span></p>
+                                </div>
+                            </label>
+                            <br />
+
+                            <label>Loan Term:
+
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="30" value="15" class="slider1" id="trm" />
+                                    <p>Loan Term (1 year - 30 years): <span id="demo1"></span></p>
+                                </div>
+                            </label>
+                            <br />
+                            <!--<label>Loan Term(Year): <input type="text" id="trm" name="APR" /></label><br />-->
+                            <label>Loan Amount:
+
+                                <div class="slidecontainer">
+                                    <input type="range" min="20000" max="2000000" class="slider1" step="100" value="500000" id="amt" />
+                                    <p>Loan Amount ($): ($20,000 - $2 million): <span id="demo3"></span></p>
+                                </div>
+                            </label>
+                            <br />
+
+                            <!--<label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />-->
+                            <input class="btn btn-outline-success" type="button" id="sbt" value="Submit" />
+                            <input class="btn btn-outline-success" type="reset" id="rst" value="Reset Form" /><br /><br />
+                            <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
+                        </form>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+</section>
+
+
 </div>
+
+
+
 <!--MODAL-->
 
 <div class="container">
@@ -228,9 +228,6 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
-<script src="/js/google-maps.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script th:replace="fragments/scripts :: scripts"></script>
 <script>
@@ -285,7 +282,7 @@
             openModel();
             // Get data from Server
             ajaxGet();
-        })
+        });
 
         // Open Bootstrap Modal
         function openModel(){
@@ -314,7 +311,7 @@
                 $(".modal-body #greetingId").text("Can Not Get Data from Server!");
             }
         }
-    })
+    });
 
     // RANGE SLIDER
     var slider1 = document.getElementById("apr");
@@ -324,7 +321,7 @@
     // Update the current slider value (each time you drag the slider handle)
     slider1.oninput = function() {
         output1.innerHTML = this.value;
-    }
+    };
     var slider2 = document.getElementById("trm");
     var output2 = document.getElementById("demo1");
     output2.innerHTML = slider2.value; // Display the default slider value
@@ -332,7 +329,7 @@
     // Update the current slider value (each time you drag the slider handle)
     slider2.oninput = function() {
         output2.innerHTML = this.value;
-    }
+    };
 
     var slider3 = document.getElementById("amt");
     var output3 = document.getElementById("demo3");
@@ -343,6 +340,9 @@
         output3.innerHTML = this.value;
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
+<script src="/js/google-maps.js"></script>
 
 </body>
 </html>

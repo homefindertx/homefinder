@@ -1,7 +1,7 @@
 .register-body {
     background-image: url(/images/stock-home-blue.jpeg);
     background-size: cover;
-    height: 800px;
+    height: 850px;
     background-position: -390px 0;
 }
 
@@ -169,7 +169,7 @@
     .register-body {
         background-image: url(/images/stock-home-blue.jpeg);
         background-size: cover;
-        background-position: 0 -200px;
+        background-position: 0 -170px;
         height: 100%;
     }
 

@@ -1,11 +1,11 @@
-.login-body {
-    background-image: url(/images/stock-home-blue.jpeg);
+.create-body {
+    background-image: url(/images/insideProfile.jpg);
     background-size: cover;
     height: 850px;
     background-position: -390px 0;
 }
 
-.login-box {
+.create-box {
     padding-top: 20%;
 }
 
@@ -24,54 +24,57 @@
 .navbar-background {
     background-color: rgba(41, 41, 41, 0)
 }
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
+}
+/*FOR THE UPDATE FORM*/
 
-/*FOR THE LOGIN FORM*/
-
-.transition, .login-form button, .login-form .question label, .login-form .question input[type="text"] {
+.transition, .create-form button, .create-form .question label, .create-form .question input[type="text"] {
     -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
 }
-.transition, .login-form button, .login-form .question label, .login-form .question input[type="password"] {
+.transition, .create-form button, .create-form .question label, .create-form .question input[type="number"] {
     -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
 }
-.login-form button {
-    margin-top: 35px;
-    background-color: white;
-    border: 1px solid #28a745;
-    line-height: 0;
-    font-size: 17px;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 20px 15px;
-    border-radius: 60px;
-    color: #28a745;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    position: relative;
-    z-index: 1;
-}
-.login-form button:hover, form button:focus {
+
+.create-form button {
+     margin-top: 35px;
+     background-color: white;
+     border: 1px solid #28a745;
+     line-height: 0;
+     font-size: 17px;
+     display: inline-block;
+     box-sizing: border-box;
+     padding: 20px 15px;
+     border-radius: 60px;
+     color: #28a745;
+     font-weight: 100;
+     letter-spacing: 0.01em;
+     position: relative;
+     z-index: 1;
+ }
+.create-form button:hover, form button:focus {
     color: white;
     background-color: #28a745;
 }
-.login-form .question {
+.create-form .question {
     position: relative;
     padding: 10px 0;
 }
-.login-form .question:first-of-type {
+.create-form .question:first-of-type {
     padding-top: 0;
 }
-.login-form .question:last-of-type {
+.create-form .question:last-of-type {
     padding-bottom: 0;
 }
-.login-form .question input[type="text"] {
+.create-form .question input[type="text"]{
     appearance: none;
-    background-color: none;
+    /*background-color: none;*/
     border: 1px solid #28a745;
     line-height: 0;
     font-size: 17px;
@@ -86,32 +89,10 @@
     position: relative;
     z-index: 1;
 }
-.login-form .question input[type="text"]:focus {
-    outline: none;
-    background: #28a745;
-    color: white;
-    margin-top: 30px;
-}
-.login-form .question input[type="text"]:valid {
-    margin-top: 30px;
-}
-.login-form .question input[type="text"]:focus ~ label {
-    -moz-transform: translate(0, -35px);
-    -ms-transform: translate(0, -35px);
-    -webkit-transform: translate(0, -35px);
-    transform: translate(0, -35px);
-}
-.login-form .question input[type="text"]:valid ~ label {
-    text-transform: uppercase;
-    font-style: italic;
-    -moz-transform: translate(5px, -35px) scale(0.6);
-    -ms-transform: translate(5px, -35px) scale(0.6);
-    -webkit-transform: translate(5px, -35px) scale(0.6);
-    transform: translate(5px, -35px) scale(0.6);
-}
-.login-form .question input[type="password"] {
+
+.create-form .question input[type="number"] {
     appearance: none;
-    background-color: none;
+    /*background-color: none;*/
     border: 1px solid #28a745;
     line-height: 0;
     font-size: 17px;
@@ -126,22 +107,84 @@
     position: relative;
     z-index: 1;
 }
-.login-form .question input[type="password"]:focus {
+
+.create-form .question input[type="text"]:focus {
     outline: none;
     background: #28a745;
     color: white;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
 }
-.login-form .question input[type="password"]:valid {
-    margin-top: 30px;
+.create-form .question input[type="number"]:focus {
+    outline: none;
+    background: #28a745;
+    color: white;
+    /*margin-top: 30px;*/
 }
-.login-form .question input[type="password"]:focus ~ label {
+
+.create-form .question input[type="text"]:valid {
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="text"]:focus ~ label {
     -moz-transform: translate(0, -35px);
     -ms-transform: translate(0, -35px);
     -webkit-transform: translate(0, -35px);
     transform: translate(0, -35px);
 }
-.login-form .question input[type="password"]:valid ~ label {
+.create-form .question input[type="number"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="text"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+.create-form .question input[type="number"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+.create-form .question input[type="password"] {
+    appearance: none;
+    /*background-color: none;*/
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+.create-form .question input[type="password"]:focus {
+    outline: none;
+    background: #28a745;
+    color: white;
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="password"]:valid {
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="password"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="password"]:valid ~ label {
     text-transform: uppercase;
     font-style: italic;
     -moz-transform: translate(5px, -35px) scale(0.6);
@@ -152,29 +195,36 @@
 
 
 
-@media only screen and (min-width: 426px) {
-    .login-box {
+.main .create-box{
+    width: 50%;
+    padding-top: 4%;
+    margin-bottom: 4%;
+}
+@media only screen and (max-width: 768px) {
+    .create-box {
         padding-top: 10%;
+        width: 70%;
     }
 
     .motto {
         width: 100%;
         padding: 10px 0;
     }
+
 }
 
 
-
 @media only screen and (min-width: 769px) {
-    .login-body {
-        background-image: url(/images/stock-home-blue.jpeg);
+    .create-body {
+        background-image: url(/images/insideProfile.jpg);
         background-size: cover;
         background-position: 0 -170px;
         height: 100%;
     }
 
-    .login-box {
-        padding-top: 5%;
+    .create-box {
+        padding-top: -2%;
+        padding-bottom: 2%;
     }
 
     .grey-transparent {

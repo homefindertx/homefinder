@@ -1,0 +1,16 @@
+.about-us-body {
+    height: 100%;
+    background-image: linear-gradient(#7cb342, #032B43);
+}
+
+.width {
+    width: 100%;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+    .about-us-body {
+        height: 850px;
+    }
+}

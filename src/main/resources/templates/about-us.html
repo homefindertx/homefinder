@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('Our Team')">
-    <!---->
-</head>
+<head th:replace="fragments/head :: head('Our Team')"></head>
+<link rel="stylesheet" href="/css/about-us.css" />
 
-
-<body style="background-image: linear-gradient(#7cb342, #032B43);">
+<body class="about-us-body">
 <div class="parallaxHome text-center">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
@@ -13,17 +11,15 @@
         <h1 class="text-white">Meet the Developers</h1>
     </div>
 
-
 <section>
     <div class="card-deck mt-3 mb-2 mr-2 ml-2">
 
         <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-img-top">
-                <img src="/../images/RuusaBolton.jpg" style="width:100%" alt="Ruusa Bolton"/>
+                <img src="/../images/RuusaBolton.jpg" class="width" alt="Ruusa Bolton"/>
             </div>
             <div class="card-body">
                 <h4 class="title card-title">Ruusa Bolton</h4>
-                <p class="card-text">"I am careful not to confuse excellence with perfection." <br/> Michael J. Fox</p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="https://www.linkedin.com/in/ruusapbolton/" class="btn w3-btn w3-black btn-outline-success mx-auto"><i class="fa fa-linkedin"></i></a>
@@ -33,11 +29,10 @@
         </div>
         <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-img-top">
-                <img src="/../images/DavidMyers.jpg" style="width:100%" alt="David Myers"/>
+                <img src="/../images/DavidMyers.jpg" class="width" alt="David Myers"/>
             </div>
             <div class="card-body">
                 <h4 class="card-title">David Myers</h4>
-                <p class="card-text">"We have done so much, with so little, that we can do anything with practically nothing at all." <br/> Unknown</p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="https://www.linkedin.com/in/david-a-myers/" class="btn btn-outline-success mx-auto"><i class="fa fa-linkedin"></i></a>
@@ -47,11 +42,10 @@
         </div>
         <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-img-top">
-                <img src="/../images/CharlesHadden.jpg" style="width:100%" alt="Charles Hadden"/>
+                <img src="/../images/CharlesHadden.jpg" class="width" alt="Charles Hadden"/>
             </div>
             <div class="card-body">
                 <h4 class="card-title">Charles Hadden</h4>
-                <p>"There is no heavier burden than an unfulfilled potential." <br/> Charles Schulz</p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="https://www.linkedin.com/in/charles-hadden/" class="btn btn-outline-success mx-auto"><i class="fa fa-linkedin"></i></a>
@@ -61,11 +55,10 @@
         </div>
         <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-img-top">
-                <img src="/../images/TylorPelletier.jpg" style="width:100%" alt="Tylor Pelletier"/>
+                <img src="/../images/TylorPelletier.jpg" class="width" alt="Tylor Pelletier"/>
             </div>
             <div class="card-body">
                 <h4 class="card-title">Tylor Pelletier</h4>
-                <p>"You can mass-produce hardware; you cannot mass-produce the human mind." <br/> Michio Kaku</p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="https://www.linkedin.com/in/tylor-pelletier/" class="btn btn-outline-success mx-auto"><i class="fa fa-linkedin"></i></a>
@@ -77,8 +70,6 @@
 </section>
 
 </div>
-
-
 
 </body>
 </html>

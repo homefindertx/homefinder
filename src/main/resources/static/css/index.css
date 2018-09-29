@@ -2,3 +2,38 @@
     background-color: #EBE9E9;
 }
 
+/*body {*/
+    /*background-image: url(/images/stock-house-blue-angle.jpeg);*/
+    /*background-size: cover;*/
+    /*height: 850px;*/
+    /*background-position: 30% 10%;*/
+/*}*/
+
+.parallaxIndex {
+background-image: url("../TwilioStatic/air-bubbles-clipart-1.jpg");
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 65vh;
+}
+
+
+/*CHANGES NAV-FONT TO BOLD*/
+nav  {
+    margin-right: auto;
+    font-size: 1.6em;
+    font-weight: 500
+}
+
+/*CREATES A SHADOW UNDER NAVBAR WHEN SCROLLING*/
+
+.shadow {
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .6);
+}body {
+    /*background: #ffdbc6;*/
+}
+
+.listDiv{
+    margin-top: 5%;
+}
