@@ -10,11 +10,11 @@
 - [x] Bring functionality to the register, login, home, index pages
 - [x] Add User pages for profile, profile edit, and show
 - [x] Add Seller pages for profile, profile edit, your homes, edit your homes, and create a new home to sell
-- [ ] Populate Real Estate API
 - [x] Populate Maps API
-- [ ] Populate Messaging API
-- [ ] Create Mortgage Calculator
+- [x] Populate Messaging API
+- [x] Create Mortgage Calculator
 - [x] Add a search feature
-- [ ] Add image upload
-- [ ] Fix up fragments
+- [x] Add image upload
+- [x] Fix up fragments
+- [ ] Mobile responsive
 - [ ] Style
