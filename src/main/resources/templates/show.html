@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head th:replace="fragments/head :: head('View House')"></head>
 <link rel="stylesheet" href="/css/show.css" />
@@ -27,61 +27,61 @@
 
     </div>
 
-<section>
+    <section>
 
-    <div class="container mt-5 d-none d-lg-block">
-        <div class="row shadow-lg ">
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
-                </div>            </div>
-            <div class="col-md-6 card-group">
-                <div class="row">
-                    <div class="col card text-center p-0">
-                        <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%"  />
-                        <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%"  />
-                    </div>
-                    <div class="col card text-center p-0">
-                        <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%"  />
-                        <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%"  />
+        <div class="container mt-5 d-none d-lg-block">
+            <div class="row shadow-lg ">
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>            </div>
+                <div class="col-md-6 card-group">
+                    <div class="row">
+                        <div class="col card text-center p-0">
+                            <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%"  />
+                            <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%"  />
+                        </div>
+                        <div class="col card text-center p-0">
+                            <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%"  />
+                            <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%"  />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container mt-5 d-lg-none">
-        <div class="row shadow-lg ">
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+        <div class="container mt-5 d-lg-none">
+            <div class="row shadow-lg ">
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath2}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath3}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath4}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 p-0">
-                <div class="card text-center  ">
-                    <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                <div class="col-md-6 p-0">
+                    <div class="card text-center  ">
+                        <img th:src="@{'/images/' + ${listing.uploadPath5}}" th:alt-title="#{logo}" style="width:100%" class="img-fluid d-block border-0" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</section>
-<br/>
+    </section>
+    <br/>
 
     <div class="banner d-none d-lg-block">
         <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
@@ -100,31 +100,33 @@
     </div>
 
 
-<section>
+    <section>
         <div class="col-container w-100">
             <div class=" card-deck row">
-                <div class="card text-center col-12 col-lg-6 w-100 p-0" style="height: 100%;" >
+                <div class="card  border-success  text-center mb-4 col-12 col-lg-6 w-100 p-0" >
                     <div class="card-img-top row justify-content-center">
-                        <p class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}" style="width: 100%">
+                        <p class="listing-wrapper " th:attr="data-listing-map-id=${listing.id}" style="width: 100%">
                         <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
                         </p>
                     </div>
-                        <p class="card-body">
-                            <small class="text-muted"><h3>Listed Price</h3>
-                                <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
-                            </small>
-                        </p>
-<!-- Trigger the modal with a button -->
-                        <p>
-                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-outline-success btn-lg" id="btnId">
-                                <a class="nav-link " href="/calltwilio"> <b>Contact Seller</b></a>
-                            </button>
-                        </p>
-                </div>
-                <div class="card text-center mb-4 col-12 col-lg-6 w-100">
                     <div class="card-body">
-                        <h5 class="card-title">Mortgage Calculator</h5>
-                        <form action="">
+                        <small class="text-muted"><h3>Listed Price</h3>
+                            <h2>$<span th:text="${listing.price}" class="cost"></span>0</h2>
+                        </small>
+                    </div>
+                    <!-- Trigger the modal with a button -->
+                    <div class="card-footer ">
+                        <button sec:authorize="isAuthenticated()" type="button" class="button btn-outline-success" id="btnId">
+                            <a class="nav-link " href="/calltwilio"> <b>Contact Seller</b></a>
+                        </button>
+                        <a href="/login"><p sec:authorize="!isAuthenticated()">Please log in for access to more features.</p></a>
+                    </div>
+                </div>
+
+                <div class="card  border-success  text-center mb-4 col-12 col-lg-6 w-100 p-0">
+                    <form action="">
+                        <div class="card-body">
+                            <h5 class="card-title">Mortgage Calculator</h5>
                             <p>Drag the slider to display the desired value.</p>
                             <label>APR Percent(%):
 
@@ -156,14 +158,17 @@
                             <!--<label>Loan Amount ($): <input type="text" id="amt" name="amt" /></label><br />-->
                             <input class="btn btn-outline-success" type="button" id="sbt" value="Submit" />
                             <input class="btn btn-outline-success" type="reset" id="rst" value="Reset Form" /><br /><br />
+
+                        </div>
+                        <div class="card-footer">
                             <label>Monthly Payment: <input type="text" id="pmt" name="mPmt" /></label>
-                        </form>
-                    </div>
-            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
-</section>
+    </section>
 
 
 </div>
@@ -196,8 +201,8 @@
                     <div>
                         <form  th:action="@{/twilio}"  method="post">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Enter a telephone number?</label>
-                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="5551115555" />
+                                <label for="exampleFormControlInput1">Enter a telephone number</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="2101231234" />
 
                             </div>
                             <div class="form-group">
@@ -227,7 +232,6 @@
     </div>
 </div>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script th:replace="fragments/scripts :: scripts"></script>
 <script>
     var term;
@@ -342,6 +346,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
 <script src="/js/google-maps.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>
