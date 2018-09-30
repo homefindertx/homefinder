@@ -1,12 +1,14 @@
+
+
 .create-body {
     background-image: url(/images/sellerImg4.jpeg);
     background-size: cover;
-    height: 850px;
-    background-position: -390px 0;
+    height: 100%;
+    /*background-position: -390px 0;*/
 }
 
 .create-box {
-    padding-top: 20%;
+    /*padding-top: 20%;*/
 }
 
 .grey-transparent {
@@ -14,6 +16,7 @@
     background-color: rgba(40, 40, 40, .9);
     border-radius: 20%;
     margin: 5%;
+    height: 80%;
 }
 
 .motto {
@@ -193,18 +196,20 @@
     transform: translate(5px, -35px) scale(0.6);
 }
 
-.main .create-box{
-    width: 90%;
-    padding-top: 4%;
-    margin-bottom: 4%;
-}
+/*.main .create-box{*/
+    /*width: 90%;*/
+    /*padding-top: 4%;*/
+    /*margin-bottom: 4%;*/
+/*}*/
 
 
 
 @media only screen and (max-width: 768px) {
     .create-box {
         padding-top: 10%;
-        width: 70%;
+        width: 90%;
+        margin-bottom: 8px;
+        border-radius: 20% 20% 20% 20%;
     }
 
     .motto {
@@ -212,22 +217,26 @@
         padding: 10px 0;
     }
 
+    /*html {*/
+        /*height: 100%;*/
+    /*}*/
 }
+
 
 
 
 @media only screen and (min-width: 769px) {
     .create-body {
-        background-image: url(/images/insideProfile.jpg);
+        background-image: url(/images/sellerImg4.jpeg);
         background-size: cover;
-        background-position: 0 -170px;
+        /*background-position: 0 -170px;*/
         height: 100%;
     }
 
     .main .create-box{
-        width: 50%;
+        width: 90%;
         padding-top: 4%;
-        margin-bottom: 4%;
+        margin-bottom: 10px;
     }
 
     .create-box {
@@ -238,4 +247,5 @@
     .grey-transparent {
         margin: 0;
     }
+
 }

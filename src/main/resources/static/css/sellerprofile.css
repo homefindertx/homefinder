@@ -1,120 +1,309 @@
-.seller_body {
-    background-image: url(/images/sellerImg4.jpeg);
-    background-size: cover;
-    height: 100%;
-    position: fixed;
+/*.seller_body {*/
+    /*background-image: url(/images/sellerImg4.jpeg);*/
+    /*background-size: cover;*/
+    /*height: 100%;*/
+    /*position: fixed;*/
 
-    /*background-position: -390px 0;*/
-}
+    /*!*background-position: -390px 0;*!*/
+/*}*/
 
-div.profileContent {
-    margin: 0;
-}
+/*div.profileContent {*/
+    /*margin: 0;*/
+/*}*/
 
-.profileContainer {
-    display: inline-block;
-}
+/*.profileContainer {*/
+    /*display: inline-block;*/
+/*}*/
+
+/*.navbar-background {*/
+    /*background-color: #EBE9E9;*/
+/*}*/
+
+/*.profileContent {*/
+    /*!*display: block;*!*/
+    /*!*text-align: center;*!*/
+    /*width: 480px;*/
+    /*height: 405px;*/
+    /*padding: 5%;*/
+    /*background-color: rgba(40, 40, 40, .8);*/
+    /*color: rgb(142, 177, 128);*/
+    /*border-radius: 0% 20% 20% 0%;*/
+
+    /*top: 85px;*/
+    /*left: 42%;*/
+    /*position: fixed;*/
+    /*align-content: center;*/
+    /*margin: 0;*/
+
+/*}*/
+
+/*.buttonContainer {*/
+    /*padding: 20px;*/
+/*}*/
+
+/*input {*/
+    /*background-color: transparent;*/
+    /*border: transparent;*/
+/*}*/
+
+/*.idName {*/
+    /*position: relative;*/
+    /*left: -17px;*/
+    /*width: 140px;*/
+    /*top: 45px;*/
+/*}*/
+
+/*.id {*/
+    /*background-image: url(/images/anonymousphoto.png);*/
+    /*background-size: cover;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+/*}*/
+
+/*div.profileId {*/
+
+    /*text-align: center;*/
+    /*width: 250px;*/
+    /*height: 405px;*/
+    /*padding: 5%;*/
+    /*background-color: rgba(40, 40, 40, .8);*/
+    /*color: rgb(142, 177, 128);*/
+    /*border-radius: 20% 0% 0% 20%;*/
+
+    /*top: 85px;*/
+    /*left: 24%;*/
+    /*position: fixed;*/
+    /*align-content: center;*/
+    /*margin: 0;*/
+/*}*/
+
+
+/*table {*/
+    /*height: 70px;*/
+    /*width: 80%;*/
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*color: rgb(142, 177, 128);*/
+    /*bottom: 0;*/
+    /*margin-left: 160px;*/
+
+/*}*/
+
+/*div.table-responsive {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+/*}*/
+
+/*td.table-danger {*/
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*color: rgb(142, 177, 128);*/
+    /*bottom: 0;*/
+/*}*/
+
+/*.b_p_Content {*/
+    /*padding-bottom: 20px;*/
+    /*line-height: 3.5;*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*h1 {*/
+    /*padding-bottom: 17px;*/
+    /*margin-top: -45px;*/
+/*}*/
+
+/*h4 {*/
+    /*!*display: block;*!*/
+/*}*/
+
+/*h5 {*/
+    /*margin-top: -18px;*/
+    /*line-height: 3.2;*/
+/*}*/
 
 .navbar-background {
     background-color: #EBE9E9;
 }
-
-.profileContent {
-    /*display: block;*/
-    /*text-align: center;*/
-    width: 480px;
-    height: 405px;
-    padding: 5%;
-    background-color: rgba(40, 40, 40, .8);
-    color: rgb(142, 177, 128);
-    border-radius: 0% 20% 20% 0%;
-
-    top: 85px;
-    left: 42%;
-    position: fixed;
-    align-content: center;
-    margin: 0;
-
+.navbar-background {
+    background-color: rgba(41, 41, 41, 0)
 }
 
-.buttonContainer {
-    padding: 20px;
-}
+.nav-font{background-color: rgba(3, 43, 67, 1);}
 
-input {
-    background-color: transparent;
-    border: transparent;
-}
+/*body {*/
+/*background-image: url(/images/stock-house-blue-angle.jpeg);*/
+/*background-size: cover;*/
+/*height: 850px;*/
+/*background-position: 30% 10%;*/
+/*}*/
 
-.idName {
-    position: relative;
-    left: -17px;
-    width: 140px;
-    top: 45px;
-}
-
-.id {
-    background-image: url(/images/anonymousphoto.png);
+.parallaxIndex {
+    background-image: url("../TwilioStatic/air-bubbles-clipart-1.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    width: 100px;
-    height: 100px;
+    min-height: 65vh;
 }
 
-div.profileId {
 
-    text-align: center;
-    width: 250px;
-    height: 405px;
+/*!*CHANGES NAV-FONT TO BOLD*!*/
+/*nav  {*/
+/*margin-right: auto;*/
+/*font-size: 1.6em;*/
+/*font-weight: 500*/
+/*}*/
+
+/*CREATES A SHADOW UNDER NAVBAR WHEN SCROLLING*/
+
+.shadow {
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .6);
+}body {
+     /*background: #ffdbc6;*/
+ }
+
+
+.create-body {
+    background-image: url(/images/sellerImg4.jpeg);
+    background-size: cover;
+    height: 850px;
+    /*background-position: -390px 0;*/
+}
+
+.create-box {
+    /*padding-top: 5%;dm*/
+}
+
+.grey-transparent {
     padding: 5%;
-    background-color: rgba(40, 40, 40, .8);
-    color: rgb(142, 177, 128);
-    border-radius: 20% 0% 0% 20%;
+    border-radius: 1%;
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*margin: 5%;dm*/
+}
 
-    top: 85px;
-    left: 24%;
-    position: fixed;
-    align-content: center;
-    margin: 0;
+/*FOR THE create FORM*/
+
+.transition,  button, label {
+    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+}
+
+button {
+    margin-top: 35px;
+    background-color: white;
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+button:hover, form button:focus {
+    color: white;
+    background-color: #28a745;
 }
 
 
-table {
-    height: 70px;
-    width: 80%;
+.create-form .question input[type="text"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="number"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="text"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+.create-form .question input[type="number"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+
+.create-form .question input[type="password"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="password"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+
+.editButton {
+    left: 30%;
+
+}
+
+.table-danger {
     background-color: rgba(40, 40, 40, .9);
-    color: rgb(142, 177, 128);
-    bottom: 0;
-    margin-left: 160px;
-
+    color: white;
 }
 
-div.table-responsive {
-    position: absolute;
-    bottom: 0;
-}
-
-td.table-danger {
+th {
     background-color: rgba(40, 40, 40, .9);
-    color: rgb(142, 177, 128);
-    bottom: 0;
+    color: white;
 }
 
-.b_p_Content {
-    padding-bottom: 20px;
-    line-height: 3.5;
-    margin-left: 10px;
+.main .create-box{
+    width: 100%;
+}
+@media only screen and (min-width: 426px) {
+    .create-box {
+        padding-top: 5%;
+    }
+
+    .editButton {
+        left: 39%;
+        padding-right: 10px;
+    }
+
 }
 
-h1 {
-    padding-bottom: 17px;
-    margin-top: -45px;
-}
 
-h4 {
-    /*display: block;*/
-}
 
-h5 {
-    margin-top: -18px;
-    line-height: 3.2;
+@media only screen and (min-width: 769px) {
+    .create-body {
+        background-image: url(/images/sellerImg4.jpeg);
+        background-size: cover;
+        /*background-position: 0 -170px;*/
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    .create-box {
+        padding-top: -2%;
+        padding-bottom: 2%;
+    }
+
+    .grey-transparent {
+        margin: 0;
+    }
 }
