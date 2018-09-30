@@ -1,0 +1,168 @@
+.profile_body {
+    background-image: url(/images/insideProfile.jpg);
+    background-size: cover;
+    height: 800px;
+    background-position: -390px 0;
+}
+
+.profileContainer {
+    /*padding: 20% 0 0 0;*/
+}
+
+.navbar-background {
+    background-color: #EBE9E9;
+}
+
+.profileContent {
+    /*display: block;*/
+    /*text-align: center;*/
+    width: 480px;
+    height: 405px;
+    padding: 5%;
+    background-color: rgba(40, 40, 40, .9);
+    color: rgb(90, 150, 180);
+    border-radius: 0% 20% 20% 0%;
+
+    top: 70px;
+    left: 42%;
+    position: fixed;
+    align-content: center;
+    margin: 9% 0 0 0;
+
+}
+
+input {
+    background-color: transparent;
+    border: transparent;
+}
+
+.idName {
+    position: relative;
+    left: -17px;
+    width: 130px;
+    top: 45px;
+}
+
+.id {
+    background-image: url(/images/anonymousphoto.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+
+}
+
+.profileId {
+
+    /*display: block;*/
+    text-align: center;
+    width: 250px;
+    height: 405px;
+    padding: 5%;
+    background-color: rgba(40, 40, 40, .9);
+    color: rgb(90, 150, 180);
+    border-radius: 20% 0% 0% 20%;
+
+    top: 70px;
+    left: 24%;
+    position: fixed;
+    align-content: center;
+    margin: 9% 0 0 0;
+}
+
+.b_p_Content {
+    padding-bottom: 20px;
+    line-height: 0.5;
+}
+
+h1 {
+    padding-bottom: 30px;
+    margin-top: -22px;
+}
+
+h4 {
+    display: inline-block;
+}
+
+h5 {
+    margin-top: -18px;
+    line-height: 3.2;
+}
+
+@media only screen and (min-width:320px) and (max-width:426px) {
+
+    .profile_body {
+        width: 100%;
+        background-image: url(/images/insideProfile.jpg);
+        background-size: cover;
+        white-space: nowrap;
+        height: 700px;
+    }
+
+    .profileId {
+        width: 90%;
+        white-space: nowrap;
+        border-radius: 20% 20% 0% 0%;
+        left: 5px;
+        top: 44px;
+        height: 200px;
+        position: relative;
+        text-align: center;
+        margin: 0;
+    }
+
+    .profileContent {
+        width: 90%;
+        white-space: nowrap;
+        border-radius: 0% 0% 20% 20%;
+        left: 5px;
+        position: relative;
+        margin: 0;
+        top: 50px;
+        height: 270px;
+        text-align: center;
+    }
+
+    .profileContainer {
+        width: 100%;
+        top: 0px;
+    }
+
+    h3 {
+        padding-bottom: 0;
+    }
+
+    .id {
+        background-image: url(/images/anonymousphoto.png);
+        background-size: cover;
+        width: 39%;
+        height: 39%;
+    }
+
+    .idName {
+        width: 90%;
+        position: center;
+        height: 55%;
+
+    }
+
+    h4 {
+
+    }
+    .cardtitle{
+        white-space: nowrap;
+        /*font-size: 1.5rem;*/
+
+    }
+
+    .b_p_Content {
+        padding-bottom: 0;
+        padding-top: 20px;
+    }
+
+    a.btn.btn-outline-success:hover {
+        background-color: green;
+        color: white;
+    }
+
+
+}
