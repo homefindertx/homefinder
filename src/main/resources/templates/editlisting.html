@@ -10,6 +10,8 @@
     <div class=" main justify-content-center">
         <div class="main-login main-center text-white listing-box grey-transparent">
             <h1 class="text-white text-center">Edit Your Listing</h1>
+            <button type="submit" class="close" onclick="goBack()">&times;</button>
+
             <br /><br />
 
             <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}" class="listing-form">
@@ -161,6 +163,11 @@
         </div>
     </div>
 </div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
