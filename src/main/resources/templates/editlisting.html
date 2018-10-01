@@ -43,22 +43,24 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Square Footage:  </label>
                         <span><input type="text" th:field="*{square_footage}" class="form-control" name="square_footage" id="square_footage"  placeholder="Enter Listing Square Footage"/></span>
 
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Lot Size </label>
                         <span><input type="number" th:field="*{lot_size}" class="form-control" name="lot_size" id="lot_size"  placeholder="Enter Lot Size"/></span>
 
                     </div>
-                    <div class="col">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <label>Year Built</label>
                         <span><input type="text" th:field="*{year_built}" class="form-control" name="year_built" id="year_built"  placeholder="Enter Year Listing was Built"/></span>
 
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Price:  </label>
                         <input type="text" th:field="*{price}" class="form-control" name="price" id="price"  placeholder="Enter Listing Price"/>
 
@@ -171,4 +173,3 @@
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
-
