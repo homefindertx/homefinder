@@ -1,8 +1,13 @@
 .edit-listing-body {
+
     background-image: url(/../images/brown-house.jpeg);
     background-size: cover;
-    height: 850px;
-    background-position: -390px 0;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*min-height: 65vh;*/
+    /*background-position: -390px 0;*/
 }
 
 .main .listing-box {
@@ -229,7 +234,7 @@
     .edit-listing-body {
         background-image: url(/../images/brown-house.jpeg);
         background-size: cover;
-        background-position: 0 -170px;
+        /*background-position: 0 -170px;*/
         height: 100%;
     }
 
