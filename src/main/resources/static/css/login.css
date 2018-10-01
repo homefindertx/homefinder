@@ -9,6 +9,10 @@
     padding-top: 20%;
 }
 
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
+}
+
 .grey-transparent {
     padding: 5%;
     background-color: rgba(40, 40, 40, .9);

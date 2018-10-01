@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
+}
+
 
 
 @media only screen and (min-width: 769px) {

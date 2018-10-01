@@ -14,12 +14,17 @@
 /*}*/
 
 .parallaxIndex {
-    background-image: url("/../images/leaf.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 65vh;
+    background-image: linear-gradient(#032B43, #7cb342);
+    /*background-image: url("/../images/brown-house.jpeg");*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*min-height: 65vh;*/
+}
+
+.price {
+    font-size: 30px;
 }
 
 
