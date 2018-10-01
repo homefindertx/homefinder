@@ -1,3 +1,124 @@
+/*.seller_body {*/
+    /*background-image: url(/images/sellerImg4.jpeg);*/
+    /*background-size: cover;*/
+    /*height: 100%;*/
+    /*position: fixed;*/
+
+    /*!*background-position: -390px 0;*!*/
+/*}*/
+
+/*div.profileContent {*/
+    /*margin: 0;*/
+/*}*/
+
+/*.profileContainer {*/
+    /*display: inline-block;*/
+/*}*/
+
+/*.navbar-background {*/
+    /*background-color: #EBE9E9;*/
+/*}*/
+
+/*.profileContent {*/
+    /*!*display: block;*!*/
+    /*!*text-align: center;*!*/
+    /*width: 480px;*/
+    /*height: 405px;*/
+    /*padding: 5%;*/
+    /*background-color: rgba(40, 40, 40, .8);*/
+    /*color: rgb(142, 177, 128);*/
+    /*border-radius: 0% 20% 20% 0%;*/
+
+    /*top: 85px;*/
+    /*left: 42%;*/
+    /*position: fixed;*/
+    /*align-content: center;*/
+    /*margin: 0;*/
+
+/*}*/
+
+/*.buttonContainer {*/
+    /*padding: 20px;*/
+/*}*/
+
+/*input {*/
+    /*background-color: transparent;*/
+    /*border: transparent;*/
+/*}*/
+
+/*.idName {*/
+    /*position: relative;*/
+    /*left: -17px;*/
+    /*width: 140px;*/
+    /*top: 45px;*/
+/*}*/
+
+/*.id {*/
+    /*background-image: url(/images/anonymousphoto.png);*/
+    /*background-size: cover;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+/*}*/
+
+/*div.profileId {*/
+
+    /*text-align: center;*/
+    /*width: 250px;*/
+    /*height: 405px;*/
+    /*padding: 5%;*/
+    /*background-color: rgba(40, 40, 40, .8);*/
+    /*color: rgb(142, 177, 128);*/
+    /*border-radius: 20% 0% 0% 20%;*/
+
+    /*top: 85px;*/
+    /*left: 24%;*/
+    /*position: fixed;*/
+    /*align-content: center;*/
+    /*margin: 0;*/
+/*}*/
+
+
+/*table {*/
+    /*height: 70px;*/
+    /*width: 80%;*/
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*color: rgb(142, 177, 128);*/
+    /*bottom: 0;*/
+    /*margin-left: 160px;*/
+
+/*}*/
+
+/*div.table-responsive {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+/*}*/
+
+/*td.table-danger {*/
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*color: rgb(142, 177, 128);*/
+    /*bottom: 0;*/
+/*}*/
+
+/*.b_p_Content {*/
+    /*padding-bottom: 20px;*/
+    /*line-height: 3.5;*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*h1 {*/
+    /*padding-bottom: 17px;*/
+    /*margin-top: -45px;*/
+/*}*/
+
+/*h4 {*/
+    /*!*display: block;*!*/
+/*}*/
+
+/*h5 {*/
+    /*margin-top: -18px;*/
+    /*line-height: 3.2;*/
+/*}*/
+
 .navbar-background {
     background-color: #EBE9E9;
 }
@@ -41,21 +162,21 @@
 
 
 .create-body {
-    background-image: url(/../TwilioStatic/bluebg.jpeg);
+    background-image: url(/images/sellerImg4.jpeg);
     background-size: cover;
     height: 850px;
-    background-position: -390px 0;
+    /*background-position: -390px 0;*/
 }
 
 .create-box {
-    padding-top: 5%;
+    /*padding-top: 5%;dm*/
 }
 
 .grey-transparent {
     padding: 5%;
-    background-color: rgba(40, 40, 40, .9);
     border-radius: 1%;
-    margin: 5%;
+    /*background-color: rgba(40, 40, 40, .9);*/
+    /*margin: 5%;dm*/
 }
 
 /*FOR THE create FORM*/
@@ -133,7 +254,20 @@ button:hover, form button:focus {
     transform: translate(5px, -35px) scale(0.6);
 }
 
+.editButton {
+    left: 30%;
 
+}
+
+.table-danger {
+    background-color: rgba(40, 40, 40, .9);
+    color: white;
+}
+
+th {
+    background-color: rgba(40, 40, 40, .9);
+    color: white;
+}
 
 .main .create-box{
     width: 100%;
@@ -143,15 +277,24 @@ button:hover, form button:focus {
         padding-top: 5%;
     }
 
+    .editButton {
+        left: 39%;
+        padding-right: 10px;
+    }
+
 }
 
 
 
 @media only screen and (min-width: 769px) {
     .create-body {
-        background-image: url(/../TwilioStatic/bluebg.jpeg);
+        background-image: url(/images/sellerImg4.jpeg);
         background-size: cover;
-        background-position: 0 -170px;
+        /*background-position: 0 -170px;*/
+        height: 100%;
+    }
+
+    html {
         height: 100%;
     }
 
