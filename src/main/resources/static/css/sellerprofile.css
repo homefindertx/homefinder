@@ -1,158 +1,6 @@
-/*.seller_body {*/
-    /*background-image: url(/images/sellerImg4.jpeg);*/
-    /*background-size: cover;*/
-    /*height: 100%;*/
-    /*position: fixed;*/
-
-    /*!*background-position: -390px 0;*!*/
-/*}*/
-
-/*div.profileContent {*/
-    /*margin: 0;*/
-/*}*/
-
-/*.profileContainer {*/
-    /*display: inline-block;*/
-/*}*/
-
-/*.navbar-background {*/
-    /*background-color: #EBE9E9;*/
-/*}*/
-
-/*.profileContent {*/
-    /*!*display: block;*!*/
-    /*!*text-align: center;*!*/
-    /*width: 480px;*/
-    /*height: 405px;*/
-    /*padding: 5%;*/
-    /*background-color: rgba(40, 40, 40, .8);*/
-    /*color: rgb(142, 177, 128);*/
-    /*border-radius: 0% 20% 20% 0%;*/
-
-    /*top: 85px;*/
-    /*left: 42%;*/
-    /*position: fixed;*/
-    /*align-content: center;*/
-    /*margin: 0;*/
-
-/*}*/
-
-/*.buttonContainer {*/
-    /*padding: 20px;*/
-/*}*/
-
-/*input {*/
-    /*background-color: transparent;*/
-    /*border: transparent;*/
-/*}*/
-
-/*.idName {*/
-    /*position: relative;*/
-    /*left: -17px;*/
-    /*width: 140px;*/
-    /*top: 45px;*/
-/*}*/
-
-/*.id {*/
-    /*background-image: url(/images/anonymousphoto.png);*/
-    /*background-size: cover;*/
-    /*width: 100px;*/
-    /*height: 100px;*/
-/*}*/
-
-/*div.profileId {*/
-
-    /*text-align: center;*/
-    /*width: 250px;*/
-    /*height: 405px;*/
-    /*padding: 5%;*/
-    /*background-color: rgba(40, 40, 40, .8);*/
-    /*color: rgb(142, 177, 128);*/
-    /*border-radius: 20% 0% 0% 20%;*/
-
-    /*top: 85px;*/
-    /*left: 24%;*/
-    /*position: fixed;*/
-    /*align-content: center;*/
-    /*margin: 0;*/
-/*}*/
-
-
-/*table {*/
-    /*height: 70px;*/
-    /*width: 80%;*/
-    /*background-color: rgba(40, 40, 40, .9);*/
-    /*color: rgb(142, 177, 128);*/
-    /*bottom: 0;*/
-    /*margin-left: 160px;*/
-
-/*}*/
-
-/*div.table-responsive {*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-/*}*/
-
-/*td.table-danger {*/
-    /*background-color: rgba(40, 40, 40, .9);*/
-    /*color: rgb(142, 177, 128);*/
-    /*bottom: 0;*/
-/*}*/
-
-/*.b_p_Content {*/
-    /*padding-bottom: 20px;*/
-    /*line-height: 3.5;*/
-    /*margin-left: 10px;*/
-/*}*/
-
-/*h1 {*/
-    /*padding-bottom: 17px;*/
-    /*margin-top: -45px;*/
-/*}*/
-
-/*h4 {*/
-    /*!*display: block;*!*/
-/*}*/
-
-/*h5 {*/
-    /*margin-top: -18px;*/
-    /*line-height: 3.2;*/
-/*}*/
-
-.navbar-background {
-    background-color: #EBE9E9;
+.nav-font{
+    background-color: rgba(3, 43, 67, 1);
 }
-.navbar-background {
-    background-color: rgba(41, 41, 41, 0)
-}
-
-.nav-font{background-color: rgba(3, 43, 67, 1);}
-
-/*body {*/
-/*background-image: url(/images/stock-house-blue-angle.jpeg);*/
-/*background-size: cover;*/
-/*height: 850px;*/
-/*background-position: 30% 10%;*/
-/*}*/
-
-.parallaxIndex {
-    background-image: url("../TwilioStatic/air-bubbles-clipart-1.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 65vh;
-}
-
-
-/*!*CHANGES NAV-FONT TO BOLD*!*/
-/*nav  {*/
-/*margin-right: auto;*/
-/*font-size: 1.6em;*/
-/*font-weight: 500*/
-/*}*/
-
-/*CREATES A SHADOW UNDER NAVBAR WHEN SCROLLING*/
 
 .shadow {
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .6);
@@ -160,11 +8,14 @@
      /*background: #ffdbc6;*/
  }
 
-
 .create-body {
-    background-image: url(/images/sellerImg4.jpeg);
+    background-image: url(/../images/brown-house.jpeg);
     background-size: cover;
     height: 850px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 65vh;
     /*background-position: -390px 0;*/
 }
 
@@ -269,6 +120,11 @@ th {
     color: white;
 }
 
+td {
+    background-color: rgba(40, 40, 40, .9);
+    color: white;
+}
+
 .main .create-box{
     width: 100%;
 }
@@ -288,7 +144,7 @@ th {
 
 @media only screen and (min-width: 769px) {
     .create-body {
-        background-image: url(/images/sellerImg4.jpeg);
+        /*background-image: url(/images/sellerImg4.jpeg);*/
         background-size: cover;
         /*background-position: 0 -170px;*/
         height: 100%;
