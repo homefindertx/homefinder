@@ -1,5 +1,5 @@
 .edit-listing-body {
-    background-image: url(/../images/stock-home-blue.jpeg);
+    background-image: url(/../images/brown-house.jpeg);
     background-size: cover;
     height: 850px;
     background-position: -390px 0;
@@ -227,7 +227,7 @@
 
 @media only screen and (min-width: 769px) {
     .edit-listing-body {
-        background-image: url(/../images/stock-home-blue.jpeg);
+        background-image: url(/../images/brown-house.jpeg);
         background-size: cover;
         background-position: 0 -170px;
         height: 100%;
