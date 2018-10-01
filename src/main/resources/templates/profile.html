@@ -1,46 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/ http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head('Your Profile')">
-</head>
-<link rel="stylesheet" href="/css/profile.css" />
-<body class="profile_body">
+<head th:replace="fragments/head :: head('Your Profile')"></head>
+<link rel="stylesheet" href="/../css/profile.css" />
+
+<body class="profile-body">
+
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div class="profileContainer">
-    <div class="profileId">
-        <div class="id">
+<div class="container d-none d-lg-block">
+    <div class="row justify-content-center">
+        <div class="grey-transparent box">
+            <div class="row justify-content-center">
+                <div class="profile-img"></div>
+            </div>
+            <br />
+            <div class="id"></div>
+          <div class="idName">
+              <h2>Hello, <span th:text="${user.first_name}"></span>!</h2>
+              <br />
+              <h4 class="welcome">Welcome to your profile page.</h4>
+          </div>
         </div>
-      <div class="idName">
-        <h4>Hello, <span th:text="${user.first_name}"></span>!</h4><br />
-          <h5 class="welcome">Welcome to your profile page.</h5>
-      </div>
-    </div>
-    <div class="profileContent">
-        <h1>  Buyer Profile: </h1>
-
-        <div class="b_p_Content">
-
-            <div>
-                <h5 class="card-title">Your Username: <span th:text="${user.username}"></span></h5>
-                <p class="card-text">First Name: <span th:text="${user.first_name}"></span></p>
-                <p class="card-text">Last Name: <span th:text="${user.last_name}"></span></p>
-                <p class="card-text">Email: <span th:text="${user.email}"></span></p>
-                <p class="card-text phone">Phone: <span th:text="${user.phone_number}"></span></p>
-                <a th:href="@{/profile/{id}/edit(id=${user.id})}" class="btn btn-outline-success">Edit</a>
-                <a th:href="@{/index}" class="btn btn-outline-success">Listings</a>
+        <div class="grey-transparent box">
+            <h2>  Buyer Profile: </h2>
+            <br />
+            <div class="b_p_Content">
+                <div>
+                    <h5 class="card-title">Your Username: <span th:text="${user.username}"></span></h5>
+                    <h5 class="card-text">First Name: <span th:text="${user.first_name}"></span></h5>
+                    <h5 class="card-text">Last Name: <span th:text="${user.last_name}"></span></h5>
+                    <h5 class="card-text">Email: <span th:text="${user.email}"></span></h5>
+                    <h5 class="card-text phone">Phone: <span th:text="${user.phone_number}"></span></h5>
+                    <br />
+                    <a th:href="@{/profile/{id}/edit(id=${user.id})}" class="btn btn-outline-success">Edit</a>
+                    <a th:href="@{/index}" class="btn btn-outline-success">Listings</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!--href="/index"-->
 
+<div class="container d-lg-none">
+    <div class="row justify-content-center">
+        <div class="grey-transparent box">
+            <div class="row justify-content-center">
+                <div class="profile-img"></div>
+            </div>
+            <br />
+            <div class="id"></div>
+            <div class="idName">
+                <h2>Hello, <span th:text="${user.first_name}"></span>!</h2>
+                <br />
+                <h4 class="welcome">Welcome to your profile page.</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="grey-transparent box">
+            <h2>  Buyer Profile: </h2>
+            <br />
+            <div class="b_p_Content">
+                <div>
+                    <h5 class="card-title">Your Username: <span th:text="${user.username}"></span></h5>
+                    <h5 class="card-text">First Name: <span th:text="${user.first_name}"></span></h5>
+                    <h5 class="card-text">Last Name: <span th:text="${user.last_name}"></span></h5>
+                    <h5 class="card-text">Email: <span th:text="${user.email}"></span></h5>
+                    <h5 class="card-text phone">Phone: <span th:text="${user.phone_number}"></span></h5>
+                    <br />
+                    <a th:href="@{/profile/{id}/edit(id=${user.id})}" class="btn btn-outline-success">Edit</a>
+                    <a th:href="@{/index}" class="btn btn-outline-success">Listings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-<!--<p th:text="${user.id}"></p>-->
-<!--<p th:text="${user.username}"></p>-->
-
-<!--<a th:href="@{/profile/{id}/edit(id=${user.id})}"><button class="button">Edit</button></a>-->
 <script th:replace="fragments/scripts :: scripts"></script>
 <script>
     $('.phone').text(function(i, text) {
