@@ -12,7 +12,7 @@
             <h1 class="text-white text-center">Create Your Listing</h1>
             <button type="submit" class="close" onclick="goBack()">&times;</button>
 
-            <br /><br />
+            <br />
 
             <form th:action="'/'+ ${listing.id} + '/edit'" th:method="post" th:object="${listing}" class="create-form">
                 <div class="row">
@@ -43,22 +43,24 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Square Footage:  </label>
                         <span><input type="text" th:field="*{square_footage}" class="form-control" name="square_footage" id="square_footage"  placeholder="Enter Listing Square Footage"/></span>
 
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Lot Size </label>
                         <span><input type="number" th:field="*{lot_size}" class="form-control" name="lot_size" id="lot_size"  placeholder="Enter Lot Size"/></span>
 
                     </div>
-                    <div class="col">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <label>Year Built</label>
                         <span><input type="text" th:field="*{year_built}" class="form-control" name="year_built" id="year_built"  placeholder="Enter Year Listing was Built"/></span>
 
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                         <label>Price:  </label>
                         <input type="text" th:field="*{price}" class="form-control" name="price" id="price"  placeholder="Enter Listing Price"/>
 
@@ -77,7 +79,7 @@
                     <div class="col">
                         <label>Bedrooms</label>
                         <select   name="bedrooms" id="bedrooms" class="form-control btn btn-success">
-                            <option >Bedrooms</option>
+                            <!--<option >BR</option>-->
                             <option  th:field="*{bedrooms}" value="1">1</option>
                             <option th:field="*{bedrooms}" value="2">2</option>
                             <option  th:field="*{bedrooms}" value="3">3</option>
@@ -96,7 +98,7 @@
 
                         <label>Bathrooms</label>
                         <select  name="bathrooms" id="bathrooms" class="form-control btn btn-success">
-                            <option  href="#">bathrooms</option>
+                            <!--<option  href="#">BA</option>-->
                             <option  th:field="*{bathrooms}" value="1">1</option>
                             <option  th:field="*{bathrooms}" value="2">2</option>
                             <option th:field="*{bathrooms}" value="3">3</option>
