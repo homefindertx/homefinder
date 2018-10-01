@@ -24,7 +24,9 @@
 }
 
 .profile-img {
-    background-color: whitesmoke;
+    /*background-color: whitesmoke;*/
+    background-image: url("/../images/user-photo.png");
+    background-size: cover;
     border-radius: 20%;
     height: 170px;
     width: 170px;
