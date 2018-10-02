@@ -96,14 +96,10 @@ USE  homefinder_db;
 
 INSERT INTO listing(user_id, address, description, bedrooms, bathrooms, square_footage, price, year_built, lot_size, city, zipcode, status, state, upload_path, upload_path2, upload_path3, upload_path4, upload_path5) VALUES
   (1, '1002 Cerro Alto Dr', 'Beautiful 3 bedroom', 3, 2, 1055,  181939,  1964, 8276, 'San Antonio', 78213, 'For Sale', 'TX', 'home1.jpeg', 'houseint1.jpeg', 'housekit1.jpeg', 'housebath1.jpeg', 'houseyard1.jpeg'),
-  (1, '226 Carolwood Dr', 'Home with Pool', 5, 4, 3210, 489000, 2003, 12000, 'San Antonio', 78213, 'For Sale', 'TX', 'home2.jpeg', 'houseint2.jpeg', 'housekit2.jpeg', 'housebath2.jpeg', 'houseyard2.jpeg'),
   (1, '515 Grabo Dr', 'Beautiful House', 3, 2, 1179, 169000, 1966, 7562, 'San Antonio', 78216, 'For Sale', 'TX', 'home3.jpeg', 'houseint3.jpeg', 'housekit3.jpeg', 'housebath3.jpeg', 'houseyard3.jpeg'),
   (1, '6205 Rue Sophie St', '6 Bedrooms, Wow!', 6, 4, 2913, 244900, 1971, 12000, 'San Antonio', 78238, 'For Sale', 'TX', 'home4.jpeg', 'houseint4.jpeg', 'housekit4.jpeg', 'housebath4.jpeg', 'houseyard4.jpeg'),
   (1, '5610 Prentiss Dr', 'Very Nice Neighborhood', 3, 2, 1568, 185500, 1965, 10018, 'San Antonio', 78240, 'For Sale', 'TX', 'home5.jpeg', 'houseint5.jpeg', 'housekit5.jpeg', 'housebath5.jpeg', 'houseyard5.jpeg'),
   (1, '6911 Sunlight Dr', 'Very great Neighborhood', 3, 2, 1563, 179000, 1973, 8712, 'San Antonio', 78238, 'For Sale', 'TX', 'home6.jpeg', 'houseint6.jpeg', 'housekit6.jpeg', 'housebath6.jpeg', 'houseyard6.jpeg'),
-  (1, '5723 Errol Flynn Dr', 'Beautiful 3/2', 3, 2, 1443, 150000, 1969, 13000, 'San Antonio', 78240, 'For Sale', 'TX', 'home7.jpeg', 'houseint7.jpeg', 'housekit7.jpeg', 'housebath7.jpeg', 'houseyard7.jpeg'),
-  (1, '6315 Stirrup Ln', 'Very nice Neighborhood', 3, 2, 1539, 189000, 1974, 12000, 'San Antonio', 78240, 'For Sale', 'TX', 'home8.jpeg', 'houseint8.jpeg', 'housekit8.jpeg', 'housebath8.jpeg', 'houseyard8.jpeg'),
-  (1, '7006 N Forest Crest', 'Beautiful 3/2', 3, 2, 1625, 165000, 1970, 8923, 'San Antonio', 78240, 'For Sale', 'TX', 'home9.jpeg', 'houseint9.jpeg', 'housekit9.jpeg', 'housebath9.jpeg', 'houseyard9.jpeg'),
   (1, '6313 Sawyer Rd', 'Beautiful 3/3', 3, 3, 1930, 375000, 1946, 30000, 'San Antonio', 78238, 'For Sale', 'TX', 'home0.jpeg', 'houseint0.jpeg', 'housekit0.jpeg', 'housebath0.jpeg', 'houseyard0.jpeg'),
   (2, '9411 Bowen Dr', 'Awesome place to raise a Family', 3, 2, 1640, 165000, 1979, 6969, 'San Antonio', 78250, 'For Sale', 'TX', 'home11.jpeg', 'houseint11.jpeg', 'housekit11.jpeg', 'housebath11.jpeg', 'houseyard11.jpeg'),
   (2, '19739 La sierra Blvd', 'Tylors House', 4, 4, 3975, 749000, 1990, 50000, 'San Antonio', 78256, 'For Sale', 'TX', 'home12.jpeg', 'houseint12.jpeg', 'housekit12.jpeg', 'housebath12.jpeg', 'houseyard12.jpeg'),
@@ -111,9 +107,13 @@ INSERT INTO listing(user_id, address, description, bedrooms, bathrooms, square_f
   (2, '111 Campanile', 'Affordable Cute 5/6', 5, 6, 5228, 998000, 2002, 60000, 'San Antonio', 78258, 'For Sale', 'TX', 'home14.jpeg', 'houseint14.jpeg', 'housekit14.jpeg', 'housebath14.jpeg', 'houseyard14.jpeg'),
   (2, '22115 Scenic Loop Rd', 'Modern Beauty', 5, 7, 5159, 1656000, 2018, 200000, 'San Antonio', 78255, 'For Sale', 'TX', 'home15.jpeg', 'houseint15.jpeg', 'housekit15.jpeg', 'housebath15.jpeg', 'houseyard15.jpeg'),
   (2, '22603 Tess Vly', 'Beautiful Home in the Hill Country', 4, 4, 3780, 1075000, 2018, 30000, 'San Antonio', 78255, 'For Sale', 'TX', 'home16.jpeg', 'houseint16.jpeg', 'housekit16.jpeg', 'housebath16.jpeg', 'houseyard16.jpeg'),
+  (1, '6315 Stirrup Ln', 'Very nice Neighborhood', 3, 2, 1539, 189000, 1974, 12000, 'San Antonio', 78240, 'For Sale', 'TX', 'home8.jpeg', 'houseint8.jpeg', 'housekit8.jpeg', 'housebath8.jpeg', 'houseyard8.jpeg'),
   (2, '9469 Canyon Mist', 'Your own slice of the good life', 8, 11, 10280, 2995000, 2013, 1000000, 'San Antonio', 78255, 'For Sale', 'TX', 'home17.jpeg', 'houseint17.jpeg', 'housekit17.jpeg', 'housebath17.jpeg', 'houseyard17.jpeg'),
+  (1, '7006 N Forest Crest', 'Beautiful 3/2', 3, 2, 1625, 165000, 1970, 8923, 'San Antonio', 78240, 'For Sale', 'TX', 'home9.jpeg', 'houseint9.jpeg', 'housekit9.jpeg', 'housebath9.jpeg', 'houseyard9.jpeg'),
+  (1, '226 Carolwood Dr', 'Home with Pool', 5, 4, 3210, 489000, 2003, 12000, 'San Antonio', 78213, 'For Sale', 'TX', 'home2.jpeg', 'houseint2.jpeg', 'housekit2.jpeg', 'housebath2.jpeg', 'houseyard2.jpeg'),
   (2, '8603 Kingsbury Vw', 'Beautiful City House', 12, 12, 5060, 549999, 2007, 20000, 'San Antonio', 78240, 'For Sale', 'TX', 'home18.jpeg', 'houseint18.jpeg', 'housekit18.jpeg', 'housebath18.jpeg', 'houseyard18.jpeg'),
   (2, '1115 S Alamo St Unit 2105', 'Downtown living, Downtown PriceTag', 2, 3, 1888, 570000, 2009, 0, 'San Antonio', 78210, 'For Sale', 'TX', 'home19.jpeg', 'houseint19.jpeg', 'housekit19.jpeg', 'housebath19.jpeg', 'houseyard19.jpeg'),
+  (1, '5723 Errol Flynn Dr', 'Beautiful 3/2', 3, 2, 1443, 150000, 1969, 13000, 'San Antonio', 78240, 'For Sale', 'TX', 'home7.jpeg', 'houseint7.jpeg', 'housekit7.jpeg', 'housebath7.jpeg', 'houseyard7.jpeg'),
   (2, '13410 Roundup Pass', 'Beautiful Country Home', 3, 3, 3546, 650000, 2001, 20000, 'San Antonio', 78245, 'For Sale', 'TX', 'home20.jpeg', 'houseint20.jpeg', 'housekit20.jpeg', 'housebath20.jpeg', 'houseyard20.jpeg');
 
 -- -- -- -- VERIFIES SEEDING WAS DONE RIGHT
