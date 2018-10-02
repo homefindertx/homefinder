@@ -47,3 +47,36 @@
 .listDiv{
     margin-top: 5%;
 }
+
+
+/*NON MOBILE VIEW*/
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    /*HIDE VIEW ON MOBILE*/
+    #laptopview {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+}
+
+/*NON MOBILE VIEW*/
+@media only screen
+and (min-device-width : 481px)
+and (max-device-width : 2560px) {
+/*HIDE VIEW ON LAPTOP*/
+    #mobileview {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+}
