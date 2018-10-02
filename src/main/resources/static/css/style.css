@@ -3,14 +3,6 @@ html, body {
     width: 100%;
 }
 
-.address {
-    font-size: 20px;
-}
-
-.price {
-    font-size: 18px;
-}
-
 .map-size {
     height: 250px;
     width: 350px;

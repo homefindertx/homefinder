@@ -120,7 +120,3 @@ INSERT INTO listing(user_id, address, description, bedrooms, bathrooms, square_f
 
 -- select * from user;
 -- select * from listing;
-
-
-
-

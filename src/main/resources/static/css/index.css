@@ -12,10 +12,6 @@
     /*min-height: 65vh;*/
 }
 
-.price {
-    font-size: 30px;
-}
-
 .shadow {
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, .6);
 }
@@ -24,18 +20,35 @@
     margin-top: 5%;
 }
 
-.margin {
-    margin: 0;
-}
-
 .map-size {
-    height: 600px;
+    height: 220px;
     width: 100%;
 }
 
 .house-img {
-    height: 600px;
+    height: 220px;
     width: 100%;
+}
+
+.anchor:link {
+    color: whitesmoke;
+}
+.anchor:hover {
+    color: white;
+}
+.anchor:visited {
+    color: whitesmoke;
+}
+.anchor:active {
+    color: white;
+}
+
+.custom-toggler.navbar-toggler {
+     border-color: rgba(124, 252, 0, 1);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 
@@ -79,5 +92,18 @@ and (max-device-width : 2560px) {
     .house-img {
         height: 250px;
         width: 350px;
+    }
+
+    .anchor:link {
+        color: #28a745;
+    }
+    .anchor:hover {
+        color: green;
+    }
+    .anchor:visited {
+        color: #28a745;
+    }
+    .anchor:active {
+        color: darkgreen;
     }
 }
