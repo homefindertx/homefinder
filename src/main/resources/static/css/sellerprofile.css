@@ -37,7 +37,7 @@
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
 }
 
-button {
+.create-form button {
     margin-top: 35px;
     background-color: white;
     border: 1px solid #28a745;
@@ -53,7 +53,7 @@ button {
     position: relative;
     z-index: 1;
 }
-button:hover, form button:focus {
+.create-form button:hover, form button:focus {
     color: white;
     background-color: #28a745;
 }
@@ -148,6 +148,39 @@ td {
 }
 
 
+@media only screen and (min-width: 426px) {
+    .register-box {
+        padding-top: 10%;
+    }
+
+    .motto {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+/*@media only screen and (min-width: 769px) {*/
+    /*.create-body {*/
+        /*!*background-image: url(/images/sellerImg4.jpeg);*!*/
+        /*background-size: cover;*/
+        /*!*background-position: 0 -170px;*!*/
+        /*height: 100%;*/
+    /*}*/
+
+    /*html {*/
+        /*height: 100%;*/
+    /*}*/
+
+    /*.create-box {*/
+        /*padding-top: -2%;*/
+        /*padding-bottom: 2%;*/
+    /*}*/
+
+    /*.grey-transparent {*/
+        /*margin: 0;*/
+    /*}*/
+/*}*/
+
 @media only screen and (min-width: 769px) {
     .create-body {
         /*background-image: url(/images/sellerImg4.jpeg);*/
@@ -156,8 +189,10 @@ td {
         height: 100%;
     }
 
-    html {
-        height: 100%;
+    .main .create-box{
+        width: 60%;
+        padding-top: 4%;
+        margin-bottom: 10px;
     }
 
     .create-box {
@@ -168,4 +203,5 @@ td {
     .grey-transparent {
         margin: 0;
     }
+
 }
