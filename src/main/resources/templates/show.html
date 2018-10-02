@@ -10,7 +10,7 @@
 
 <div class="container" th:object="${listing}">
 
-    <div class="banner d-lg-none">
+    <div class="banner d-lg-none text-white">
         <br />
         <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
         <h3>
@@ -21,9 +21,9 @@
         <h3>
             <span th:text="${listing.description}"></span>
         </h3>
-        <h3>
-            <span th:text="${listing.status}"></span>
-        </h3>
+        <!--<h3>-->
+            <!--<span th:text="${listing.status}"></span>-->
+        <!--</h3>-->
 
     </div>
 
@@ -83,7 +83,7 @@
     </section>
     <br/>
 
-    <div class="banner d-none d-lg-block">
+    <div class="banner d-none d-lg-block text-white">
         <h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3>
         <h3>
             <span th:text="${listing.city}" class="cities"></span><span>, </span>
@@ -93,9 +93,9 @@
         <h3>
             <span th:text="${listing.description}"></span>
         </h3>
-        <h3>
-            <span th:text="${listing.status}"></span>
-        </h3>
+        <!--<h3>-->
+            <!--<span th:text="${listing.status}"></span>-->
+        <!--</h3>-->
         <br />
     </div>
 
@@ -116,8 +116,8 @@
                     </div>
                     <!-- Trigger the modal with a button -->
                     <div class="card-footer ">
-                        <button sec:authorize="isAuthenticated()" type="button" class="button btn-outline-success" id="btnId">
-                            <a class="nav-link " href="/calltwilio"> <b>Contact Seller</b></a>
+                        <button sec:authorize="isAuthenticated()" type="button" class="btn btn-outline-success" id="btnId">
+                            <a class="nav-link green" href="/calltwilio"> <b>Contact Seller</b></a>
                         </button>
                         <a href="/login"><p sec:authorize="!isAuthenticated()">Please log in for access to more features.</p></a>
                     </div>
@@ -186,7 +186,7 @@
             <!-- Bootstrap Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Enquiry about </h4>
+                    <h4 class="modal-title">Inquiry about </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">

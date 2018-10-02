@@ -1,44 +1,83 @@
-/*.navbar-background {*/
-    /*background-color: #EBE9E9;*/
-/*}*/
-
 .nav-font {
-    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
+    background-color: rgba(3, 43, 67, 1);
 }
-
-/*body {*/
-    /*background-image: url(/images/stock-house-blue-angle.jpeg);*/
-    /*background-size: cover;*/
-    /*height: 850px;*/
-    /*background-position: 30% 10%;*/
-/*}*/
 
 .parallaxIndex {
-    background-image: url("/../images/leaf.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 65vh;
+    background-image: linear-gradient(#032B43, #7cb342);
+    /*background-image: url("/../images/brown-house.jpeg");*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*min-height: 65vh;*/
 }
 
-
-/*CHANGES NAV-FONT TO BOLD*/
-/*nav  {*/
-    /*margin-right: auto;*/
-    /*font-size: 1.6em;*/
-    /*font-weight: 500*/
-/*}*/
-
-/*CREATES A SHADOW UNDER NAVBAR WHEN SCROLLING*/
+.price {
+    font-size: 30px;
+}
 
 .shadow {
-    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .6);
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .6);
 }
-/*body {*/
-    /*!*background: #ffdbc6;*!*/
-/*}*/
 
 .listDiv{
     margin-top: 5%;
+}
+
+.margin {
+    margin: 0;
+}
+
+.map-size {
+    height: 600px;
+    width: 100%;
+}
+
+.house-img {
+    height: 600px;
+    width: 100%;
+}
+
+
+/*NON MOBILE VIEW*/
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    /*HIDE VIEW ON MOBILE*/
+    #laptopview {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+}
+
+
+/*NON MOBILE VIEW*/
+@media only screen
+and (min-device-width : 481px)
+and (max-device-width : 2560px) {
+/*HIDE VIEW ON LAPTOP*/
+    #mobileview {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+
+    .map-size {
+        height: 250px;
+        width: 350px;
+    }
+
+    .house-img {
+        height: 250px;
+        width: 350px;
+    }
 }

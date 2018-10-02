@@ -5,8 +5,12 @@
     background-position: -390px 0;
 }
 
-.register-box {
-    padding-top: 20%;
+.register-container {
+    margin-top: 1%;
+}
+
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
 }
 
 .grey-transparent {

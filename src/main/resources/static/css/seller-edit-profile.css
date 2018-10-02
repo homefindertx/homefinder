@@ -1,7 +1,7 @@
 
 
 .create-body {
-    background-image: url(/images/sellerImg4.jpeg);
+    background-image: url(/../images/brown-house.jpeg);
     background-size: cover;
     height: 100%;
     /*background-position: -390px 0;*/
@@ -227,14 +227,14 @@
 
 @media only screen and (min-width: 769px) {
     .create-body {
-        background-image: url(/images/sellerImg4.jpeg);
+        /*background-image: url(/images/sellerImg4.jpeg);*/
         background-size: cover;
         /*background-position: 0 -170px;*/
         height: 100%;
     }
 
     .main .create-box{
-        width: 90%;
+        width: 60%;
         padding-top: 4%;
         margin-bottom: 10px;
     }

@@ -1,199 +1,253 @@
-.profile_body {
-    background-image: url(/images/insideProfile.jpg);
+.profile-body {
+    background-image: url(/../images/brown-house.jpeg);
     background-size: cover;
-    height: 800px;
-    background-position: -390px 0;
+    height: 100%;
+    /*background-position: -390px 0;*/
 }
 
-.profileContainer {
-    /*padding: 20% 0 0 0;*/
-}
+/*.create-box {*/
+    /*margin-top: 2%;*/
+/*}*/
 
-.navbar-background {
-    background-color: #EBE9E9;
-}
-
-.profileContent {
-    /*display: block;*/
-    /*text-align: center;*/
-    width: 480px;
-    height: 405px;
+.grey-transparent {
     padding: 5%;
     background-color: rgba(40, 40, 40, .9);
-    color: rgb(90, 150, 180);
-    border-radius: 0% 20% 20% 0%;
-
-    top: 70px;
-    left: 42%;
-    position: fixed;
-    align-content: center;
-    margin: 9% 0 0 0;
-
+    border-radius: 20%;
+    margin: 5%;
+    height: 80%;
 }
 
-input {
-    background-color: transparent;
-    border: transparent;
+.motto {
+    background-color: #2b2b2b;
+    opacity: 0.9;
 }
 
-.idName {
-    position: relative;
-    left: -17px;
-    width: 130px;
-    top: 45px;
+/*.navbar-background {*/
+/*background-color: rgba(41, 41, 41, 0)*/
+/*}*/
+.nav-font {
+    background-color: rgba(3, 43, 67, 1); /*rgba(41, 41, 41, .2);*/
+}
+/*FOR THE UPDATE FORM*/
+
+.transition, .create-form button, .create-form .question label, .create-form .question input[type="text"] {
+    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+}
+.transition, .create-form button, .create-form .question label, .create-form .question input[type="number"] {
+    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
 }
 
-.id {
-    background-image: url(/images/anonymousphoto.png);
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-
+.register-container {
+    margin-top: 3%;
 }
 
-.profileId {
-
-    /*display: block;*/
-    text-align: center;
-    width: 250px;
-    height: 405px;
-    padding: 5%;
-    background-color: rgba(40, 40, 40, .9);
-    color: rgb(90, 150, 180);
-    border-radius: 20% 0% 0% 20%;
-
-    top: 70px;
-    left: 24%;
-    position: fixed;
-    align-content: center;
-    margin: 9% 0 0 0;
-}
-
-.b_p_Content {
-    padding-bottom: 20px;
-    line-height: 0.5;
-}
-
-h1 {
-    padding-bottom: 30px;
-    margin-top: -22px;
-}
-
-h4 {
+.create-form button {
+    margin-top: 35px;
+    background-color: white;
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
     display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+.create-form button:hover, form button:focus {
+    color: white;
+    background-color: #28a745;
+}
+.create-form .question {
+    position: relative;
+    padding: 10px 0;
+}
+.create-form .question:first-of-type {
+    padding-top: 0;
+}
+.create-form .question:last-of-type {
+    padding-bottom: 0;
+}
+.create-form .question input[type="text"]{
+    appearance: none;
+    /*background-color: none;*/
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
 }
 
-h5 {
-    margin-top: -18px;
-    line-height: 3.2;
+.create-form .question input[type="number"] {
+    appearance: none;
+    /*background-color: none;*/
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
 }
 
-@media only screen and (min-width:320px) and (max-width:426px) {
+.create-form .question input[type="text"]:focus {
+    outline: none;
+    background: #28a745;
+    color: white;
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="number"]:focus {
+    outline: none;
+    background: #28a745;
+    color: white;
+    /*margin-top: 30px;*/
+}
 
-    .profile_body {
-        width: 100%;
-        background-image: url(/images/insideProfile.jpg);
-        background-size: cover;
-        white-space: nowrap;
-        height: 700px;
+.create-form .question input[type="text"]:valid {
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="text"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="number"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="text"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+.create-form .question input[type="number"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+.create-form .question input[type="password"] {
+    appearance: none;
+    /*background-color: none;*/
+    border: 1px solid #28a745;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #28a745;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+.create-form .question input[type="password"]:focus {
+    outline: none;
+    background: #28a745;
+    color: white;
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="password"]:valid {
+    /*margin-top: 30px;*/
+}
+.create-form .question input[type="password"]:focus ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+.create-form .question input[type="password"]:valid ~ label {
+    text-transform: uppercase;
+    font-style: italic;
+    -moz-transform: translate(5px, -35px) scale(0.6);
+    -ms-transform: translate(5px, -35px) scale(0.6);
+    -webkit-transform: translate(5px, -35px) scale(0.6);
+    transform: translate(5px, -35px) scale(0.6);
+}
+
+/*.main .create-box{*/
+/*width: 90%;*/
+/*padding-top: 4%;*/
+/*margin-bottom: 4%;*/
+/*}*/
+
+
+
+@media only screen and (max-width: 768px) {
+    .create-box {
+        padding-top: 10%;
+        width: 90%;
+        margin-bottom: 8px;
+        border-radius: 20% 20% 20% 20%;
     }
 
-    .profileId {
-        width: 90%;
-        white-space: nowrap;
-        border-radius: 20% 20% 0% 0%;
-        left: 5%;
-        top: 44px;
-        height: 220px;
-        position: relative;
-        text-align: center;
+    .motto {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /*html {*/
+    /*height: 100%;*/
+    /*}*/
+}
+
+
+
+
+@media only screen and (min-width: 769px) {
+    .profile-body {
+        /*background-image: url(/images/sellerImg4.jpeg);*/
+        background-size: cover;
+        /*background-position: 0 -170px;*/
+        height: 100%;
+    }
+
+    .main .create-box{
+        width: 60%;
+        padding-top: 4%;
+        margin-bottom: 10px;
+    }
+
+    .create-box {
+        padding-top: -2%;
+        padding-bottom: 2%;
+    }
+
+    .grey-transparent {
         margin: 0;
     }
 
-    .profileContent {
-        width: 90%;
-        white-space: nowrap;
-        border-radius: 0% 0% 20% 20%;
-        left: 5%;
-        position: relative;
-        margin: 0;
-        top: 50px;
-        height: 270px;
-        text-align: center;
-    }
-
-    .profileContainer {
-        width: 100%;
-        top: 0px;
-    }
-
-    h3 {
-        padding-bottom: 0;
-    }
-
-    .id {
-        background-image: url(/images/anonymousphoto.png);
-        background-size: cover;
-        /*width: 34%;*/
-        height: 19%;
-        left: 30%;
-        position: relative;
-        padding-right: 41%;
-        margin-top: -8px;
-    }
-
-    .idName {
-        width: 95%;
-        position: initial;
-        padding-top: 0;
-        left: 0;
-    }
-
-    h1 {
-        font-size: 1.7rem;
-    }
-    .cardtitle{
-        white-space: nowrap;
-        /*font-size: 1.5rem;*/
-
-    }
-
-    .b_p_Content {
-        padding-bottom: 0;
-        padding-top: 20px;
-    }
-
-    a.btn.btn-outline-success:hover {
-        background-color: green;
-        color: white;
-    }
-
-
-}
-@media only screen and (min-width:427px) and (max-width:1430px) {
-
-    .profile_body {
-        width: 100%;
-        background-image: url(/images/insideProfile.jpg);
-        background-size: cover;
-        white-space: nowrap;
-        height: 700px;
-    }
-
-    .profileId {
-        width: 22%;
-        left: 10%;
-        white-space: nowrap;
-    }
-
-    .profileContent {
-        width: 55%;
-        left: 33%;
-        text-align: center;
-    }
-
-    .welcome {
-        display: none;
-
-    }
 }
