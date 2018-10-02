@@ -10,13 +10,13 @@
 
 <!--DESKTOP VIEW-->
 
-<div class="container d-none d-lg-block">
+<div class="container index-container">
 
     <br /><br />
     <h3 class="text-white">Listings</h3>
     <hr />
 
-    <div th:each="listing : ${searchedContent}">
+    <div th:each="listing : ${searchedContent}" style="height: 550px;">
         <div th:if="${searchedContent.isEmpty()}">
             <h1>There are no listings matching those search terms</h1>
         </div>
@@ -55,66 +55,42 @@
                 </div>
             </div>
             <br />
-        </th:block>
-    </div>
-</div>
 
-<!--MOBILE VIEW-->
 
-    <div class="d-lg-none mr-4 ml-4">
-
-        <br /><br />
-        <h1 class="text-white">Listings</h1>
-        <hr />
-
-        <div th:each="listing : ${searchedContent}">
-            <div th:if="${searchedContent.isEmpty()}">
-                <h1>There are no listings matching those search terms</h1>
-            </div>
-            <th:block th:replace="index :: listing"></th:block>
-        </div>
-
-        <div class="listDiv" th:each="listing : ${listings}">
-            <div th:if="${listings.isEmpty()}">
-                <td class="table-danger" colspan="9">WE do not have any listings at this time. We apologize for the inconvenience.</td>
-            </div>
-            <th:block th:fragment="listing" >
-
-                <div id="mobileview">
-                    <div class="row shadow-lg bg-white">
-                        <div class="col-12 p-0">
-                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="map-size" th:src="@{'/images/' + ${listing.uploadPath}}" /></a>
-                        </div>
-                        <div class="col-12 p-0">
-                            <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" /></a>
-                        </div>
-                        <div class="col-12 p-0">
+            <div id="mobileview">
+                <div class="row shadow-lg bg-white">
+                    <div class="col-12 p-0">
+                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()"><img class="map-size" th:src="@{'/images/' + ${listing.uploadPath}}" /></a>
+                    </div>
+                    <div class="col-12 p-0">
+                        <a th:href="@{login}" sec:authorize="!isAuthenticated()"><img class="house-img" th:src="@{'/images/' + ${listing.uploadPath}}" /></a>
+                    </div>
+                    <div class="col-12 p-0">
                         <span class="listing-wrapper" th:attr="data-listing-map-id=${listing.id}">
                             <div th:attr="id=${'map_' + listing.id}" class="maps map-size"></div>
                         </span>
-                        </div>
-                    </div>
-
-                    <div class="row shadow-lg">
-                        <div class=" col-12 p-3 shadow-lg text-white">
-                            <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3></a>
-                            <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3></a>
-                            <h3 class=""><span class="cities" th:text="${listing.city}"></span><span>, </span>
-                                <span class="states " th:text="${listing.state}"></span>
-                                <span class="zipcodes " th:text="${listing.zipcode}"></span></h3>
-                            <h5 th:text="${listing.description}"></h5>
-                            <h5 th:text="${listing.status}"></h5>
-                            <br />
-                            <h3>Price:</h3>
-                            <h3>$<span th:text="${listing.price}" class="cost"></span>0</h3>
-                        </div>
                     </div>
                 </div>
-                <br />
-            </th:block>
-        </div>
 
+                <div class="row shadow-lg">
+                    <div class=" col-12 p-3 shadow-lg text-white">
+                        <a th:href="@{show/{id}(id=${listing.id})}" sec:authorize="isAuthenticated()" class="anchor"><h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3></a>
+                        <a th:href="@{login}" sec:authorize="!isAuthenticated()" class="anchor"><h3 class="listing-address addresses" th:attr="data-listing-map-address=${listing.address}" th:text="${listing.address}"></h3></a>
+                        <h3 class=""><span class="cities" th:text="${listing.city}"></span><span>, </span>
+                            <span class="states " th:text="${listing.state}"></span>
+                            <span class="zipcodes " th:text="${listing.zipcode}"></span></h3>
+                        <h5 th:text="${listing.description}"></h5>
+                        <h5 th:text="${listing.status}"></h5>
+                        <br />
+                        <h3>Price:</h3>
+                        <h3>$<span th:text="${listing.price}" class="cost"></span>0</h3>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </th:block>
     </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhurXijdJgQJHmGLvsUToMu9fTqIJYw-c"></script>
