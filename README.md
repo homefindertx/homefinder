@@ -16,5 +16,5 @@
 - [x] Add a search feature
 - [x] Add image upload
 - [x] Fix up fragments
-- [ ] Mobile responsive
-- [ ] Style
+- [x] Mobile responsive
+- [x] Style
